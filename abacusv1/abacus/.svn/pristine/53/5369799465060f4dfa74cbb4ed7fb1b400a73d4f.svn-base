@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B20AFB5C-197E-4EE1-BD8F-D4E284875E7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>abacusRules</RootNamespace>
+    <AssemblyName>abacusData</AssemblyName>
+    <MyType>Windows</MyType>
+    <OptionStrict>On</OptionStrict>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ClassLibrary1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ClassLibrary1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Cooperator.Framework.Core, Version=1.3.3.0, Culture=neutral, PublicKeyToken=8f7f403e20325116, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CooperatorAssemblies\\Cooperator.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cooperator.Framework.Data, Version=1.3.3.0, Culture=neutral, PublicKeyToken=8f7f403e20325116, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CooperatorAssemblies\\Cooperator.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Cooperator.Framework.Library, Version=1.3.3.0, Culture=neutral, PublicKeyToken=8f7f403e20325116, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CooperatorAssemblies\\Cooperator.Framework.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abacusEntities\abacusEntities.vbproj">
+      <Project>{0d87416c-7707-4396-b09c-3d3b6ac81fca}</Project>
+      <Name>abacusEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="conexionmioa.vb" />
+    <Compile Include="LazyProviders\DefaultLazyProvider.vb" />
+    <Compile Include="Mappers\AlmacenesMapper.vb" />
+    <Compile Include="Mappers\Auto\AlmacenesMapper.Auto.vb" />
+    <Compile Include="Gateways\AlmacenesGateway.vb" />
+    <Compile Include="Gateways\Auto\AlmacenesGateway.Auto.vb" />
+    <Compile Include="Mappers\cargopersonalMapper.vb" />
+    <Compile Include="Mappers\Auto\cargopersonalMapper.Auto.vb" />
+    <Compile Include="Gateways\cargopersonalGateway.vb" />
+    <Compile Include="Gateways\Auto\cargopersonalGateway.Auto.vb" />
+    <Compile Include="Mappers\CategoriasMapper.vb" />
+    <Compile Include="Mappers\Auto\CategoriasMapper.Auto.vb" />
+    <Compile Include="Gateways\CategoriasGateway.vb" />
+    <Compile Include="Gateways\Auto\CategoriasGateway.Auto.vb" />
+    <Compile Include="Mappers\ChoferesMapper.vb" />
+    <Compile Include="Mappers\Auto\ChoferesMapper.Auto.vb" />
+    <Compile Include="Gateways\ChoferesGateway.vb" />
+    <Compile Include="Gateways\Auto\ChoferesGateway.Auto.vb" />
+    <Compile Include="Mappers\ClieAlmacenMapper.vb" />
+    <Compile Include="Mappers\Auto\ClieAlmacenMapper.Auto.vb" />
+    <Compile Include="Gateways\ClieAlmacenGateway.vb" />
+    <Compile Include="Gateways\Auto\ClieAlmacenGateway.Auto.vb" />
+    <Compile Include="Mappers\ClieContactosMapper.vb" />
+    <Compile Include="Mappers\Auto\ClieContactosMapper.Auto.vb" />
+    <Compile Include="Gateways\ClieContactosGateway.vb" />
+    <Compile Include="Gateways\Auto\ClieContactosGateway.Auto.vb" />
+    <Compile Include="Mappers\ClientesMapper.vb" />
+    <Compile Include="Mappers\Auto\ClientesMapper.Auto.vb" />
+    <Compile Include="Gateways\ClientesGateway.vb" />
+    <Compile Include="Gateways\Auto\ClientesGateway.Auto.vb" />
+    <Compile Include="Mappers\CotizacionMapper.vb" />
+    <Compile Include="Mappers\Auto\CotizacionMapper.Auto.vb" />
+    <Compile Include="Gateways\CotizacionGateway.vb" />
+    <Compile Include="Gateways\Auto\CotizacionGateway.Auto.vb" />
+    <Compile Include="Mappers\CotizacionDetMapper.vb" />
+    <Compile Include="Mappers\Auto\CotizacionDetMapper.Auto.vb" />
+    <Compile Include="Gateways\CotizacionDetGateway.vb" />
+    <Compile Include="Gateways\Auto\CotizacionDetGateway.Auto.vb" />
+    <Compile Include="Mappers\DistritosMapper.vb" />
+    <Compile Include="Mappers\Auto\DistritosMapper.Auto.vb" />
+    <Compile Include="Gateways\DistritosGateway.vb" />
+    <Compile Include="Gateways\Auto\DistritosGateway.Auto.vb" />
+    <Compile Include="Mappers\FacturaMapper.vb" />
+    <Compile Include="Mappers\Auto\FacturaMapper.Auto.vb" />
+    <Compile Include="Gateways\FacturaGateway.vb" />
+    <Compile Include="Gateways\Auto\FacturaGateway.Auto.vb" />
+    <Compile Include="Mappers\FacturaDetMapper.vb" />
+    <Compile Include="Mappers\Auto\FacturaDetMapper.Auto.vb" />
+    <Compile Include="Gateways\FacturaDetGateway.vb" />
+    <Compile Include="Gateways\Auto\FacturaDetGateway.Auto.vb" />
+    <Compile Include="Mappers\FamiliasMapper.vb" />
+    <Compile Include="Mappers\Auto\FamiliasMapper.Auto.vb" />
+    <Compile Include="Gateways\FamiliasGateway.vb" />
+    <Compile Include="Gateways\Auto\FamiliasGateway.Auto.vb" />
+    <Compile Include="Mappers\FormaPagoMapper.vb" />
+    <Compile Include="Mappers\Auto\FormaPagoMapper.Auto.vb" />
+    <Compile Include="Gateways\FormaPagoGateway.vb" />
+    <Compile Include="Gateways\Auto\FormaPagoGateway.Auto.vb" />
+    <Compile Include="Mappers\GuiasMapper.vb" />
+    <Compile Include="Mappers\Auto\GuiasMapper.Auto.vb" />
+    <Compile Include="Gateways\GuiasGateway.vb" />
+    <Compile Include="Gateways\Auto\GuiasGateway.Auto.vb" />
+    <Compile Include="Mappers\GuiasDetMapper.vb" />
+    <Compile Include="Mappers\Auto\GuiasDetMapper.Auto.vb" />
+    <Compile Include="Gateways\GuiasDetGateway.vb" />
+    <Compile Include="Gateways\Auto\GuiasDetGateway.Auto.vb" />
+    <Compile Include="Mappers\idcrdMapper.vb" />
+    <Compile Include="Mappers\Auto\idcrdMapper.Auto.vb" />
+    <Compile Include="Gateways\idcrdGateway.vb" />
+    <Compile Include="Gateways\Auto\idcrdGateway.Auto.vb" />
+    <Compile Include="Mappers\IngresosMapper.vb" />
+    <Compile Include="Mappers\Auto\IngresosMapper.Auto.vb" />
+    <Compile Include="Gateways\IngresosGateway.vb" />
+    <Compile Include="Gateways\Auto\IngresosGateway.Auto.vb" />
+    <Compile Include="Mappers\IngresosDetMapper.vb" />
+    <Compile Include="Mappers\Auto\IngresosDetMapper.Auto.vb" />
+    <Compile Include="Gateways\IngresosDetGateway.vb" />
+    <Compile Include="Gateways\Auto\IngresosDetGateway.Auto.vb" />
+    <Compile Include="Mappers\KardexMapper.vb" />
+    <Compile Include="Mappers\Auto\KardexMapper.Auto.vb" />
+    <Compile Include="Gateways\KardexGateway.vb" />
+    <Compile Include="Gateways\Auto\KardexGateway.Auto.vb" />
+    <Compile Include="Mappers\LoginMapper.vb" />
+    <Compile Include="Mappers\Auto\LoginMapper.Auto.vb" />
+    <Compile Include="Gateways\LoginGateway.vb" />
+    <Compile Include="Gateways\Auto\LoginGateway.Auto.vb" />
+    <Compile Include="Mappers\MarcasMapper.vb" />
+    <Compile Include="Mappers\Auto\MarcasMapper.Auto.vb" />
+    <Compile Include="Gateways\MarcasGateway.vb" />
+    <Compile Include="Gateways\Auto\MarcasGateway.Auto.vb" />
+    <Compile Include="Mappers\MonedasMapper.vb" />
+    <Compile Include="Mappers\Auto\MonedasMapper.Auto.vb" />
+    <Compile Include="Gateways\MonedasGateway.vb" />
+    <Compile Include="Gateways\Auto\MonedasGateway.Auto.vb" />
+    <Compile Include="Mappers\MotivoSalMapper.vb" />
+    <Compile Include="Mappers\Auto\MotivoSalMapper.Auto.vb" />
+    <Compile Include="Gateways\MotivoSalGateway.vb" />
+    <Compile Include="Gateways\Auto\MotivoSalGateway.Auto.vb" />
+    <Compile Include="Mappers\MovilesMapper.vb" />
+    <Compile Include="Mappers\Auto\MovilesMapper.Auto.vb" />
+    <Compile Include="Gateways\MovilesGateway.vb" />
+    <Compile Include="Gateways\Auto\MovilesGateway.Auto.vb" />
+    <Compile Include="Mappers\ProductosMapper.vb" />
+    <Compile Include="Mappers\Auto\ProductosMapper.Auto.vb" />
+    <Compile Include="Gateways\ProductosGateway.vb" />
+    <Compile Include="Gateways\Auto\ProductosGateway.Auto.vb" />
+    <Compile Include="Mappers\ProvContactosMapper.vb" />
+    <Compile Include="Mappers\Auto\ProvContactosMapper.Auto.vb" />
+    <Compile Include="Gateways\ProvContactosGateway.vb" />
+    <Compile Include="Gateways\Auto\ProvContactosGateway.Auto.vb" />
+    <Compile Include="Mappers\ProveedoresMapper.vb" />
+    <Compile Include="Mappers\Auto\ProveedoresMapper.Auto.vb" />
+    <Compile Include="Gateways\ProveedoresGateway.vb" />
+    <Compile Include="Gateways\Auto\ProveedoresGateway.Auto.vb" />
+    <Compile Include="Mappers\ProvinciasMapper.vb" />
+    <Compile Include="Mappers\Auto\ProvinciasMapper.Auto.vb" />
+    <Compile Include="Gateways\ProvinciasGateway.vb" />
+    <Compile Include="Gateways\Auto\ProvinciasGateway.Auto.vb" />
+    <Compile Include="Mappers\registrodevisitasMapper.vb" />
+    <Compile Include="Mappers\Auto\registrodevisitasMapper.Auto.vb" />
+    <Compile Include="Gateways\registrodevisitasGateway.vb" />
+    <Compile Include="Gateways\Auto\registrodevisitasGateway.Auto.vb" />
+    <Compile Include="Mappers\rutaMapper.vb" />
+    <Compile Include="Mappers\Auto\rutaMapper.Auto.vb" />
+    <Compile Include="Gateways\rutaGateway.vb" />
+    <Compile Include="Gateways\Auto\rutaGateway.Auto.vb" />
+    <Compile Include="Mappers\SalidasMapper.vb" />
+    <Compile Include="Mappers\Auto\SalidasMapper.Auto.vb" />
+    <Compile Include="Gateways\SalidasGateway.vb" />
+    <Compile Include="Gateways\Auto\SalidasGateway.Auto.vb" />
+    <Compile Include="Mappers\SalidasDetMapper.vb" />
+    <Compile Include="Mappers\Auto\SalidasDetMapper.Auto.vb" />
+    <Compile Include="Gateways\SalidasDetGateway.vb" />
+    <Compile Include="Gateways\Auto\SalidasDetGateway.Auto.vb" />
+    <Compile Include="Mappers\TCMapper.vb" />
+    <Compile Include="Mappers\Auto\TCMapper.Auto.vb" />
+    <Compile Include="Gateways\TCGateway.vb" />
+    <Compile Include="Gateways\Auto\TCGateway.Auto.vb" />
+    <Compile Include="Mappers\TipoCliProvMapper.vb" />
+    <Compile Include="Mappers\Auto\TipoCliProvMapper.Auto.vb" />
+    <Compile Include="Gateways\TipoCliProvGateway.vb" />
+    <Compile Include="Gateways\Auto\TipoCliProvGateway.Auto.vb" />
+    <Compile Include="Mappers\TIPOIGVMapper.vb" />
+    <Compile Include="Mappers\Auto\TIPOIGVMapper.Auto.vb" />
+    <Compile Include="Gateways\TIPOIGVGateway.vb" />
+    <Compile Include="Gateways\Auto\TIPOIGVGateway.Auto.vb" />
+    <Compile Include="Mappers\TipoProductoMapper.vb" />
+    <Compile Include="Mappers\Auto\TipoProductoMapper.Auto.vb" />
+    <Compile Include="Gateways\TipoProductoGateway.vb" />
+    <Compile Include="Gateways\Auto\TipoProductoGateway.Auto.vb" />
+    <Compile Include="Mappers\tipousuarioMapper.vb" />
+    <Compile Include="Mappers\Auto\tipousuarioMapper.Auto.vb" />
+    <Compile Include="Gateways\tipousuarioGateway.vb" />
+    <Compile Include="Gateways\Auto\tipousuarioGateway.Auto.vb" />
+    <Compile Include="Mappers\TrabajadoresMapper.vb" />
+    <Compile Include="Mappers\Auto\TrabajadoresMapper.Auto.vb" />
+    <Compile Include="Gateways\TrabajadoresGateway.vb" />
+    <Compile Include="Gateways\Auto\TrabajadoresGateway.Auto.vb" />
+    <Compile Include="Mappers\TransportistaMapper.vb" />
+    <Compile Include="Mappers\Auto\TransportistaMapper.Auto.vb" />
+    <Compile Include="Gateways\TransportistaGateway.vb" />
+    <Compile Include="Gateways\Auto\TransportistaGateway.Auto.vb" />
+    <Compile Include="Mappers\usuarioMapper.vb" />
+    <Compile Include="Mappers\Auto\usuarioMapper.Auto.vb" />
+    <Compile Include="Gateways\usuarioGateway.vb" />
+    <Compile Include="Gateways\Auto\usuarioGateway.Auto.vb" />
+    <Compile Include="micapadatos.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+</Project>

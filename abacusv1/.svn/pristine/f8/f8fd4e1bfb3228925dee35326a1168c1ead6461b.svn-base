@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D87416C-7707-4396-B09C-3D3B6AC81FCA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>abacusRules</RootNamespace>
+    <AssemblyName>abacusEntities</AssemblyName>
+    <MyType>Windows</MyType>
+    <OptionStrict>On</OptionStrict>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ClassLibrary1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ClassLibrary1.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Reference Include="Cooperator.Framework.Core, Version=1.3.3.0, Culture=neutral, PublicKeyToken=8f7f403e20325116, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CooperatorAssemblies\\Cooperator.Framework.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\familia.vb" />
+    <Compile Include="Entities\ingreso.vb" />
+    <Compile Include="Entities\proveedor.vb" />
+    <Compile Include="Entities\visita1.vb" />
+    <Compile Include="ingresodetalle.vb" />
+    <Compile Include="Objects\AlmacenesObject.vb" />
+    <Compile Include="Objects\Auto\AlmacenesObject.Auto.vb" />
+    <Compile Include="Objects\cargopersonalObject.vb" />
+    <Compile Include="Objects\Auto\cargopersonalObject.Auto.vb" />
+    <Compile Include="Entities\Categorias.vb" />
+    <Compile Include="Entities\Auto\Categorias.Auto.vb" />
+    <Compile Include="Objects\CategoriasObject.vb" />
+    <Compile Include="Objects\Auto\CategoriasObject.Auto.vb" />
+    <Compile Include="Entities\Choferes.vb" />
+    <Compile Include="Entities\Auto\Choferes.Auto.vb" />
+    <Compile Include="Objects\ChoferesObject.vb" />
+    <Compile Include="Objects\Auto\ChoferesObject.Auto.vb" />
+    <Compile Include="Entities\ClieAlmacen.vb" />
+    <Compile Include="Entities\Auto\ClieAlmacen.Auto.vb" />
+    <Compile Include="Objects\ClieAlmacenObject.vb" />
+    <Compile Include="Objects\Auto\ClieAlmacenObject.Auto.vb" />
+    <Compile Include="Objects\ClieContactosObject.vb" />
+    <Compile Include="Objects\Auto\ClieContactosObject.Auto.vb" />
+    <Compile Include="Entities\Clientes.vb" />
+    <Compile Include="Entities\Auto\Clientes.Auto.vb" />
+    <Compile Include="Objects\ClientesObject.vb" />
+    <Compile Include="Objects\Auto\ClientesObject.Auto.vb" />
+    <Compile Include="Entities\Cotizacion.vb" />
+    <Compile Include="Entities\Auto\Cotizacion.Auto.vb" />
+    <Compile Include="Objects\CotizacionObject.vb" />
+    <Compile Include="Objects\Auto\CotizacionObject.Auto.vb" />
+    <Compile Include="Entities\CotizacionDet.vb" />
+    <Compile Include="Entities\Auto\CotizacionDet.Auto.vb" />
+    <Compile Include="Objects\CotizacionDetObject.vb" />
+    <Compile Include="Objects\Auto\CotizacionDetObject.Auto.vb" />
+    <Compile Include="Objects\DistritosObject.vb" />
+    <Compile Include="Objects\Auto\DistritosObject.Auto.vb" />
+    <Compile Include="Entities\Factura.vb" />
+    <Compile Include="Entities\Auto\Factura.Auto.vb" />
+    <Compile Include="Objects\FacturaObject.vb" />
+    <Compile Include="Objects\Auto\FacturaObject.Auto.vb" />
+    <Compile Include="Entities\FacturaDet.vb" />
+    <Compile Include="Entities\Auto\FacturaDet.Auto.vb" />
+    <Compile Include="Objects\FacturaDetObject.vb" />
+    <Compile Include="Objects\Auto\FacturaDetObject.Auto.vb" />
+    <Compile Include="Objects\FamiliasObject.vb" />
+    <Compile Include="Objects\Auto\FamiliasObject.Auto.vb" />
+    <Compile Include="Objects\FormaPagoObject.vb" />
+    <Compile Include="Objects\Auto\FormaPagoObject.Auto.vb" />
+    <Compile Include="Entities\Guias.vb" />
+    <Compile Include="Entities\Auto\Guias.Auto.vb" />
+    <Compile Include="Objects\GuiasObject.vb" />
+    <Compile Include="Objects\Auto\GuiasObject.Auto.vb" />
+    <Compile Include="Entities\GuiasDet.vb" />
+    <Compile Include="Entities\Auto\GuiasDet.Auto.vb" />
+    <Compile Include="Objects\GuiasDetObject.vb" />
+    <Compile Include="Objects\Auto\GuiasDetObject.Auto.vb" />
+    <Compile Include="Entities\idcrd.vb" />
+    <Compile Include="Entities\Auto\idcrd.Auto.vb" />
+    <Compile Include="Objects\idcrdObject.vb" />
+    <Compile Include="Objects\Auto\idcrdObject.Auto.vb" />
+    <Compile Include="Entities\Ingresos.vb" />
+    <Compile Include="Entities\Auto\Ingresos.Auto.vb" />
+    <Compile Include="Objects\IngresosObject.vb" />
+    <Compile Include="Objects\Auto\IngresosObject.Auto.vb" />
+    <Compile Include="Entities\IngresosDet.vb" />
+    <Compile Include="Entities\Auto\IngresosDet.Auto.vb" />
+    <Compile Include="Objects\IngresosDetObject.vb" />
+    <Compile Include="Objects\Auto\IngresosDetObject.Auto.vb" />
+    <Compile Include="Entities\Kardex.vb" />
+    <Compile Include="Entities\Auto\Kardex.Auto.vb" />
+    <Compile Include="Objects\KardexObject.vb" />
+    <Compile Include="Objects\Auto\KardexObject.Auto.vb" />
+    <Compile Include="Entities\Login.vb" />
+    <Compile Include="Entities\Auto\Login.Auto.vb" />
+    <Compile Include="Objects\LoginObject.vb" />
+    <Compile Include="Objects\Auto\LoginObject.Auto.vb" />
+    <Compile Include="Objects\MarcasObject.vb" />
+    <Compile Include="Objects\Auto\MarcasObject.Auto.vb" />
+    <Compile Include="Objects\MonedasObject.vb" />
+    <Compile Include="Objects\Auto\MonedasObject.Auto.vb" />
+    <Compile Include="Objects\MotivoSalObject.vb" />
+    <Compile Include="Objects\Auto\MotivoSalObject.Auto.vb" />
+    <Compile Include="Objects\MovilesObject.vb" />
+    <Compile Include="Objects\Auto\MovilesObject.Auto.vb" />
+    <Compile Include="Entities\Productos.vb" />
+    <Compile Include="Entities\Auto\Productos.Auto.vb" />
+    <Compile Include="Objects\ProductosObject.vb" />
+    <Compile Include="Objects\Auto\ProductosObject.Auto.vb" />
+    <Compile Include="Entities\ProvContactos.vb" />
+    <Compile Include="Entities\Auto\ProvContactos.Auto.vb" />
+    <Compile Include="Objects\ProvContactosObject.vb" />
+    <Compile Include="Objects\Auto\ProvContactosObject.Auto.vb" />
+    <Compile Include="Objects\ProveedoresObject.vb" />
+    <Compile Include="Objects\Auto\ProveedoresObject.Auto.vb" />
+    <Compile Include="Objects\ProvinciasObject.vb" />
+    <Compile Include="Objects\Auto\ProvinciasObject.Auto.vb" />
+    <Compile Include="Entities\registrodevisitas.vb" />
+    <Compile Include="Entities\Auto\registrodevisitas.Auto.vb" />
+    <Compile Include="Objects\registrodevisitasObject.vb" />
+    <Compile Include="Objects\Auto\registrodevisitasObject.Auto.vb" />
+    <Compile Include="Entities\ruta.vb" />
+    <Compile Include="Entities\Auto\ruta.Auto.vb" />
+    <Compile Include="Objects\rutaObject.vb" />
+    <Compile Include="Objects\Auto\rutaObject.Auto.vb" />
+    <Compile Include="Entities\Salidas.vb" />
+    <Compile Include="Entities\Auto\Salidas.Auto.vb" />
+    <Compile Include="Objects\SalidasObject.vb" />
+    <Compile Include="Objects\Auto\SalidasObject.Auto.vb" />
+    <Compile Include="Entities\SalidasDet.vb" />
+    <Compile Include="Entities\Auto\SalidasDet.Auto.vb" />
+    <Compile Include="Objects\SalidasDetObject.vb" />
+    <Compile Include="Objects\Auto\SalidasDetObject.Auto.vb" />
+    <Compile Include="Objects\TCObject.vb" />
+    <Compile Include="Objects\Auto\TCObject.Auto.vb" />
+    <Compile Include="Objects\TipoCliProvObject.vb" />
+    <Compile Include="Objects\Auto\TipoCliProvObject.Auto.vb" />
+    <Compile Include="Objects\TIPOIGVObject.vb" />
+    <Compile Include="Objects\Auto\TIPOIGVObject.Auto.vb" />
+    <Compile Include="Objects\TipoProductoObject.vb" />
+    <Compile Include="Objects\Auto\TipoProductoObject.Auto.vb" />
+    <Compile Include="Objects\tipousuarioObject.vb" />
+    <Compile Include="Objects\Auto\tipousuarioObject.Auto.vb" />
+    <Compile Include="Entities\Trabajadores.vb" />
+    <Compile Include="Entities\Auto\Trabajadores.Auto.vb" />
+    <Compile Include="Objects\TrabajadoresObject.vb" />
+    <Compile Include="Objects\Auto\TrabajadoresObject.Auto.vb" />
+    <Compile Include="Objects\TransportistaObject.vb" />
+    <Compile Include="Objects\Auto\TransportistaObject.Auto.vb" />
+    <Compile Include="Entities\usuario.vb" />
+    <Compile Include="Entities\Auto\usuario.Auto.vb" />
+    <Compile Include="Objects\usuarioObject.vb" />
+    <Compile Include="Objects\Auto\usuarioObject.Auto.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+</Project>

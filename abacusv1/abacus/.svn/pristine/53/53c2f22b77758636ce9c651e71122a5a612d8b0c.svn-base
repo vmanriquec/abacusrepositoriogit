@@ -1,0 +1,95 @@
+﻿Public Class Menu
+
+    Private Sub KryptonButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton1.Click
+        Dim cf As New gestionclientes
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub KryptonButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton2.Click
+        Dim cf As New Form1
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+
+    Private Sub KryptonButton3_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton3.Click
+        Dim cf As New registrorutas
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub KryptonButton4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton4.Click
+        Dim cf As New clientedireccionruta
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub KryptonButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton5.Click
+        Dim cf As New ProgramacionVisitasaclientes
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub KryptonButton6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton6.Click
+        Dim cf As New gestionfamilia
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub KryptonButton7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton7.Click
+        Dim cf As New categoriasdeproductos
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub KryptonButton8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton8.Click
+        Dim cf As New Gestionproveedores
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub ExpandableSplitter1_ExpandedChanged(ByVal sender As System.Object, ByVal e As Stimulsoft.Controls.Win.DotNetBar.ExpandedChangeEventArgs)
+
+    End Sub
+
+    Private Sub ButtonX3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonX3.Click
+        Dim cf As New gestionproductos
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub RibbonPanel3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RibbonPanel3.Click
+
+    End Sub
+
+    Private Sub ButtonX4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonX4.Click
+        Dim cf As New gestiondeingresos
+        cf.TopLevel = False
+        cf.Parent = Me.PanelEx1
+        cf.StartPosition = FormStartPosition.CenterParent
+        cf.Show()
+    End Sub
+
+    Private Sub ButtonX2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonX2.Click
+        Me.Close()
+    End Sub
+End Class

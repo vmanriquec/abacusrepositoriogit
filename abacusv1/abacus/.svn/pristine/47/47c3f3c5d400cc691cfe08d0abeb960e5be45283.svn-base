@@ -1,0 +1,176 @@
+﻿Imports abacusRules.Objects
+Imports abacusRules.Entities
+Imports abacusRules.Mappers
+Imports abacusRules.micapadatos
+Imports abacusRules
+Public Class Gestionproveedores
+    Dim actuali, siempreid As Integer
+    Private Sub cargartodos()
+        Me.DataGridView1.DataSource = capaproveedores.cargartodosproveedores
+    End Sub
+    Private Sub limpiar()
+        Me.txtnombre.Text = ""
+        Me.apellidos.Text = ""
+        Me.apellidos.Text = ""
+        Me.dni.Text = ""
+    End Sub
+    Private Sub bloquear()
+        Me.txtnombre.Enabled = False
+        Me.apellidos.Enabled = False
+        Me.direccion.Enabled = False
+        Me.TELEFONO.Enabled = False
+
+        Me.registro.Enabled = False
+        Me.registro.Enabled = False
+        Me.dni.Enabled = False
+    End Sub
+    Private Sub habilitar()
+        Me.txtnombre.Enabled = True
+        Me.apellidos.Enabled = True
+        Me.registro.Enabled = True
+        Me.registro.Enabled = True
+        Me.dni.Enabled = True
+    End Sub
+    Public Shared Sub cargarcomboprovincia(ByVal cbo As ComboBox)
+        Try
+            cbo.DataSource = ProvinciasMapper.cargarnombreprovinciascargocombo()
+
+            cbo.DisplayMember = "Provincia"
+            cbo.ValueMember = "IdProvincia"
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Public Shared Sub cargarcomboformapago(ByVal cbo As ComboBox)
+        Try
+            cbo.DataSource = FormaPagoMapper.cargarnombreformapagocargocombo()
+
+            cbo.DisplayMember = "forma"
+            cbo.ValueMember = "IdFPago"
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Public Shared Sub cargarcombodistrito(ByVal cbo As ComboBox)
+        Try
+            cbo.DataSource = DistritosMapper.cargarnombredistritosargocombo()
+            cbo.DisplayMember = "Distrito"
+            cbo.ValueMember = "IdDistrito"
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    'Private Sub Deshabilitar_Frame(ByVal UnFrame As Control, ByVal Habilitar As Boolean)
+    '    'Variable de tipo Control Para los controles del contenedor en este caso del Frame  
+    '    Dim ElControl As Control
+
+    '    'recorre los controles  
+
+    '    For Each ElControl In Controls
+    '        'si está dentro lo deshabilita  
+    '        If ElControl.Container Is UnFrame Then
+    '            ElControl.Enabled = Habilitar
+    '        End If
+    '    Next
+    'End Sub
+
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'AbacusDataSet.listartodoslosproveedores' Puede moverla o quitarla según sea necesario.
+        cargarcombodistrito(Me.distrito)
+        cargarcomboprovincia(Me.provincia)
+        Me.estado.Checked = True
+    End Sub
+    Private Sub KryptonButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton1.Click
+        Me.Close()
+    End Sub
+    Private Sub nuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nuevo.Click
+        limpiar()
+        actuali = 0
+    End Sub
+
+    Private Sub grabar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles grabar.Click
+        If txtnombre.Text = "" Then
+            MsgBox("al menos debe llenar el nombre")
+        Else
+            If actuali <> 1 Then
+                Dim proveedor1 As New proveedor
+                proveedor1.Nombre = Me.txtnombre.Text
+                proveedor1.Apellido = Me.apellidos.Text
+                proveedor1.Direccionp = Me.direccion.Text
+                proveedor1.DI = Me.dni.Text
+                proveedor1.NomComercial = Me.razonsocial.Text
+                proveedor1.Telefono1p = Me.TELEFONO.Text
+                proveedor1.Faxp = Me.fax.Text
+                proveedor1.Emailp = Me.email.Text
+                proveedor1.estado = "1"
+                proveedor1.Provinciap = CStr(Me.provincia.SelectedValue)
+                proveedor1.Distritop = CStr(Me.distrito.SelectedValue)
+                proveedor1.Observaciones = Me.observaciones.Text
+                proveedor1.Telefono1p = Me.TELEFONO.Text
+                proveedor1.Webp = Me.txtweb.Text
+                capaproveedores.proveedores_Insert(proveedor1)
+                MsgBox("se agrego un nuevo proveedor")
+                limpiar()
+            Else
+                Dim fila As Byte
+                Dim i As Integer
+                fila = CByte(Me.DataGridView1.CurrentCell.RowIndex())
+                i = CInt(CDec(Me.DataGridView1.Item(0, fila).Value()))
+                Dim proveedor1 As New proveedor
+                proveedor1.IdProveedor = i
+                proveedor1.Nombre = Me.txtnombre.Text
+                proveedor1.Apellido = Me.apellidos.Text
+                proveedor1.Direccionp = Me.direccion.Text
+                proveedor1.DI = Me.dni.Text
+                proveedor1.NomComercial = Me.razonsocial.Text
+                proveedor1.Telefono1p = Me.TELEFONO.Text
+                proveedor1.Faxp = Me.fax.Text
+                proveedor1.Emailp = Me.email.Text
+                If estado.Checked = True Then
+                    proveedor1.estado = "1"
+                Else
+                    proveedor1.estado = "0"
+                End If
+                proveedor1.Provinciap = CStr(Me.provincia.SelectedValue)
+                proveedor1.Distritop = CStr(Me.distrito.SelectedValue)
+                proveedor1.Observaciones = Me.observaciones.Text
+                proveedor1.Telefono1p = Me.TELEFONO.Text
+                proveedor1.Webp = Me.txtweb.Text
+                capaproveedores.actualizarfamilia(proveedor1)
+                MsgBox("se modifico el registro")
+                limpiar()
+
+            End If
+            cargartodos()
+
+        End If
+
+    End Sub
+    Private Sub eliminar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eliminar.Click
+        If Me.DataGridView1.RowCount = 0 Then
+            MsgBox("busque primero el registro")
+        Else
+            Dim fila As Byte
+            Dim i As Integer
+            fila = CByte(Me.DataGridView1.CurrentCell.RowIndex())
+            Dim proveedor1 As New proveedor
+            i = CInt(CDec(Me.DataGridView1.Item(0, fila).Value()))
+            proveedor1.IdProveedor = i
+            capaproveedores.eliminarproveedor(proveedor1)
+            MsgBox("registro eliminada con exito")
+        End If
+        cargartodos()
+    End Sub
+
+    Private Sub todos_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles todos.Click
+        cargartodos()
+    End Sub
+
+    Private Sub editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles editar.Click
+        actuali = 1
+    End Sub
+End Class

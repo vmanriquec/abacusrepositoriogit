@@ -1,0 +1,667 @@
+﻿Imports abacusRules.Objects
+Imports abacusRules.Entities
+Imports abacusRules.Mappers
+Imports abacusRules.micapadatos
+Imports abacusRules
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Diagnostics
+Imports System.IO
+
+Public Class gestiondeingresos
+    Dim actuali, actualidetalle, ultimoid, e As Integer
+    Dim mRow As Integer = 0
+    Dim newpage As Boolean = True
+    Dim caden, cadena As String
+    Dim fecha1, fecha2 As Date
+    Dim idprov As Integer
+    Dim det As DataTable
+
+    Private Sub cargartodos()
+        Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresos
+    End Sub
+    Public Shared Sub cargarcombonombreproveedor(ByVal cbo As ComboBox)
+        Try
+            cbo.DataSource = capaproveedores.cargarcomboconcatenadoproveedores
+            cbo.DisplayMember = "nombre"
+            cbo.ValueMember = "IdProveedor"
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+
+    Public Shared Sub cargarcombonombreproducto(ByVal cbo As ComboBox)
+        Try
+            cbo.DataSource = capaproductos.cargarcomboproductos
+            cbo.DisplayMember = "Producto"
+            cbo.ValueMember = "IdProducto"
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Public Shared Sub cargarcombonombretrabajador(ByVal cbo As ComboBox)
+        Try
+            cbo.DataSource = TrabajadoresMapper.cargarnombretrabajador
+            cbo.DisplayMember = "nombre"
+            cbo.ValueMember = "IdTrabjador"
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Public Shared Sub cargarcomboalmacen(ByVal cbo As ComboBox)
+        Try
+            cbo.DataSource = AlmacenesMapper.cargarcomboalmacen
+            cbo.DisplayMember = "Almacen"
+            cbo.ValueMember = "IdAlmacen"
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Function Sumar( _
+        ByVal nombre_Columna As String, _
+        ByVal Dgv As DataGridView) As Decimal
+
+        Dim total As Decimal = 0
+
+        ' recorrer las filas y obtener los items de la columna indicada en "nombre_Columna"  
+        Try
+            For i As Integer = 0 To Dgv.RowCount - 1
+                total = CDec(total + CDec(Dgv.Item(nombre_Columna.ToLower, i).Value))
+            Next
+
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+
+        ' retornar el valor  
+        Return total
+
+    End Function
+    Private Sub crearcadenaconfecha(ByVal campo As String, ByVal idabuscar As Integer, ByVal fecha1 As Date, ByVal fecha2 As Date)
+        cadena = "SELECT dbo.Ingresos.IdIngresos AS ID,dbo.Trabajadores.Nombres+ '--' + dbo.Trabajadores.Apellidos AS Reg_Ingreso,dbo.Ingresos.Fecha,dbo.Ingresos.Serie,dbo.Ingresos.Numero,dbo.Ingresos.estado,dbo.Ingresos.valortotal AS Total,dbo.Ingresos.lote,dbo.Proveedores.NomComercial AS Proveedor,dbo.Almacenes.Almacen,dbo.FormaPago.Forma AS Form_Pago,dbo.Ingresos.TipDoc  FROM    dbo.Ingresos INNER JOIN dbo.Proveedores ON dbo.Ingresos.IdProveedor = dbo.Proveedores.IdProveedor INNER JOIN dbo.Trabajadores ON dbo.Ingresos.IdTrabjador = dbo.Trabajadores.IdTrabjador INNER JOIN dbo.Almacenes ON dbo.Ingresos.IdAlmacen = dbo.Almacenes.IdAlmacen INNER JOIN dbo.FormaPago ON dbo.FormaPago.IdFPago = dbo.Ingresos.ModoPago  WHERE '" & campo & "'='" & idabuscar & "' AND Fecha Between '" & fecha1 & "'  And   '" & fecha2 & "'"
+    End Sub
+    Private Sub crearcadenasinfecha(ByVal campo As String, ByVal idabuscar As Integer)
+        cadena = "SELECT dbo.Ingresos.IdIngresos AS ID,dbo.Trabajadores.Nombres+ '--' + dbo.Trabajadores.Apellidos AS Reg_Ingreso,dbo.Ingresos.Fecha,dbo.Ingresos.Serie,dbo.Ingresos.Numero,dbo.Ingresos.estado,dbo.Ingresos.valortotal AS Total,dbo.Ingresos.lote,dbo.Proveedores.NomComercial AS Proveedor,dbo.Almacenes.Almacen,dbo.FormaPago.Forma AS Form_Pago,dbo.Ingresos.TipDoc  FROM    dbo.Ingresos INNER JOIN dbo.Proveedores ON dbo.Ingresos.IdProveedor = dbo.Proveedores.IdProveedor INNER JOIN dbo.Trabajadores ON dbo.Ingresos.IdTrabjador = dbo.Trabajadores.IdTrabjador INNER JOIN dbo.Almacenes ON dbo.Ingresos.IdAlmacen = dbo.Almacenes.IdAlmacen INNER JOIN dbo.FormaPago ON dbo.FormaPago.IdFPago = dbo.Ingresos.ModoPago  WHERE '" & campo & "'='" & idabuscar & "'"
+    End Sub
+
+    Private Sub idultimoingreso()
+        Dim cn As New SqlClient.SqlConnection(cox)
+        caden = ("SELECT max(IdIngresos) FROM Ingresos")
+        Dim cmd As New SqlClient.SqlCommand(caden, cn)
+        Dim drConsulta1 As SqlClient.SqlDataReader
+        cn.Open()
+        drConsulta1 = cmd.ExecuteReader()
+        While drConsulta1.Read
+            ultimoid = CInt(CStr((drConsulta1(0))))
+        End While
+        drConsulta1.NextResult()
+        drConsulta1.Close()
+        cn.Close()
+    End Sub
+
+
+    Private Sub muestrarapidadedetalles(ByVal a As Integer)
+
+        If a = 1 Then
+
+
+            If Me.dgbusqueda.RowCount = 0 Then
+                MsgBox("busque primero la ruta")
+            Else
+                Dim fila As Byte
+                Dim i As Integer
+                fila = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
+                Dim ingreso1 As IngresosObject
+
+                i = CInt(CDec(Me.dgbusqueda.Item(0, fila).Value()))
+                ingreso1 = IngresosMapper.Instance.GetOne(i)
+                Dim aa As New ingreso
+                aa.IdIngresos = i
+                Me.dgdetalle.DataSource = capaingresos.listardetalleporingreso(aa)
+            End If
+        Else
+        End If
+    End Sub
+    Private Sub beditar()
+        Me.nuevo.Enabled = False
+        Me.eliminar.Enabled = False
+        Me.todos.Enabled = False
+        Me.grabar.Enabled = True
+        Me.editar.Enabled = False
+
+    End Sub
+
+    Private Sub bgrabar()
+        Me.nuevo.Enabled = True
+        Me.eliminar.Enabled = False
+        Me.todos.Enabled = True
+        Me.grabar.Enabled = False
+        Me.editar.Enabled = False
+
+    End Sub
+    Private Sub beliminar()
+        Me.nuevo.Enabled = True
+        Me.eliminar.Enabled = False
+        Me.todos.Enabled = True
+        Me.grabar.Enabled = False
+        Me.editar.Enabled = False
+    End Sub
+    Private Sub btodos()
+        Me.nuevo.Enabled = False
+        Me.eliminar.Enabled = True
+        Me.todos.Enabled = True
+        Me.grabar.Enabled = False
+        Me.editar.Enabled = True
+    End Sub
+
+    Private Sub binicio()
+        Me.nuevo.Enabled = True
+        Me.eliminar.Enabled = False
+        Me.todos.Enabled = True
+        Me.grabar.Enabled = False
+        Me.editar.Enabled = False
+        Me.DataGridView1.Enabled = True
+        Me.DataGridView1.Visible = True
+        Me.dgdetalle.Enabled = False
+        Me.dgdetalle.Visible = False
+        Me.cboeliminardetalle.Enabled = False
+        Me.btadicionar.Enabled = False
+
+    End Sub
+    Private Sub bnuevo()
+        Me.nuevo.Enabled = False
+        Me.eliminar.Enabled = False
+        Me.todos.Enabled = False
+        Me.grabar.Enabled = True
+        Me.editar.Enabled = False
+    End Sub
+
+
+
+    Private Sub limpiardetalle()
+        Me.txtcantidad.Text = ""
+        Me.txtcosto.Text = ""
+        Me.txtventa.Text = ""
+        Me.cboproducto.Text = ""
+        'Me.txtobservaciones.Text = ""
+    End Sub
+    Private Sub limpiarcabecera()
+        Me.cboalmacen.Text = ""
+        Me.cboproducto.Text = ""
+        Me.cboproveedor.Text = ""
+        Me.cbotipodocumento.Text = ""
+        Me.cbotipopago.Text = ""
+        Me.cbotrabajador.Text = ""
+        Me.txtserie.Text = ""
+        Me.txtnumero.Text = ""
+        Me.txtlote.Text = ""
+        Me.labmonto.Text = ""
+    End Sub
+    Private Sub habilitarcabecera()
+        Me.cboalmacen.Enabled = True
+        Me.cboproducto.Enabled = True
+        Me.cboproveedor.Enabled = True
+        Me.cbotipodocumento.Enabled = True
+        Me.cbotipopago.Enabled = True
+        Me.cbotrabajador.Enabled = True
+        Me.txtserie.Enabled = True
+        Me.txtnumero.Enabled = True
+        Me.txtlote.Enabled = True
+        Me.labmonto.Enabled = True
+    End Sub
+    Private Sub habilitardetalle()
+        Me.txtcantidad.Enabled = True
+        Me.txtcosto.Enabled = True
+        Me.txtventa.Enabled = True
+        Me.cboproducto.Enabled = True
+    End Sub
+    Private Sub inhabilitarcabecera()
+        Me.cboalmacen.Enabled = False
+        Me.cboproducto.Enabled = False
+        Me.cboproveedor.Enabled = False
+        Me.cbotipodocumento.Enabled = False
+        Me.cbotipopago.Enabled = False
+        Me.cbotrabajador.Enabled = False
+        Me.txtserie.Enabled = False
+        Me.txtnumero.Enabled = False
+        Me.txtlote.Enabled = False
+        Me.labmonto.Enabled = False
+    End Sub
+    Private Sub inhabilitardetalle()
+        Me.txtcantidad.Enabled = False
+        Me.txtcosto.Enabled = False
+        Me.txtventa.Enabled = False
+        Me.cboproducto.Enabled = False
+    End Sub
+
+    Private Sub bloquear()
+        'Me.cboruta.Enabled = False
+        'Me.txtobservacion.Enabled = False
+        'Me.cbotrabajador.Enabled = False
+    End Sub
+    Private Sub habilitar()
+        'Me.cbotrabajador.Enabled = True
+        'Me.cboruta.Enabled = True
+        'Me.txtobservacion.Enabled = True
+
+    End Sub
+    Private Sub nuevo_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        limpiarcabecera()
+        actuali = 0
+    End Sub
+
+    Private Sub gestiondeingresos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        cargarcombonombreproveedor(cboproveedor)
+        cargarcombonombreproducto(cboproducto)
+        cargarcombonombretrabajador(cbotrabajador)
+        cargarcomboalmacen(cboalmacen)
+        limpiarcabecera()
+        limpiardetalle()
+        inhabilitarcabecera()
+        inhabilitardetalle()
+
+        binicio()
+    End Sub
+
+    Private Sub cboagregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btadicionar.Click
+
+        If txtcantidad.Text = "" Or Me.txtcosto.Text = "" Or Me.cboproducto.Text = "" Or Me.cboproveedor.Text = "" Or Me.cbotrabajador.Text = "" Or Me.txtventa.Text = "" Then
+
+            MsgBox("debe llenar algun numero en costo o cantidad ademas de por lo menos un trabajador y un proveedor")
+        Else
+
+            If actualidetalle = 1 Then
+
+                Dim fila As Byte
+                Dim i As Integer
+                fila = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
+                i = CInt(CDec(Me.dgbusqueda.Item(0, fila).Value()))
+                Dim oo As New ingreso
+                oo.IdIngresos = i
+                Dim detalle1 As New ingresodetalle
+                detalle1.IdIngresos = i
+                detalle1.IdProducto = CInt(CType(Me.cboproducto.SelectedValue.ToString, Integer?))
+                detalle1.Cantidad = CDec(Me.txtcantidad.Text)
+                detalle1.PU = CDec(Me.txtcosto.Text)
+                Me.labmonto.Text = CStr(Sumar("subtotal", Me.dgdetalle))
+
+                Dim t As Integer = CInt(Me.txtcantidad.Text)
+                'Me.DataGridView1.Item(1, 2).Value = 
+                Dim c As Decimal = CDec(Me.txtcosto.Text)
+
+                'Me.DataGridView1.Item(1, 4).Value = 
+                Dim r As Decimal = t * c
+                detalle1.subtotal = r
+                detalle1.pventa = CDec(Me.txtventa.Text)
+                detalle1.IdAlmacen = CInt(Me.cboalmacen.SelectedValue)
+                capaingresos.Registrardetalle(detalle1)
+                Me.dgdetalle.DataSource = capaingresos.listardetalleporingreso(oo)
+
+
+
+
+
+            Else
+
+                Dim ee As Integer = CInt(CType(Me.cboproducto.SelectedValue.ToString, Integer?))
+
+                'Me.DataGridView1.Item(1, 1).Value = 
+                'Me.DataGridView1.Item(1, 3).Value = 
+                Dim p As Decimal = CDec(Me.txtventa.Text)
+                Dim t As Integer = CInt(Me.txtcantidad.Text)
+                'Me.DataGridView1.Item(1, 2).Value = 
+                Dim c As Decimal = CDec(Me.txtcosto.Text)
+
+                'Me.DataGridView1.Item(1, 4).Value = 
+                Dim r As Decimal = t * c
+                Me.dgdetalle.Rows.Add(ee, Me.cboproducto.Text, t, c, p, r)
+                Me.labmonto.Text = CStr(Sumar("subtotal", Me.dgdetalle))
+                'Else
+                End
+                ' Me.dgdetalle.DataSource = False
+            End If
+        End If
+    End Sub
+
+    Private Sub grabar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles grabar.Click
+        If actuali = 1 And actualidetalle = 1 Then
+
+            Dim fila As Byte
+            Dim i As Integer
+            fila = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
+            i = CInt(CDec(Me.DataGridView1.Item(0, fila).Value()))
+            Dim ingreso1 As New ingreso
+            ingreso1.IdIngresos = i
+            ingreso1.IdAlmacen = CInt(CType(Me.cboalmacen.SelectedValue.ToString, Integer?))
+            ingreso1.IdTrabjador = CInt(CType(Me.cbotrabajador.SelectedValue.ToString, Integer?))
+            ingreso1.Fecha = Me.dtfecha.Value
+            ingreso1.Serie = Me.txtserie.Text
+            ingreso1.Numero = Me.txtnumero.Text
+            Select Case Me.cbotipodocumento.Text
+                Case Is = "boleta"
+                    ingreso1.TipDoc = 1
+                Case Is = "factura"
+                    ingreso1.TipDoc = 2
+                Case Is = "guia"
+                    ingreso1.TipDoc = 3
+            End Select
+
+            Select Case Me.cbotipopago.Text
+                Case Is = "contado"
+                    ingreso1.ModoPago = 1
+                Case Is = "credito"
+                    ingreso1.ModoPago = 2
+                Case Is = "letra"
+                    ingreso1.ModoPago = 3
+                Case Is = "otros"
+                    ingreso1.ModoPago = 4
+            End Select
+            ingreso1.IdProveedor = CInt(CType(Me.cboproveedor.SelectedValue.ToString, Integer?))
+            ingreso1.estado = "1"
+            ingreso1.valortotal = CDec(CType(Me.labmonto.Text, Decimal?))
+            ingreso1.lote = Me.txtlote.Text
+
+            capaingresos.actualizaringreso(ingreso1)
+            idultimoingreso()
+            Dim filas As Integer = Me.DataGridView1.RowCount
+            Dim q As Integer
+            For q = 0 To filas - 1
+
+                Dim detalle1 As New ingresodetalle
+                detalle1.IdIngresos = ultimoid
+                detalle1.IdProducto = CInt(Me.DataGridView1.Item(0, q).Value)
+                detalle1.Cantidad = CInt(Me.DataGridView1.Item(2, q).Value)
+                detalle1.PU = CDec(Me.DataGridView1.Item(3, q).Value)
+                detalle1.subtotal = CDec(Me.DataGridView1.Item(4, q).Value)
+                detalle1.pventa = CDec(Me.DataGridView1.Item(5, q).Value)
+                detalle1.IdAlmacen = CInt(Me.cboalmacen.SelectedValue)
+                capaingresos.actualizardetalle(detalle1)
+            Next
+            MsgBox("se actualizo registro")
+        Else
+
+            If Me.cboproducto.Text = "" Or Me.txtcosto.Text = "" Or Me.txtcantidad.Text = "" Then
+
+                MsgBox("debe llenar por lo menos un nombre")
+
+            Else
+                If actuali <> 1 Then
+                    Dim ingreso1 As New ingreso
+                    ingreso1.IdAlmacen = CInt(CType(Me.cboalmacen.SelectedValue.ToString, Integer?))
+                    ingreso1.IdTrabjador = CInt(CType(Me.cbotrabajador.SelectedValue.ToString, Integer?))
+                    ingreso1.Fecha = Me.dtfecha.Value
+                    ingreso1.Serie = Me.txtserie.Text
+                    ingreso1.Numero = Me.txtnumero.Text
+                    Select Case Me.cbotipodocumento.Text
+                        Case Is = "boleta"
+                            ingreso1.TipDoc = 1
+                        Case Is = "factura"
+                            ingreso1.TipDoc = 2
+                        Case Is = "guia"
+                            ingreso1.TipDoc = 3
+                    End Select
+
+                    Select Case Me.cbotipopago.Text
+                        Case Is = "contado"
+                            ingreso1.ModoPago = 1
+                        Case Is = "credito"
+                            ingreso1.ModoPago = 2
+                        Case Is = "letra"
+                            ingreso1.ModoPago = 3
+                        Case Is = "otros"
+                            ingreso1.ModoPago = 4
+                    End Select
+                    ingreso1.IdProveedor = CInt(CType(Me.cboproveedor.SelectedValue.ToString, Integer?))
+                    ingreso1.estado = "1"
+                    ingreso1.valortotal = CDec(CType(Me.labmonto.Text, Decimal?))
+                    ingreso1.lote = Me.txtlote.Text
+                    capaingresos.Registraringreso(ingreso1)
+                    idultimoingreso()
+                    Dim filas As Integer = Me.DataGridView1.RowCount
+                    Dim q As Integer
+                    For q = 0 To filas - 1
+
+                        Dim detalle1 As New ingresodetalle
+                        detalle1.IdIngresos = ultimoid
+                        detalle1.IdProducto = CInt(Me.DataGridView1.Item(0, q).Value)
+                        detalle1.Cantidad = CInt(Me.DataGridView1.Item(2, q).Value)
+                        detalle1.PU = CDec(Me.DataGridView1.Item(3, q).Value)
+                        detalle1.subtotal = CDec(Me.DataGridView1.Item(4, q).Value)
+                        detalle1.pventa = CDec(Me.DataGridView1.Item(5, q).Value)
+                        detalle1.IdAlmacen = CInt(Me.cboalmacen.SelectedValue)
+                        capaingresos.Registrardetalle(detalle1)
+                    Next
+                    MsgBox("se agrego el registro")
+                End If
+            End If
+        End If
+        bgrabar()
+        cargartodos()
+        muestrarapidadedetalles(1)
+        Me.dgbusqueda.Enabled = True
+        Me.DataGridView1.DataSource = ""
+        limpiarcabecera()
+        limpiardetalle()
+
+    End Sub
+    Private Sub botonbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles botonbuscar.Click
+
+        If Me.chfecha.Checked = False Then
+        ElseIf Me.opproveedor.Checked = True Then
+            Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporproveedorconfecha(CInt(Me.cbobusqueda.SelectedValue), Me.datefechainicio.Value, Me.datefechafin.Value)
+        ElseIf Me.opproducto.Checked = True Then
+        End If
+
+        If Me.opnumero.Checked = True Then
+            Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresospornumero(CStr(Me.txtdato.Text))
+        End If
+
+
+        If Me.opserie.Checked = True Then
+            Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporserie(CStr(Me.txtdato.Text))
+        End If
+
+
+
+
+
+        If Me.chfecha.Checked = True Then
+
+
+        ElseIf Me.opproveedor.Checked = True Then
+            Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporproveedor(CInt(Me.cbobusqueda.SelectedValue))
+
+        ElseIf Me.opproducto.Checked = True Then
+
+        ElseIf Me.opnumero.Checked = True Then
+        ElseIf Me.opserie.Checked = True Then
+
+        End If
+        Dim cant As Integer = Me.dgbusqueda.RowCount
+        Me.Label17.Text = CStr(cant)
+        btodos()
+        btadicionar.Enabled = False
+        Me.cboeliminardetalle.Enabled = False
+
+    End Sub
+
+    Private Sub editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles editar.Click
+        If Me.dgbusqueda.RowCount = 0 Then
+            MsgBox("busque primero la ruta")
+        Else
+            Dim fila As Byte
+            Dim i As Integer
+            fila = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
+            Dim ingreso1 As IngresosObject
+
+            i = CInt(CDec(Me.dgbusqueda.Item(0, fila).Value()))
+            ingreso1 = IngresosMapper.Instance.GetOne(i)
+            Me.cbotrabajador.SelectedValue = ingreso1.IdTrabjador
+            Me.cboproveedor.SelectedValue = ingreso1.IdProveedor
+            Me.cboalmacen.SelectedValue = ingreso1.IdAlmacen
+
+            Select Case ingreso1.ModoPago
+                Case Is = 1
+                    Me.cbotipopago.Text = "boleta"
+                Case Is = 2
+                    Me.cbotipopago.Text = "factura"
+                Case Is = 3
+                    Me.cbotipopago.Text = "guia"
+            End Select
+
+            Select Case ingreso1.TipDoc
+                Case Is = 1
+                    Me.cbotipodocumento.Text = "contado"
+                Case Is = 2
+                    Me.cbotipodocumento.Text = "credito"
+                Case Is = 3
+                    Me.cbotipodocumento.Text = "letra"
+                Case Is = 4
+                    Me.cbotipodocumento.Text = "otros"
+            End Select
+            Me.txtlote.Text = ingreso1.lote
+            Me.txtserie.Text = ingreso1.Serie
+            Me.txtnumero.Text = ingreso1.Numero
+            Me.labmonto.Text = CStr(ingreso1.valortotal)
+            actuali = 1
+            actualidetalle = 1
+            Dim aa As New ingreso
+            aa.IdIngresos = i
+            det = capaingresos.listardetalleporingreso(aa)
+            Me.dgdetalle.DataSource = det
+
+            beditar()
+            muestrarapidadedetalles(0)
+            Me.dgbusqueda.Enabled = False
+            Me.btadicionar.Enabled = True
+            habilitarcabecera()
+            habilitardetalle()
+            btadicionar.Enabled = True
+            Me.cboeliminardetalle.Enabled = True
+        End If
+    End Sub
+    Private Sub todos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles todos.Click
+        cargartodos()
+        btodos()
+        Dim cant As Integer = Me.dgbusqueda.RowCount
+        Me.Label17.Text = CStr(cant)
+
+    End Sub
+    Private Sub dgdetalle_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+        If Me.dgdetalle.RowCount = 0 Then
+            MsgBox("no existen detalles")
+        Else
+            Dim fila As Byte
+            Dim i As Integer
+            fila = CByte(Me.dgdetalle.CurrentCell.RowIndex())
+            Dim detalleingreso1 As IngresosDet
+            i = CInt(CDec(Me.dgdetalle.Item(0, fila).Value()))
+            detalleingreso1 = IngresosDetMapper.Instance.GetOne(i)
+            Me.cboproducto.SelectedValue = detalleingreso1.IdProducto
+            Me.txtcantidad.Text = CStr(detalleingreso1.Cantidad)
+            Me.txtcosto.Text = CStr(detalleingreso1.PU)
+            Me.txtventa.Text = CStr(detalleingreso1.pventa)
+            actualidetalle = 1
+            Me.DataGridView1.Enabled = False
+            Me.dgbusqueda.Enabled = False
+            Me.btadicionar.Enabled = False
+        End If
+
+    End Sub
+
+    Private Sub nuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nuevo.Click
+        Me.DataGridView1.Enabled = True
+        bnuevo()
+        limpiarcabecera()
+        limpiardetalle()
+        habilitarcabecera()
+        habilitardetalle()
+    End Sub
+
+    Private Sub eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eliminar.Click
+
+       
+    End Sub
+    Private Sub cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cancelar.Click
+        binicio()
+        Me.DataGridView1.DataSource = ""
+        limpiarcabecera()
+        limpiardetalle()
+    End Sub
+
+    Private Sub dgbusqueda_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgbusqueda.CellContentClick
+        muestrarapidadedetalles(1)
+        Me.dgdetalle.Visible = True
+        Me.dgdetalle.Enabled = True
+        Me.DataGridView1.Visible = False
+        Me.DataGridView1.Enabled = False
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub dgdetalle_CellContentClick_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgdetalle.CellContentClick
+        If Me.dgdetalle.RowCount = 0 Then
+            MsgBox("no existen detalles")
+        Else
+            Dim fila As Byte
+            Dim i As Integer
+            fila = CByte(Me.dgdetalle.CurrentCell.RowIndex())
+            Dim detalleingreso1 As IngresosDet
+            i = CInt(CDec(Me.dgdetalle.Item(0, fila).Value()))
+            detalleingreso1 = IngresosDetMapper.Instance.GetOne(i)
+            Me.cboproducto.SelectedValue = detalleingreso1.IdProducto
+            Me.txtcantidad.Text = CStr(detalleingreso1.Cantidad)
+            Me.txtcosto.Text = CStr(detalleingreso1.PU)
+            Me.txtventa.Text = CStr(detalleingreso1.pventa)
+            Me.DataGridView1.Enabled = False
+            Me.dgbusqueda.Enabled = False
+        End If
+    End Sub
+
+    Private Sub opproveedor_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles opproveedor.CheckedChanged
+        cargarcombonombreproveedor(Me.cbobusqueda)
+
+    End Sub
+
+    Private Sub ExpandablePanel1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpandablePanel1.Click
+
+    End Sub
+
+    Private Sub opproducto_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles opproducto.CheckedChanged
+        cargarcombonombreproducto(cbobusqueda)
+
+    End Sub
+
+    Private Sub cboeliminardetalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboeliminardetalle.Click
+
+
+        If Me.dgdetalle.RowCount = 0 Then
+            MsgBox("no existen detalles")
+        Else
+
+            If actualidetalle = 1 Then
+
+                Dim fila As Byte
+                Dim i As Integer
+                fila = CByte(Me.dgdetalle.CurrentCell.RowIndex())
+                Dim ingresodetalle1 As ingresodetalle
+                i = CInt(CDec(Me.dgdetalle.Item(0, fila).Value()))
+                IngresosDetMapper.Instance.Delete(i)
+                Dim fila1 As Byte
+                Dim ii As Integer
+                fila1 = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
+                Dim ingreso1 As ingreso
+                ii = CInt(CDec(Me.dgbusqueda.Item(0, fila1).Value()))
+                capaingresos.listarsolodetalleporidingreso(ii)
+                Me.dgdetalle.DataSource = capaingresos.listarsolodetalleporidingreso(ii)
+            Else
+                'solo sin datos recuperados
+                DataGridView1.Rows.RemoveAt(DataGridView1.CurrentRow.Index)
+            End If
+            beliminar()
+        End If
+    End Sub
+End Class

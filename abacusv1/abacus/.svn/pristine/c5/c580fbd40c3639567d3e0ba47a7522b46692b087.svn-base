@@ -1,0 +1,340 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Menu
+    Inherits System.Windows.Forms.Form
+
+    'Form reemplaza a Dispose para limpiar la lista de componentes.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Requerido por el Diseñador de Windows Forms
+    Private components As System.ComponentModel.IContainer
+
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar usando el Diseñador de Windows Forms.  
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.RibbonControl1 = New Stimulsoft.Controls.Win.DotNetBar.RibbonControl()
+        Me.RibbonPanel1 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
+        Me.ButtonX1 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.KryptonButton8 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.KryptonButton5 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.KryptonButton4 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.KryptonButton3 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.KryptonButton1 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.KryptonButton2 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.RibbonPanel3 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
+        Me.ButtonX4 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.RibbonPanel2 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
+        Me.ButtonX3 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.KryptonButton7 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.KryptonButton6 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.RibbonTabItem1 = New Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem()
+        Me.productos = New Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem()
+        Me.RibbonTabItem2 = New Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem()
+        Me.QatCustomizeItem1 = New Stimulsoft.Controls.Win.DotNetBar.QatCustomizeItem()
+        Me.PanelEx1 = New Stimulsoft.Controls.Win.DotNetBar.PanelEx()
+        Me.ButtonX2 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ContextMenuBar1 = New Stimulsoft.Controls.Win.DotNetBar.ContextMenuBar()
+        Me.RibbonControl1.SuspendLayout()
+        Me.RibbonPanel1.SuspendLayout()
+        Me.RibbonPanel3.SuspendLayout()
+        Me.RibbonPanel2.SuspendLayout()
+        CType(Me.ContextMenuBar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'RibbonControl1
+        '
+        Me.RibbonControl1.CategorizeMode = Stimulsoft.Controls.Win.DotNetBar.eCategorizeMode.Categories
+        Me.RibbonControl1.Controls.Add(Me.RibbonPanel1)
+        Me.RibbonControl1.Controls.Add(Me.RibbonPanel3)
+        Me.RibbonControl1.Controls.Add(Me.RibbonPanel2)
+        Me.RibbonControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.RibbonControl1.Items.AddRange(New Stimulsoft.Controls.Win.DotNetBar.BaseItem() {Me.RibbonTabItem1, Me.productos, Me.RibbonTabItem2})
+        Me.RibbonControl1.KeyTipsFont = New System.Drawing.Font("Arial", 7.0!)
+        Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl1.Margin = New System.Windows.Forms.Padding(1)
+        Me.RibbonControl1.MdiSystemItemVisible = False
+        Me.RibbonControl1.Name = "RibbonControl1"
+        Me.RibbonControl1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 2)
+        Me.RibbonControl1.QuickToolbarItems.AddRange(New Stimulsoft.Controls.Win.DotNetBar.BaseItem() {Me.QatCustomizeItem1})
+        Me.RibbonControl1.Size = New System.Drawing.Size(1362, 126)
+        Me.RibbonControl1.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.RibbonControl1.TabGroupHeight = 14
+        Me.RibbonControl1.TabGroupsVisible = True
+        Me.RibbonControl1.TabIndex = 0
+        '
+        'RibbonPanel1
+        '
+        Me.RibbonPanel1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.RibbonPanel1.Controls.Add(Me.ButtonX1)
+        Me.RibbonPanel1.Controls.Add(Me.KryptonButton8)
+        Me.RibbonPanel1.Controls.Add(Me.KryptonButton5)
+        Me.RibbonPanel1.Controls.Add(Me.KryptonButton4)
+        Me.RibbonPanel1.Controls.Add(Me.KryptonButton3)
+        Me.RibbonPanel1.Controls.Add(Me.KryptonButton1)
+        Me.RibbonPanel1.Controls.Add(Me.KryptonButton2)
+        Me.RibbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanel1.Location = New System.Drawing.Point(0, 40)
+        Me.RibbonPanel1.Name = "RibbonPanel1"
+        Me.RibbonPanel1.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RibbonPanel1.Size = New System.Drawing.Size(1362, 84)
+        Me.RibbonPanel1.TabIndex = 1
+        '
+        'ButtonX1
+        '
+        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX1.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX1.Image = Global.abacus.My.Resources.Resources.Profile
+        Me.ButtonX1.Location = New System.Drawing.Point(738, 13)
+        Me.ButtonX1.Name = "ButtonX1"
+        Me.ButtonX1.Size = New System.Drawing.Size(124, 62)
+        Me.ButtonX1.TabIndex = 0
+        Me.ButtonX1.Text = "Personal<b></b>"
+        '
+        'KryptonButton8
+        '
+        Me.KryptonButton8.Location = New System.Drawing.Point(599, 7)
+        Me.KryptonButton8.Name = "KryptonButton8"
+        Me.KryptonButton8.Size = New System.Drawing.Size(133, 71)
+        Me.KryptonButton8.TabIndex = 5
+        Me.KryptonButton8.Values.Image = Global.abacus.My.Resources.Resources._1376797844_provider
+        Me.KryptonButton8.Values.Text = "Proveedor"
+        '
+        'KryptonButton5
+        '
+        Me.KryptonButton5.Location = New System.Drawing.Point(485, 6)
+        Me.KryptonButton5.Name = "KryptonButton5"
+        Me.KryptonButton5.Size = New System.Drawing.Size(108, 69)
+        Me.KryptonButton5.TabIndex = 4
+        Me.KryptonButton5.Values.Image = Global.abacus.My.Resources.Resources.Comment
+        Me.KryptonButton5.Values.Text = "Visitas"
+        '
+        'KryptonButton4
+        '
+        Me.KryptonButton4.Location = New System.Drawing.Point(358, 6)
+        Me.KryptonButton4.Name = "KryptonButton4"
+        Me.KryptonButton4.Size = New System.Drawing.Size(121, 69)
+        Me.KryptonButton4.TabIndex = 3
+        Me.KryptonButton4.Values.Image = Global.abacus.My.Resources.Resources.Icon_479
+        Me.KryptonButton4.Values.Text = "rutas /clientes"
+        '
+        'KryptonButton3
+        '
+        Me.KryptonButton3.Location = New System.Drawing.Point(246, 3)
+        Me.KryptonButton3.Name = "KryptonButton3"
+        Me.KryptonButton3.Size = New System.Drawing.Size(106, 72)
+        Me.KryptonButton3.TabIndex = 2
+        Me.KryptonButton3.Values.Image = Global.abacus.My.Resources.Resources.Diary_64x64_копия
+        Me.KryptonButton3.Values.Text = "ruta"
+        '
+        'KryptonButton1
+        '
+        Me.KryptonButton1.Location = New System.Drawing.Point(122, 3)
+        Me.KryptonButton1.Name = "KryptonButton1"
+        Me.KryptonButton1.Size = New System.Drawing.Size(118, 72)
+        Me.KryptonButton1.TabIndex = 0
+        Me.KryptonButton1.Values.Image = Global.abacus.My.Resources.Resources.user
+        Me.KryptonButton1.Values.Text = "clientes"
+        '
+        'KryptonButton2
+        '
+        Me.KryptonButton2.Location = New System.Drawing.Point(6, 0)
+        Me.KryptonButton2.Name = "KryptonButton2"
+        Me.KryptonButton2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue
+        Me.KryptonButton2.Size = New System.Drawing.Size(110, 75)
+        Me.KryptonButton2.TabIndex = 1
+        Me.KryptonButton2.Values.Image = Global.abacus.My.Resources.Resources.Profile
+        Me.KryptonButton2.Values.Text = "personal"
+        '
+        'RibbonPanel3
+        '
+        Me.RibbonPanel3.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.RibbonPanel3.Controls.Add(Me.ButtonX4)
+        Me.RibbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanel3.Location = New System.Drawing.Point(0, 40)
+        Me.RibbonPanel3.Name = "RibbonPanel3"
+        Me.RibbonPanel3.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RibbonPanel3.Size = New System.Drawing.Size(1370, 84)
+        Me.RibbonPanel3.TabIndex = 3
+        Me.RibbonPanel3.Visible = False
+        '
+        'ButtonX4
+        '
+        Me.ButtonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX4.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX4.Image = Global.abacus.My.Resources.Resources.archive
+        Me.ButtonX4.Location = New System.Drawing.Point(8, 3)
+        Me.ButtonX4.Name = "ButtonX4"
+        Me.ButtonX4.Size = New System.Drawing.Size(119, 79)
+        Me.ButtonX4.TabIndex = 3
+        Me.ButtonX4.Text = "Ingresos"
+        '
+        'RibbonPanel2
+        '
+        Me.RibbonPanel2.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.RibbonPanel2.Controls.Add(Me.ButtonX3)
+        Me.RibbonPanel2.Controls.Add(Me.KryptonButton7)
+        Me.RibbonPanel2.Controls.Add(Me.KryptonButton6)
+        Me.RibbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanel2.Name = "RibbonPanel2"
+        Me.RibbonPanel2.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RibbonPanel2.Size = New System.Drawing.Size(1370, 152)
+        Me.RibbonPanel2.TabIndex = 2
+        Me.RibbonPanel2.Visible = False
+        '
+        'ButtonX3
+        '
+        Me.ButtonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX3.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX3.Image = Global.abacus.My.Resources.Resources._1376862110_palet03
+        Me.ButtonX3.Location = New System.Drawing.Point(269, 7)
+        Me.ButtonX3.Name = "ButtonX3"
+        Me.ButtonX3.Size = New System.Drawing.Size(136, 75)
+        Me.ButtonX3.TabIndex = 2
+        Me.ButtonX3.Text = "Productos"
+        '
+        'KryptonButton7
+        '
+        Me.KryptonButton7.Location = New System.Drawing.Point(142, 7)
+        Me.KryptonButton7.Name = "KryptonButton7"
+        Me.KryptonButton7.Size = New System.Drawing.Size(121, 75)
+        Me.KryptonButton7.TabIndex = 1
+        Me.KryptonButton7.Values.Image = Global.abacus.My.Resources.Resources.Bar_Chart
+        Me.KryptonButton7.Values.Text = "Categorias"
+        '
+        'KryptonButton6
+        '
+        Me.KryptonButton6.Location = New System.Drawing.Point(4, 7)
+        Me.KryptonButton6.Name = "KryptonButton6"
+        Me.KryptonButton6.Size = New System.Drawing.Size(132, 75)
+        Me.KryptonButton6.TabIndex = 0
+        Me.KryptonButton6.Values.Image = Global.abacus.My.Resources.Resources.kwikdisk
+        Me.KryptonButton6.Values.Text = "Familias"
+        '
+        'RibbonTabItem1
+        '
+        Me.RibbonTabItem1.Checked = True
+        Me.RibbonTabItem1.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
+        Me.RibbonTabItem1.ImagePaddingHorizontal = 8
+        Me.RibbonTabItem1.Name = "RibbonTabItem1"
+        Me.RibbonTabItem1.Panel = Me.RibbonPanel1
+        Me.RibbonTabItem1.PopupPositionAdjusted = False
+        Me.RibbonTabItem1.Text = "Registro de Maestras"
+        '
+        'productos
+        '
+        Me.productos.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
+        Me.productos.ImagePaddingHorizontal = 8
+        Me.productos.Name = "productos"
+        Me.productos.Panel = Me.RibbonPanel2
+        Me.productos.PopupPositionAdjusted = False
+        Me.productos.Text = "Productos"
+        '
+        'RibbonTabItem2
+        '
+        Me.RibbonTabItem2.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
+        Me.RibbonTabItem2.ImagePaddingHorizontal = 8
+        Me.RibbonTabItem2.Name = "RibbonTabItem2"
+        Me.RibbonTabItem2.Panel = Me.RibbonPanel3
+        Me.RibbonTabItem2.PopupPositionAdjusted = False
+        Me.RibbonTabItem2.Text = "Movimientos"
+        '
+        'QatCustomizeItem1
+        '
+        Me.QatCustomizeItem1.Name = "QatCustomizeItem1"
+        Me.QatCustomizeItem1.PopupPositionAdjusted = False
+        '
+        'PanelEx1
+        '
+        Me.PanelEx1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PanelEx1.CanvasColor = System.Drawing.Color.LightGoldenrodYellow
+        Me.PanelEx1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2000
+        Me.PanelEx1.Location = New System.Drawing.Point(6, 130)
+        Me.PanelEx1.Name = "PanelEx1"
+        Me.PanelEx1.Size = New System.Drawing.Size(1364, 582)
+        Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
+        Me.PanelEx1.Style.BackColor1.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground
+        Me.PanelEx1.Style.BackColor2.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.PanelEx1.Style.BackgroundImage = Global.abacus.My.Resources.Resources.wallpaper_grandefinal2
+        Me.PanelEx1.Style.Border = Stimulsoft.Controls.Win.DotNetBar.eBorderType.SingleLine
+        Me.PanelEx1.Style.BorderColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBorder
+        Me.PanelEx1.Style.ForeColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelText
+        Me.PanelEx1.Style.GradientAngle = 90
+        Me.PanelEx1.TabIndex = 1
+        '
+        'ButtonX2
+        '
+        Me.ButtonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX2.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX2.Image = Global.abacus.My.Resources.Resources._exit
+        Me.ButtonX2.Location = New System.Drawing.Point(1327, 3)
+        Me.ButtonX2.Name = "ButtonX2"
+        Me.ButtonX2.Size = New System.Drawing.Size(37, 31)
+        Me.ButtonX2.TabIndex = 0
+        '
+        'ContextMenuBar1
+        '
+        Me.ContextMenuBar1.Location = New System.Drawing.Point(0, 718)
+        Me.ContextMenuBar1.Name = "ContextMenuBar1"
+        Me.ContextMenuBar1.Size = New System.Drawing.Size(1364, 25)
+        Me.ContextMenuBar1.Stretch = True
+        Me.ContextMenuBar1.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2003
+        Me.ContextMenuBar1.TabIndex = 2
+        Me.ContextMenuBar1.TabStop = False
+        Me.ContextMenuBar1.Text = "ContextMenuBar1"
+        '
+        'Menu
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.Controls.Add(Me.ContextMenuBar1)
+        Me.Controls.Add(Me.ButtonX2)
+        Me.Controls.Add(Me.PanelEx1)
+        Me.Controls.Add(Me.RibbonControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Name = "Menu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Sistema de gestion Sagadist"
+        Me.RibbonControl1.ResumeLayout(False)
+        Me.RibbonControl1.PerformLayout()
+        Me.RibbonPanel1.ResumeLayout(False)
+        Me.RibbonPanel3.ResumeLayout(False)
+        Me.RibbonPanel2.ResumeLayout(False)
+        CType(Me.ContextMenuBar1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+    Friend WithEvents RibbonControl1 As Stimulsoft.Controls.Win.DotNetBar.RibbonControl
+    Friend WithEvents RibbonPanel1 As Stimulsoft.Controls.Win.DotNetBar.RibbonPanel
+    Friend WithEvents RibbonPanel2 As Stimulsoft.Controls.Win.DotNetBar.RibbonPanel
+    Friend WithEvents RibbonTabItem1 As Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem
+    Friend WithEvents productos As Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem
+    Friend WithEvents QatCustomizeItem1 As Stimulsoft.Controls.Win.DotNetBar.QatCustomizeItem
+    Friend WithEvents KryptonButton1 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents KryptonButton2 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents PanelEx1 As Stimulsoft.Controls.Win.DotNetBar.PanelEx
+    Friend WithEvents KryptonButton3 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents KryptonButton4 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents KryptonButton5 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents KryptonButton6 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents KryptonButton7 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents KryptonButton8 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents ButtonX1 As Stimulsoft.Controls.Win.DotNetBar.ButtonX
+    Friend WithEvents ButtonX3 As Stimulsoft.Controls.Win.DotNetBar.ButtonX
+    Friend WithEvents RibbonPanel3 As Stimulsoft.Controls.Win.DotNetBar.RibbonPanel
+    Friend WithEvents ButtonX4 As Stimulsoft.Controls.Win.DotNetBar.ButtonX
+    Friend WithEvents RibbonTabItem2 As Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem
+    Friend WithEvents ButtonX2 As Stimulsoft.Controls.Win.DotNetBar.ButtonX
+    Friend WithEvents ContextMenuBar1 As Stimulsoft.Controls.Win.DotNetBar.ContextMenuBar
+End Class

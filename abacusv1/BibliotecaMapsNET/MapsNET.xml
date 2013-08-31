@@ -1,0 +1,369 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+MapsNET
+</name>
+</assembly>
+<members>
+<member name="M:MapsNET.APIGoogleMaps.MapsBase.#ctor">
+	<summary>
+ Constructor sin parámetros. Inicializa una nueva instancia de la clase MapsBase.
+ </summary>
+</member><member name="M:MapsNET.APIGoogleMaps.MapsBase.#ctor(System.String)">
+	<summary>
+ Constructor con parámetros. Incializa una nueva instancia de la clase MapsBase.
+ </summary>
+	<param name="ClaveApi">Valor que indica la clave para el uso completo del API de Google Maps</param>
+	<remarks>Se puede comprobar la validez de la clave desde la función [ComprobarClaveAPI].</remarks>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.status">
+	<summary>
+ Propiedad que indica el estado de la última petición realizada.
+ </summary>
+	<returns>Devuelve un valor del 0 al 4. Si utiliza la función ToString, devuelve el valor correspondiente.</returns>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.peticionHTTP">
+	<summary>
+ Propiedad que indica la URL de la última petición realizada.
+ </summary>
+	<returns>Devuelve un string con la última URL que ha gestionado la clase.</returns>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.HoraPeticion">
+	<summary>
+ Propiedad que indica la hora exacta de la última petición realizada.
+ </summary>
+	<returns>Devuelve la fecha en formato. Día/Mes/Año horas:minutos:segundos</returns>
+	<remarks>La fecha se crea en función de la fecha del sistema, no de los servidores de Google Maps.</remarks>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.NumeroPeticion">
+	<summary>
+ Propiedad que indica el número (incremental) de la última petición realizada.
+ </summary>
+	<returns>Devuelve un entero con el número de la última petición realizada.</returns>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.Excepcion">
+	<summary>
+ Propiedad que informa de la última excepción ocurrida (en caso de haberla).
+ </summary>
+	<returns>Devuelve el valor Exception en caso de haber habido una excepción.</returns>
+	<remarks>Si devuelve como valor Nothing es que no ha habido excepción.</remarks>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.InformacionPeticion">
+	<summary>
+ Propiedad que informa del motivo de la última petición (si es de una ruta, codificación geográfica, etc.).
+ </summary>
+	<returns>Devuelve un string con la información de la última petición.</returns>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.TimeOut">
+	<summary>
+ Indica el tiempo máximo de espera a la hora de realizar las peticiones (se expresa en milisegundos).
+ </summary>
+	<value>Tiempo máximo de espera en milisegundos.</value>
+	<returns>Devuelve el tiemp máximo de espera expresado en milisegundos.</returns>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.IdiomaRes">
+	<summary>
+ Indica el idioma en el que se mostrarán los resultados (por defecto español, "es"). Más información sobre idiomas en https://developers.google.com/maps/faq?hl=es#languagesupport
+ </summary>
+	<value>Estable el idioma de los resultados</value>
+	<returns>Devuelve el idioma actual de los resultados.</returns>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.RegionRes">
+	<summary>
+ Indica la región de búsqueda primaria (por defecto España, "es"). Más información sobre regiones en http://es.wikipedia.org/wiki/CcTLD
+ </summary>
+	<value>Estable la región actual de búsqueda.</value>
+	<returns>Devuelve la región actual de búsqueda.</returns>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.Sensor">
+	<summary>
+ Indica si hay sensor disponible, por ejemplo, un GPS
+ </summary>
+	<value>Indica la existencia de un sensor.</value>
+	<returns>Devuelve en forma booleana la existencia o no de un sensor.</returns>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.ClaveApi">
+	<summary>
+ Propiedad que indica la clave de desarrollar del API de Google Maps
+ </summary>
+	<value>Establece el valor actual de la clave.</value>
+	<returns>Devuelve el valor actual de la clave.</returns>
+	<remarks></remarks>
+</member><member name="P:MapsNET.APIGoogleMaps.MapsBase.AlmacenPeticiones">
+	<summary>
+ Propiedad que almacena la información de todas las peticiones HTTP generadas desde el inicio de la aplicación.
+ </summary>
+	<returns>Devuelve un arraylist con la información ordenada por campos (Número de petición, hora, status, información de la petición, URL de la petición y excepción).</returns>
+</member><member name="M:MapsNET.APIGoogleMaps.MapsBase.ComprobarClaveAPI(System.String)">
+	<summary>
+ Indica si la clave proporcinada a la función es correcta-
+ </summary>
+	<param name="claveAPI">String que indica la clave que se quiere comprobar.</param>
+	<returns>Devuelve un valor booleano que en caso de ser TRUE la clave es correcta, en caso de ser FALSE la clave es incorrecta.</returns>
+	<remarks></remarks>
+</member><member name="T:MapsNET.APIGoogleMaps.MapsBase">
+	<summary>
+ Clase base. Especifica las diferentes propiedades de las peticiones (TimeOut de las peticiones, Idioma de las peticiones, Región de las peticiones, Sensor, Clave API // 
+ Permite establecer la clave del API desde el construtor // 
+ Contiene todas las peticiones realizadas desde la propiedad [almacenPeticiones] //
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.SituacionMapa.URLmapa(System.String)">
+	<summary>
+ Crea una URL para visualizar un mapa en un navegador (WebBrowser).
+ </summary>
+	<param name="direccion">Indica la dirección postal a partir de la que se quiere crear la URL (Puerta del Sol, Madrid, España).</param>
+	<returns>Devuelve un string con la URL con la que se visualizará el mapa.</returns>
+</member><member name="M:MapsNET.APIGoogleMaps.SituacionMapa.URLmapa(System.Double,System.Double)">
+	<summary>
+  Crea una URL para visualizar un mapa en un navegador (WebBrowser).
+ </summary>
+	<param name="latitud">Indica la latitud del punto.</param>
+	<param name="longitud">Indica la longitud del punto.</param>
+	<returns>Devuelve un string con la URL con la que se visualizará el mapa.</returns>
+</member><member name="T:MapsNET.APIGoogleMaps.SituacionMapa">
+	<summary>
+ Clase heredada de MapsBase. Permite mostrar localizaciones en un mapa WebBrowser.
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.CodificacionGeografica.CodificacionGeografica(System.String)">
+	<summary>
+ Función para obtener las coordenadas geográficas a partir de una dirección postal.
+ </summary>
+	<param name="Direccion">Indica la dirección postal a partir de la que se quiere obtener las coordenadas (Puerta del Sol, Madrid, España).</param>
+	<returns>Devuelve un arraylist con los datos obtenidos. Los datos se ordenan así: (latitud, longitud, dirección encontrada)</returns>
+</member><member name="M:MapsNET.APIGoogleMaps.CodificacionGeografica.CodificacionGeograficaInversa(System.Double,System.Double)">
+	<summary>
+ Función para obtener la dirección postal de un lugar a partir de sus coordenadas geográficas.
+ </summary>
+	<param name="latitud">Indica la latitud del punto a partir del cual se quiere obtener la dirección postal.</param>
+	<param name="longitud">Indica la longitud del punto a partir del cual se quiere obtener la dirección postal.</param>
+	<returns>Devuelve un arraylist con los datos obtenidos. Estos datos se ordenan de mayor exactitud en la dirección encontrada a menor: ({Puerta del Sol, Madrid, España}, {Centro, Madrid, España},{Comunidad de Madrid, España})</returns>
+</member><member name="M:MapsNET.APIGoogleMaps.CodificacionGeografica.CodigoPostal(System.String)">
+	<summary>
+ Función para obtener el código postal de una determinada dirección.
+ </summary>
+	<param name="localizacion">Indica el lugar de donde se quiere obtener el código postal. Puede indicarse como dirección postal (Puerta del Sol, Madrid, España) o como latitud/longitud (40.4167522,-3.7033701).</param>
+	<returns>Devuelve un string con el código postal encontrado. En caso de devolver una cadena vacía es que no se encontró ningún código postal.</returns>
+</member><member name="T:MapsNET.APIGoogleMaps.CodificacionGeografica">
+	<summary>
+ Clase heredada de MapsBase. Permite hacer peticiones de codificación geográfica directa/inversa y código postal.
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.Elevacion.Elevacion(System.Double,System.Double)">
+	<summary>
+ Función para obtener la elevación de una localización.
+ </summary>
+	<param name="latitud">Indica la latitud del lugar del cual se desea obtener la elevación.</param>
+	<param name="longitud">Indica la longitud del lugar del cual se desea obtener la elevación.</param>
+	<returns>Devuelve un arraylist que en primero lugar indica (en metros) la elevación del lugar y en segundo lugar la resolución (en metros) de dicha elevación</returns>
+	<remarks></remarks>
+</member><member name="T:MapsNET.APIGoogleMaps.Elevacion">
+	<summary>
+ Clase heredada de MapsBase. Permite obtener la altitud de un lugar.
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.StreetView.StreetView_URL(System.String,System.Drawing.Size,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Función para obtener la URL de una imagen estática de Google Street View.
+ </summary>
+	<param name="localizacion">Indica el lugar de donde se quiere obtener la imagen. Puede indicarse como dirección postal (Puerta del Sol, Madrid, España) o como latitud/longitud (40.4167522,-3.7033701).</param>
+	<param name="tamañoImagen">Indica el tamaño de la imagen que se va a obtener. El máximo posible es 640x640 píxeles.</param>
+	<param name="GiroHorizontal">Indica el ángulo horizontal de la cámara, por ejemplo, 90 es el Norte. Valores de 0 a 360.</param>
+	<param name="GiroVertical">Indica el ángulo vertical de la imagen. Si toma valor -90 apunta hacia abajo y 90 hacia arriba.</param>
+	<param name="zoom">Indica el zoom que se va a aplicar a la imagen. Sus valores oscilan entre 10 y 120. El valor 120 sería el menor zoom posible y el valor 10 el zoom máximo.</param>
+	<returns>Devuelve una url con la que se puede ver la imagen en un control WebBrowser.</returns>
+</member><member name="M:MapsNET.APIGoogleMaps.StreetView.StreetView_Bitmap(System.String,System.Drawing.Size,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Función para obtener un bitmap de una imagen estática de Google Street View.
+ </summary>
+	<param name="localizacion">Indica el lugar de donde se quiere obtener la imagen. Puede indicarse como dirección postal (Puerta del Sol, Madrid, España) o como latitud/longitud (40.4167522,-3.7033701).</param>
+	<param name="tamañoImagen">Indica el tamaño de la imagen que se va a obtener. El máximo posible es 640x640 píxeles.</param>
+	<param name="GiroHorizontal">Indica el ángulo horizontal de la cámara, por ejemplo, 90 es el Norte. Valores de 0 a 360.</param>
+	<param name="GiroVertical">Indica el ángulo vertical de la imagen. Si toma valor -90 apunta hacia abajo y 90 hacia arriba.</param>
+	<param name="zoom">Indica el zoom que se va a aplicar a la imagen. Sus valores oscilan entre 10 y 120. El valor 120 sería el menor zoom posible y el valor 10 el zoom máximo.</param>
+	<returns>Devuelve un bitmap con la imagen de Street View.</returns>
+</member><member name="T:MapsNET.APIGoogleMaps.StreetView">
+	<summary>
+ Clase heredada de MapsBase. Permite obtener imágenes estáticas de localizaciones.
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="P:MapsNET.APIGoogleMaps.Ruta.Copyright">
+	<summary>
+ Indica el Copyright de los datos obtenidos para calcular la ruta.
+ </summary>
+</member><member name="P:MapsNET.APIGoogleMaps.Ruta.OrdenHitos">
+	<summary>
+ Indica el orden de recorrido de los hitos.
+ </summary>
+</member><member name="P:MapsNET.APIGoogleMaps.Ruta.TiempoTotal">
+	<summary>
+ Indica el tiempo total del recorrido. Si hay hitos, cada parámetro del arraylist devuelto será un tramo.
+ </summary>
+</member><member name="P:MapsNET.APIGoogleMaps.Ruta.IDruta">
+	<summary>
+ Indica el ID de la ruta.
+ </summary>
+</member><member name="P:MapsNET.APIGoogleMaps.Ruta.DistanciaTotal">
+	<summary>
+ Indica la distancia total del recorrido. En caso de haber hitos, cada parámetros del arraylist devuelto será un tramo
+ </summary>
+</member><member name="P:MapsNET.APIGoogleMaps.Ruta.DuracionTotal">
+	<summary>
+ Indica el tiempo total del recorrido en segundos de cada tramo del recorrido
+ </summary>
+</member><member name="P:MapsNET.APIGoogleMaps.Ruta.Polilineas">
+	<summary>
+ Indica las polilíneas de cada tramo de la ruta. Estas polilíneas pueden ser utilizadas para crear mapas.
+ </summary>
+</member><member name="T:MapsNET.APIGoogleMaps.Ruta.TipoTransporte">
+	<summary>
+ Tipo de transporte para calcular la ruta. 
+ </summary>
+</member><member name="T:MapsNET.APIGoogleMaps.Ruta.RestriccionesVias">
+	<summary>
+ Tipo de restricción de carreteras para aplicar a una ruta.
+ </summary>
+</member><member name="M:MapsNET.APIGoogleMaps.Ruta.CalcularRuta(System.String,System.String,MapsNET.APIGoogleMaps.Ruta.TipoTransporte,MapsNET.APIGoogleMaps.Ruta.RestriccionesVias,System.Collections.ArrayList,System.Boolean)">
+	<summary>
+ Calcula y devuelve la ruta entre dos localizaciones. Permite incluir hitos intermedios, tipo de transporte, restricciones en carreteras...
+ </summary>
+	<param name="DireccionOrigen">Indica el lugar de origen de la ruta. Puede indicarse como dirección postal (Puerta del Sol, Madrid, España) o como latitud/longitud (40.4167522,-3.7033701).</param>
+	<param name="DireccionDestino">Indica el lugar de destino de la ruta. Puede indicarse como dirección postal (Puerta del Sol, Madrid, España) o como latitud/longitud (40.4167522,-3.7033701).</param>
+	<param name="TipoTransport">Indica el tipo de transporte durante la ruta. El transporte predeterminado es en coche (0).</param>
+	<param name="RestriccionesCarretera">Indica el tipo de restricciones aplicadas a las carreteras. El valor predeterminado es Sin restricciones (0).</param>
+	<param name="Hitos">Indica los hitos intermedios por los que quiere que pase la ruta.</param>
+	<param name="optimizar">Indica si el orden de los hitos se altera para que la ruta sea lo más corta posible. Si es TRUE los hitos se ordenarán, si es FALSE no se ordenarán.</param>
+	<returns>Devuelve un Arraylist con los datos de latitud1/longitud1/tiempo1/distancia1/indicaciones1/latitud2/longitud2..., ordenados por tramos.</returns>
+</member><member name="T:MapsNET.APIGoogleMaps.Ruta">
+	<summary>
+ Clase heredada de MapsBase. Permite crear rutas especificando las indicaciones.
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.Places.Places(System.Double,System.Double,System.Int32,System.Collections.ArrayList,System.String)">
+	<summary>
+ Devuelve los locales más cercanos a la posición indicada. Estos locales se pueden filtrar por radio, nombre del local...
+ </summary>
+	<param name="latitud">Indica la latitud del lugar a partir de cual se buscarán los locales.</param>
+	<param name="longitud">Indica la longitud del lugar a partir de cual se buscarán los locales.</param>
+	<param name="radio">Indica el radio (en metros) máximo de búsqueda de locales.</param>
+	<param name="tipoLocal">Indica los tipos de locales que se deben buscar almacenados en forma de arraylist. Más información sobre los tipos admitidos en https://developers.google.com/places/documentation/supported_types?hl=es </param>
+	<param name="NombreEstablecimiento">Nombre del establecimiento a buscar.</param>
+	<returns>Devuelve un arraylist en el que se encuentra la lista con todos los locales encontrados y sus datos. Se ordena de la siguiente forma; Nombre/Direccion/Latitud/Longitud/Icono(URL)/Referencia/Nombre2/Direccion2/Latitud2...</returns>
+	<remarks>Requiere clave API Google Maps.</remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.Places.Places(System.String,System.Int32,System.Collections.ArrayList,System.String)">
+	<summary>
+ Devuelve los locales más cercanos a la posición indicada. Estos locales se pueden filtrar por radio, nombre del local...
+ </summary>
+	<param name="Direccion">Indica la dirección postal del lugar a partir de cual se buscarán los locales (Puerta del Sol, Madrid, España). Se utiliza la codificación geográfica para pasar la dirección a latitud/longitud.</param>
+	<param name="radio">Indica el radio (en metros) máximo de búsqueda de locales.</param>
+	<param name="tipoLocal">Indica los tipos de locales que se deben buscar almacenados en forma de arraylist. Más información sobre los tipos admitidos en https://developers.google.com/places/documentation/supported_types?hl=es </param>
+	<param name="NombreEstablecimiento">Nombre del establecimiento a buscar.</param>
+	<returns>Devuelve un arraylist en el que se encuentra la lista con todos los locales encontrados y sus datos. Se ordena de la siguiente forma; Nombre/Direccion/Latitud/Longitud/Icono(URL)/Referencia/Nombre2/Direccion2/Latitud2...</returns>
+	<remarks>Requiere clave API Google Maps.</remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.Places.DatosPlaces(System.String)">
+	<summary>
+ Devuelve la información acerca de un local en concreto.
+ </summary>
+	<param name="ReferenciaLocal">Referencia del local obtenido a través de la función Places.</param>
+	<returns>Devuelve un arraylist con los datos del local ordenados de la siguiente forma: Nombre del local/Dirección/Teléfono/Dirección 2/URL de página Google Maps/Puntuación/Dirección web establecimiento.</returns>
+	<remarks>Requiere API Google Maps.</remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.Places.DatosPlacesUsuarios(System.String)">
+	<summary>
+ Devuelve la información acerca de un local en concreto proporcionada por usuarios.
+ </summary>
+	<param name="ReferenciaLocal">Referencia del local obtenido a través de la función Places.</param>
+	<returns>Devuelve un arraylist con las diferentes opciones de los usuarios ordenados así: Fecha(Unix)/autor/Texto de la review/Página Google + del autor/Fecha2(unix)/autor2...</returns>
+	<remarks>Requiere API Google Maps.</remarks>
+</member><member name="T:MapsNET.APIGoogleMaps.Places">
+	<summary>
+ Clase heredada de MapsBase. Permite obtener información de locales (places).
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="T:MapsNET.APIGoogleMaps.MapasEstaticos.FormatoImagen">
+	<summary>
+ Tipo de formato para el mapa. 
+ </summary>
+</member><member name="T:MapsNET.APIGoogleMaps.MapasEstaticos.TipoMapa">
+	<summary>
+ Indica el tipo de mapa (cubierta) que se va a mostrar
+ </summary>
+	<remarks></remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.MapasEstaticos.MapasEstaticos(System.String,System.Int32,System.Drawing.Size,MapsNET.APIGoogleMaps.MapasEstaticos.FormatoImagen,MapsNET.APIGoogleMaps.MapasEstaticos.TipoMapa,System.String)">
+	<summary>
+ Devuelve la URL para visualizar un mapa en un navegador (WebBrowser).
+ </summary>
+	<param name="centroMapa">Indica el lugar el cual será centro en el mapa. Puede indicarse como dirección postal (Puerta del Sol, Madrid, España) o como latitud/longitud (40.4167522,-3.7033701).</param>
+	<param name="zoom">Indica el zoom del mapa al centro del mapa seleccionado. El valor 0 representa toda la Tierra y el valor 21 representa edificios individuales.</param>
+	<param name="tamañoImagen">Indica el tamaño (en píxeles) del mapa. Valores máximo permitidos 700 ancho y 700 alto.</param>
+	<param name="FormatoMapa">Indica el tipo de formato de la imagen que se va a mostrar.</param>
+	<param name="TipoMapa">Indica el tipo de cubierta del suelo que se va a mostrar.</param>
+	<param name="Marcador">Indica el lugar donde se mostrará un marcador o etiqueta. Puede indicarse como dirección postal (Puerta del Sol, Madrid, España) o como latitud/longitud (40.4167522,-3.7033701).</param>
+	<returns>Devuelve un string con la URL del mapa creado.</returns>
+</member><member name="T:MapsNET.APIGoogleMaps.MapasEstaticos">
+	<summary>
+ Clase heredada de MapsBase. Permite obtener URL de mapas estáticos.
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.FuncionesExtra.Autocompletado(System.String,System.Double,System.Double,System.Int32,System.Int32)">
+	<summary>
+ Proporciona funciones de autocompletado para locales (places) basadas en zonas geográficas concretas.
+ </summary>
+	<param name="Input">Cadena de texto utilizada para la búsqueda. Es un fragmento de la palabra original, por ejemplo, Santiago Bernab. (Devolvería Santiago Bernabéu Stadium).</param>
+	<param name="Latitud">Indica la latitud de la zona geográfica donde se quiere buscar el establecimiento.</param>
+	<param name="Longitud">Indica la longitud de la zona geográfica donde se quiere buscar el establecimiento.</param>
+	<param name="RadioBusqueda">Indica el radio de búsqueda máximo a partir de la latitud/longitud proporcionada.</param>
+	<param name="NumeroCaracteresInput">Indica el número de caraceteres que se van a extraer de la variable Input para efectuar la búsqueda.</param>
+	<returns>Devuelve un arraylist con los nombres de los locales que coinciden con el Input.</returns>
+	<remarks>Requiere clave API.</remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.FuncionesExtra.UnixToTime(System.String)">
+	<summary>
+ Transforma tiempo Unix a fecha en formato #día/mes/año horas:minutos:segundos PM/AM#
+ </summary>
+	<param name="strUnixTime">Parámetro para determinar el tiempo Unix que se quiere transformar.</param>
+	<returns>Devuelve la fecha (en formato Date), horas:minutos:segundos PM/AM#</returns>
+	<remarks>Función obtenida en http://stackoverflow.com/questions/1942519/datetime-to-unixtime-stamp-in-net por el usuario Neolisk.</remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.FuncionesExtra.TimeToUnix(System.DateTime)">
+	<summary>
+ Transforma un tipo de fecha Date en tiempo Unix.
+ </summary>
+	<param name="dteDate">Parámetro que determina la fecha que se quiere transformar a tiempo Unix.</param>
+	<returns>Devuelve el tiempo Unix asociado a la fecha enviada.</returns>
+	<remarks>Función obtenida en http://stackoverflow.com/questions/1942519/datetime-to-unixtime-stamp-in-net por el usuario Neolisk.</remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.FuncionesExtra.Segundos_a_DiasHorMinSeg(System.Int64)">
+	<summary>
+ Función que transforma segundos en días/horas/minutos/segundos
+ </summary>
+	<param name="segundos">Parámetro que determina el número de segundos a transformar.</param>
+	<returns>Devuelve una cadena de texto con los días/horas/minutos/segundos. Por ejemplo: 2 días, 3 horas, 20 minutos, 3 segundos</returns>
+</member><member name="M:MapsNET.APIGoogleMaps.FuncionesExtra.DiasTranscurridos(System.String)">
+	<summary>
+ Función que indica los años/meses/días transcurridos entre la fecha enviada y la fecha actual.
+ </summary>
+	<param name="FechaUnix">Indica la fecha a partir de la cual se quiere obtener los días transcurridos. Se debe enviar en fomarto tiempo Unix.</param>
+	<returns>Devuelve un vector (string) con dos posiciones.</returns>
+</member><member name="M:MapsNET.APIGoogleMaps.FuncionesExtra.QuitarEtiquetasHTML(System.String)">
+	<summary>
+ Función que elimina algunas etiquetas HTML a partir de una cadena de texto (string) que las contenga.
+ </summary>
+	<param name="str">Cadena de texto a la que se quieren quitar las etiquetas HTML.</param>
+	<returns>Devuelve un string con la cadena de texto sin etiquetas HMTML.</returns>
+	<remarks></remarks>
+</member><member name="M:MapsNET.APIGoogleMaps.FuncionesExtra.ImagenDesdeURL(System.String)">
+	<summary>
+ Transforma una url que enlace a una imagen en un BItmap.
+ </summary>
+	<param name="URL">URL que contiene la imagen</param>
+	<returns>Devulve un bitmap con la imagen descargada.</returns>
+	<remarks>En caso de no ser una URL correcta o no enlazar a ninguna imagen, devulve un BItmap vacío.</remarks>
+</member><member name="T:MapsNET.APIGoogleMaps.FuncionesExtra">
+	<summary>
+ Clase heredada de MapsBase. Permite hacer intercambios entre fechas, funciones de autocompletado (API GOOGLE MAPS) y quitar etiquetas HTML.
+ </summary>
+	<remarks>Clase desarrollada por Luis Marcos Rivera. Sitio web: http://algoimagen.blogspot.com.es/ </remarks>
+</member><member name="P:MapsNET.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:MapsNET.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="T:MapsNET.My.Resources.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+</members>
+</doc>

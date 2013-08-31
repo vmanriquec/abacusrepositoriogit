@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84F64A7A-3DD9-4F9E-A9A0-4CA823D8F7D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>abacus.Menu</StartupObject>
+    <RootNamespace>abacus</RootNamespace>
+    <AssemblyName>abacus</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <OptionStrict>On</OptionStrict>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <IsCompassProject>True</IsCompassProject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>abacus.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>abacus.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.4.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e" />
+    <Reference Include="CustomControls">
+      <HintPath>..\..\lava\lava\lavanderia\CustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLDatagridview">
+      <HintPath>..\..\lava\lava\lavanderia\SQLDatagridview.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win">
+      <HintPath>..\..\..\..\..\..\trabajos\lava\lavanderia\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Cooperator.Framework.Core, Version=1.3.3.0, Culture=neutral, PublicKeyToken=8f7f403e20325116, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CooperatorAssemblies\\Cooperator.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Cooperator.Framework.Data, Version=1.3.3.0, Culture=neutral, PublicKeyToken=8f7f403e20325116, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CooperatorAssemblies\\Cooperator.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Cooperator.Framework.Library, Version=1.3.3.0, Culture=neutral, PublicKeyToken=8f7f403e20325116, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CooperatorAssemblies\\Cooperator.Framework.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abacusEntities\abacusEntities.vbproj">
+      <Project>{0d87416c-7707-4396-b09c-3d3b6ac81fca}</Project>
+      <Name>abacusEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abacusData\abacusData.vbproj">
+      <Project>{b20afb5c-197e-4ee1-bd8f-d4e284875e7f}</Project>
+      <Name>abacusData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\abacusRules\abacusRules.vbproj">
+      <Project>{26d15a89-4737-47f7-b9d8-a2365553beb6}</Project>
+      <Name>abacusRules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="abacusDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>abacusDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="categoriasdeproductos.Designer.vb">
+      <DependentUpon>categoriasdeproductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="categoriasdeproductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clientedireccionruta.Designer.vb">
+      <DependentUpon>clientedireccionruta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="clientedireccionruta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="convertimage.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionclientes.Designer.vb">
+      <DependentUpon>gestionclientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="gestionclientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionfamilia.Designer.vb">
+      <DependentUpon>gestionfamilia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="gestionfamilia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionproductos.Designer.vb">
+      <DependentUpon>gestionproductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="gestionproductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestionproveedores.Designer.vb">
+      <DependentUpon>Gestionproveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestionproveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionsalidas.Designer.vb">
+      <DependentUpon>gestionsalidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="gestionsalidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.vb">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="Module2.vb" />
+    <Compile Include="movimientos\gestiondeingresos.Designer.vb">
+      <DependentUpon>gestiondeingresos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="movimientos\gestiondeingresos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="plantillaregistro.Designer.vb">
+      <DependentUpon>plantillaregistro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="plantillaregistro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgramacionVisitasaclientes.Designer.vb">
+      <DependentUpon>ProgramacionVisitasaclientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramacionVisitasaclientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registrorutas.Designer.vb">
+      <DependentUpon>registrorutas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="registrorutas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="abacusDataSet.xsc">
+      <DependentUpon>abacusDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="abacusDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>abacusDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="abacusDataSet.xss">
+      <DependentUpon>abacusDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="App.Config" />
+    <None Include="config.rb" />
+    <None Include="LazyLoad.Config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="sass\ie.scss">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <OutputFolder>C:\Users\Cesar\Desktop\sistemas\abacusv1\abacus\stylesheets</OutputFolder>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>False</DebugInfo>
+    </None>
+    <None Include="sass\print.scss">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <OutputFolder>C:\Users\Cesar\Desktop\sistemas\abacusv1\abacus\stylesheets</OutputFolder>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>False</DebugInfo>
+    </None>
+    <None Include="sass\screen.scss">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <OutputFolder>C:\Users\Cesar\Desktop\sistemas\abacusv1\abacus\stylesheets</OutputFolder>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>False</DebugInfo>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\32x32\Icon_479.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="categoriasdeproductos.resx">
+      <DependentUpon>categoriasdeproductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clientedireccionruta.resx">
+      <DependentUpon>clientedireccionruta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionclientes.resx">
+      <DependentUpon>gestionclientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionfamilia.resx">
+      <DependentUpon>gestionfamilia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionproductos.resx">
+      <DependentUpon>gestionproductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestionproveedores.resx">
+      <DependentUpon>Gestionproveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gestionsalidas.resx">
+      <DependentUpon>gestionsalidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="movimientos\gestiondeingresos.resx">
+      <DependentUpon>gestiondeingresos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="plantillaregistro.resx">
+      <DependentUpon>plantillaregistro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgramacionVisitasaclientes.resx">
+      <DependentUpon>ProgramacionVisitasaclientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registrorutas.resx">
+      <DependentUpon>registrorutas.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\DataSources\abacusRules.Objects.CategoriasObject.datasource" />
+    <None Include="My Project\DataSources\abacusRules.Objects.idcrdObject.datasource" />
+    <None Include="My Project\DataSources\abacusRules.Objects.IngresosObject.datasource" />
+    <None Include="My Project\DataSources\abacusRules.Objects.ProductosObject.datasource" />
+    <None Include="My Project\DataSources\abacusRules.Objects.ProveedoresObject.datasource" />
+    <None Include="My Project\DataSources\abacusRules.Objects.registrodevisitasObject.datasource" />
+    <None Include="My Project\DataSources\abacusRules.Objects.rutaObject.datasource" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Resources\cliente-icono-5533-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edittrash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filenew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_customer_91730.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\halfencrypted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\job_seeker_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kaboodleloop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kalarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kdmconfig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kontact_todo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kwikdisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaper_grandefinal2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\32x32\Diary 64x64 копия.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bar Chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797454_download_box_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797476_Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797505_Android-Barcode-Reader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797520_ark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797546_System_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797564_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797582_Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797601_provider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797617_provider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente-icono-5533-1281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797764_provider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376797844_provider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376806550_print_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376861877_001_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376862110_palet03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376862496_appointment-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376862745_Gnome-Document-Save-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376862824_human-trashcan_full-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376862975_profile_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1376867913_kview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openterm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\codeigniter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spellcheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="stylesheets\ie.css" />
+    <Content Include="stylesheets\print.css" />
+    <Content Include="stylesheets\screen.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

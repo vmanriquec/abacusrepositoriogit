@@ -1,0 +1,262 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class categoriasdeproductos
+    Inherits System.Windows.Forms.Form
+
+    'Form reemplaza a Dispose para limpiar la lista de componentes.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Requerido por el Diseñador de Windows Forms
+    Private components As System.ComponentModel.IContainer
+
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar usando el Diseñador de Windows Forms.  
+    'No lo modifique con el editor de código.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.txtcategoria = New System.Windows.Forms.TextBox()
+        Me.cbofamilia = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.GroupPanel1 = New Stimulsoft.Controls.Win.DotNetBar.Controls.GroupPanel()
+        Me.KryptonButton1 = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.eliminar = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.todos = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.nuevo = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.editar = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.grabar = New ComponentFactory.Krypton.Toolkit.KryptonButton()
+        Me.CategoriasObjectBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdCategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdFamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FamiliasStringDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupPanel1.SuspendLayout()
+        CType(Me.CategoriasObjectBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'txtcategoria
+        '
+        Me.txtcategoria.Location = New System.Drawing.Point(64, 14)
+        Me.txtcategoria.Name = "txtcategoria"
+        Me.txtcategoria.Size = New System.Drawing.Size(318, 20)
+        Me.txtcategoria.TabIndex = 58
+        '
+        'cbofamilia
+        '
+        Me.cbofamilia.FormattingEnabled = True
+        Me.cbofamilia.Location = New System.Drawing.Point(64, 45)
+        Me.cbofamilia.Name = "cbofamilia"
+        Me.cbofamilia.Size = New System.Drawing.Size(251, 21)
+        Me.cbofamilia.TabIndex = 57
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 15)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.TabIndex = 55
+        Me.Label5.Text = "Categoria"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 46)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 56
+        Me.Label1.Text = "Familia"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCategoriaDataGridViewTextBoxColumn, Me.CategoriaDataGridViewTextBoxColumn, Me.IdFamiliaDataGridViewTextBoxColumn, Me.FamiliasStringDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.CategoriasObjectBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(9, 80)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.DataGridView1.Size = New System.Drawing.Size(306, 277)
+        Me.DataGridView1.TabIndex = 59
+        '
+        'GroupPanel1
+        '
+        Me.GroupPanel1.CanvasColor = System.Drawing.SystemColors.Control
+        Me.GroupPanel1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2000
+        Me.GroupPanel1.Controls.Add(Me.KryptonButton1)
+        Me.GroupPanel1.Controls.Add(Me.eliminar)
+        Me.GroupPanel1.Controls.Add(Me.todos)
+        Me.GroupPanel1.Controls.Add(Me.nuevo)
+        Me.GroupPanel1.Controls.Add(Me.editar)
+        Me.GroupPanel1.Controls.Add(Me.grabar)
+        Me.GroupPanel1.Location = New System.Drawing.Point(320, 77)
+        Me.GroupPanel1.Name = "GroupPanel1"
+        Me.GroupPanel1.Size = New System.Drawing.Size(62, 280)
+        '
+        '
+        '
+        Me.GroupPanel1.Style.BackColor2SchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.GroupPanel1.Style.BackColorGradientAngle = 90
+        Me.GroupPanel1.Style.BackColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground
+        Me.GroupPanel1.Style.BorderBottom = Stimulsoft.Controls.Win.DotNetBar.eStyleBorderType.Solid
+        Me.GroupPanel1.Style.BorderBottomWidth = 1
+        Me.GroupPanel1.Style.BorderColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBorder
+        Me.GroupPanel1.Style.BorderLeft = Stimulsoft.Controls.Win.DotNetBar.eStyleBorderType.Solid
+        Me.GroupPanel1.Style.BorderLeftWidth = 1
+        Me.GroupPanel1.Style.BorderRight = Stimulsoft.Controls.Win.DotNetBar.eStyleBorderType.Solid
+        Me.GroupPanel1.Style.BorderRightWidth = 1
+        Me.GroupPanel1.Style.BorderTop = Stimulsoft.Controls.Win.DotNetBar.eStyleBorderType.Solid
+        Me.GroupPanel1.Style.BorderTopWidth = 1
+        Me.GroupPanel1.Style.CornerDiameter = 4
+        Me.GroupPanel1.Style.CornerType = Stimulsoft.Controls.Win.DotNetBar.eCornerType.Rounded
+        Me.GroupPanel1.Style.TextAlignment = Stimulsoft.Controls.Win.DotNetBar.eStyleTextAlignment.Center
+        Me.GroupPanel1.Style.TextColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelText
+        Me.GroupPanel1.Style.TextLineAlignment = Stimulsoft.Controls.Win.DotNetBar.eStyleTextAlignment.Near
+        Me.GroupPanel1.TabIndex = 68
+        '
+        'KryptonButton1
+        '
+        Me.KryptonButton1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.FormClose
+        Me.KryptonButton1.Location = New System.Drawing.Point(5, 224)
+        Me.KryptonButton1.Name = "KryptonButton1"
+        Me.KryptonButton1.Size = New System.Drawing.Size(40, 44)
+        Me.KryptonButton1.TabIndex = 56
+        Me.KryptonButton1.Values.Image = Global.abacus.My.Resources.Resources._exit
+        Me.KryptonButton1.Values.Text = ""
+        '
+        'eliminar
+        '
+        Me.eliminar.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Form
+        Me.eliminar.Location = New System.Drawing.Point(3, 135)
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.Size = New System.Drawing.Size(42, 40)
+        Me.eliminar.TabIndex = 46
+        Me.eliminar.Values.Image = Global.abacus.My.Resources.Resources.edittrash
+        Me.eliminar.Values.Text = ""
+        '
+        'todos
+        '
+        Me.todos.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Form
+        Me.todos.Location = New System.Drawing.Point(3, 181)
+        Me.todos.Name = "todos"
+        Me.todos.Size = New System.Drawing.Size(37, 37)
+        Me.todos.TabIndex = 49
+        Me.todos.Values.Image = Global.abacus.My.Resources.Resources.kaboodleloop
+        Me.todos.Values.Text = ""
+        '
+        'nuevo
+        '
+        Me.nuevo.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Form
+        Me.nuevo.Location = New System.Drawing.Point(5, 1)
+        Me.nuevo.Name = "nuevo"
+        Me.nuevo.Size = New System.Drawing.Size(42, 48)
+        Me.nuevo.TabIndex = 45
+        Me.nuevo.Values.Image = Global.abacus.My.Resources.Resources.filenew
+        Me.nuevo.Values.Text = ""
+        '
+        'editar
+        '
+        Me.editar.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Form
+        Me.editar.Location = New System.Drawing.Point(8, 85)
+        Me.editar.Name = "editar"
+        Me.editar.Size = New System.Drawing.Size(39, 44)
+        Me.editar.TabIndex = 47
+        Me.editar.Values.Image = Global.abacus.My.Resources.Resources.kontact_todo
+        Me.editar.Values.Text = ""
+        '
+        'grabar
+        '
+        Me.grabar.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Form
+        Me.grabar.Location = New System.Drawing.Point(3, 44)
+        Me.grabar.Name = "grabar"
+        Me.grabar.Size = New System.Drawing.Size(46, 45)
+        Me.grabar.TabIndex = 48
+        Me.grabar.Values.Image = Global.abacus.My.Resources.Resources.halfencrypted
+        Me.grabar.Values.Text = ""
+        '
+        'CategoriasObjectBindingSource
+        '
+        Me.CategoriasObjectBindingSource.DataSource = GetType(abacusRules.Objects.CategoriasObject)
+        '
+        'IdCategoriaDataGridViewTextBoxColumn
+        '
+        Me.IdCategoriaDataGridViewTextBoxColumn.DataPropertyName = "Id_Categoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.HeaderText = "Id_Categoria"
+        Me.IdCategoriaDataGridViewTextBoxColumn.Name = "IdCategoriaDataGridViewTextBoxColumn"
+        Me.IdCategoriaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdCategoriaDataGridViewTextBoxColumn.Visible = False
+        '
+        'CategoriaDataGridViewTextBoxColumn
+        '
+        Me.CategoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria"
+        Me.CategoriaDataGridViewTextBoxColumn.HeaderText = "Categoria"
+        Me.CategoriaDataGridViewTextBoxColumn.Name = "CategoriaDataGridViewTextBoxColumn"
+        Me.CategoriaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdFamiliaDataGridViewTextBoxColumn
+        '
+        Me.IdFamiliaDataGridViewTextBoxColumn.DataPropertyName = "IdFamilia"
+        Me.IdFamiliaDataGridViewTextBoxColumn.HeaderText = "IdFamilia"
+        Me.IdFamiliaDataGridViewTextBoxColumn.Name = "IdFamiliaDataGridViewTextBoxColumn"
+        Me.IdFamiliaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdFamiliaDataGridViewTextBoxColumn.Visible = False
+        '
+        'FamiliasStringDataGridViewTextBoxColumn
+        '
+        Me.FamiliasStringDataGridViewTextBoxColumn.DataPropertyName = "FamiliasString"
+        Me.FamiliasStringDataGridViewTextBoxColumn.HeaderText = "FamiliasString"
+        Me.FamiliasStringDataGridViewTextBoxColumn.Name = "FamiliasStringDataGridViewTextBoxColumn"
+        Me.FamiliasStringDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'categoriasdeproductos
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(390, 361)
+        Me.Controls.Add(Me.GroupPanel1)
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.txtcategoria)
+        Me.Controls.Add(Me.cbofamilia)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label1)
+        Me.Name = "categoriasdeproductos"
+        Me.Text = "categoriasdeproductos"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupPanel1.ResumeLayout(False)
+        CType(Me.CategoriasObjectBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents txtcategoria As System.Windows.Forms.TextBox
+    Friend WithEvents cbofamilia As System.Windows.Forms.ComboBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupPanel1 As Stimulsoft.Controls.Win.DotNetBar.Controls.GroupPanel
+    Friend WithEvents KryptonButton1 As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents eliminar As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents todos As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents nuevo As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents editar As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents grabar As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents IdCategoriaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CategoriaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IdFamiliaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FamiliasStringDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CategoriasObjectBindingSource As System.Windows.Forms.BindingSource
+End Class

@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4F0E8AC-8B4B-4BF6-A29D-AEF512886F02}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Maps.NET.My.MyApplication</StartupObject>
+    <RootNamespace>Maps.NET</RootNamespace>
+    <AssemblyName>Maps.NET</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Maps.NET.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Maps.NET.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuracion\InfoPC.Designer.vb">
+      <DependentUpon>InfoPC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\InfoPC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Opciones.Designer.vb">
+      <DependentUpon>Opciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Opciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="ClaseAspecto.vb" />
+    <Compile Include="FormuSecundarios\ClaveAPI.Designer.vb">
+      <DependentUpon>ClaveAPI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\ClaveAPI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\CodificacionGeo.Designer.vb">
+      <DependentUpon>CodificacionGeo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\CodificacionGeo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\CodifInversa.Designer.vb">
+      <DependentUpon>CodifInversa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\CodifInversa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\CodigoPostal.Designer.vb">
+      <DependentUpon>CodigoPostal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\CodigoPostal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\DatosLocal.Designer.vb">
+      <DependentUpon>DatosLocal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\DatosLocal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\Formulario.Designer.vb">
+      <DependentUpon>Formulario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\Formulario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\InformarError.Designer.vb">
+      <DependentUpon>InformarError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\InformarError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\StreetViewlat.Designer.vb">
+      <DependentUpon>StreetViewlat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\StreetViewlat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioAPI.Designer.vb">
+      <DependentUpon>InicioAPI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InicioAPI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mapas\ImportarXML.Designer.vb">
+      <DependentUpon>ImportarXML.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mapas\ImportarXML.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mapas\MapasCompleto.Designer.vb">
+      <DependentUpon>MapasCompleto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mapas\MapasCompleto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mapas\MapasSencillos.Designer.vb">
+      <DependentUpon>MapasSencillos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mapas\MapasSencillos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mapas\MostrarMapa.Designer.vb">
+      <DependentUpon>MostrarMapa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mapas\MostrarMapa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Places\DetallesLugarComida.Designer.vb">
+      <DependentUpon>DetallesLugarComida.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Places\DetallesLugarComida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\Dialog1.Designer.vb">
+      <DependentUpon>Dialog1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\Dialog1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\Direccion.Designer.vb">
+      <DependentUpon>Direccion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\Direccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPrincipal.Designer.vb">
+      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\ElevacionDir.Designer.vb">
+      <DependentUpon>ElevacionDir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\ElevacionDir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\ElevacionesLat.Designer.vb">
+      <DependentUpon>ElevacionesLat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\ElevacionesLat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\ISP.Designer.vb">
+      <DependentUpon>ISP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\ISP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\Latitud.Designer.vb">
+      <DependentUpon>Latitud.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\Latitud.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruta\MapasRuta.Designer.vb">
+      <DependentUpon>MapasRuta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ruta\MapasRuta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruta\MapasRutaPasoaPaso.Designer.vb">
+      <DependentUpon>MapasRutaPasoaPaso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ruta\MapasRutaPasoaPaso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruta\MostarTodosStreetViewvb.Designer.vb">
+      <DependentUpon>MostarTodosStreetViewvb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ruta\MostarTodosStreetViewvb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Places\Places.Designer.vb">
+      <DependentUpon>Places.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Places\Places.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Places\PlacesDir.Designer.vb">
+      <DependentUpon>PlacesDir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Places\PlacesDir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruta\mostrarRuta.Designer.vb">
+      <DependentUpon>mostrarRuta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ruta\mostrarRuta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ruta\Rutas.Designer.vb">
+      <DependentUpon>Rutas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ruta\Rutas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\SeguimientoURL.Designer.vb">
+      <DependentUpon>SeguimientoURL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\SeguimientoURL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormuSecundarios\StreetViewDIr.Designer.vb">
+      <DependentUpon>StreetViewDIr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormuSecundarios\StreetViewDIr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Places\TodosResultados.Designer.vb">
+      <DependentUpon>TodosResultados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Places\TodosResultados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapsNet.vb" />
+    <Compile Include="Ruta\StreetViewRuta.Designer.vb">
+      <DependentUpon>StreetViewRuta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ruta\StreetViewRuta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VariablesGlobales.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Configuracion\InfoPC.resx">
+      <DependentUpon>InfoPC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Opciones.resx">
+      <DependentUpon>Opciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\ClaveAPI.resx">
+      <DependentUpon>ClaveAPI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\CodificacionGeo.resx">
+      <DependentUpon>CodificacionGeo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\CodifInversa.resx">
+      <DependentUpon>CodifInversa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\CodigoPostal.resx">
+      <DependentUpon>CodigoPostal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\DatosLocal.resx">
+      <DependentUpon>DatosLocal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\Formulario.resx">
+      <DependentUpon>Formulario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\InformarError.resx">
+      <DependentUpon>InformarError.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\StreetViewlat.resx">
+      <DependentUpon>StreetViewlat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioAPI.resx">
+      <DependentUpon>InicioAPI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapas\ImportarXML.resx">
+      <DependentUpon>ImportarXML.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapas\MapasCompleto.resx">
+      <DependentUpon>MapasCompleto.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapas\MapasSencillos.resx">
+      <DependentUpon>MapasSencillos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapas\MostrarMapa.resx">
+      <DependentUpon>MostrarMapa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Places\DetallesLugarComida.resx">
+      <DependentUpon>DetallesLugarComida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\Dialog1.resx">
+      <DependentUpon>Dialog1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\Direccion.resx">
+      <DependentUpon>Direccion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\ElevacionDir.resx">
+      <DependentUpon>ElevacionDir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\ElevacionesLat.resx">
+      <DependentUpon>ElevacionesLat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\ISP.resx">
+      <DependentUpon>ISP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\Latitud.resx">
+      <DependentUpon>Latitud.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruta\MapasRuta.resx">
+      <DependentUpon>MapasRuta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruta\MapasRutaPasoaPaso.resx">
+      <DependentUpon>MapasRutaPasoaPaso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruta\MostarTodosStreetViewvb.resx">
+      <DependentUpon>MostarTodosStreetViewvb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Places\Places.resx">
+      <DependentUpon>Places.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Places\PlacesDir.resx">
+      <DependentUpon>PlacesDir.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruta\mostrarRuta.resx">
+      <DependentUpon>mostrarRuta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruta\Rutas.resx">
+      <DependentUpon>Rutas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\SeguimientoURL.resx">
+      <DependentUpon>SeguimientoURL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormuSecundarios\StreetViewDIr.resx">
+      <DependentUpon>StreetViewDIr.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Places\TodosResultados.resx">
+      <DependentUpon>TodosResultados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ruta\StreetViewRuta.resx">
+      <DependentUpon>StreetViewRuta.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trofeo-de-bronce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trofeo-de-oro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trofeo-de-plata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medalla-de-bronce-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medalla-de-oro-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medalla-de-plata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\constructor.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cargando.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layer_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google_map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

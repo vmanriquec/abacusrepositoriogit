@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="CooperatorConnectionString" connectionString="Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=abacus;Data Source=USUARIO\SQLEXPRESS; Application Name=abacus;"
+            providerName="System.Data.SqlClient" />
+        <add name="abacus.My.MySettings.abacusConnectionString" connectionString="Data Source=USUARIO\SQLEXPRESS;Initial Catalog=abacus;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+  <appSettings>
+    <add key="Enterprisename" value="abacus" />
+  </appSettings>
+</configuration>
+
+
