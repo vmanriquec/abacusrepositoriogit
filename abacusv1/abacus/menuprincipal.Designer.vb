@@ -24,46 +24,45 @@ Partial Class menuprincipal
     Private Sub InitializeComponent()
         Me.RibbonControl1 = New Stimulsoft.Controls.Win.DotNetBar.RibbonControl()
         Me.RibbonPanel5 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
-        Me.RibbonPanel1 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
-        Me.RibbonPanel2 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
+        Me.ButtonX12 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX11 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.RibbonPanel4 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
+        Me.ButtonX13 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX10 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.RibbonPanel1 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
+        Me.ButtonX3 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX2 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX1 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.RibbonPanel2 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
+        Me.ButtonX4 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX5 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX6 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.RibbonPanel3 = New Stimulsoft.Controls.Win.DotNetBar.RibbonPanel()
+        Me.ButtonX7 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX8 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX9 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.RibbonTabItem1 = New Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem()
         Me.RibbonTabItem2 = New Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem()
         Me.RibbonTabItem3 = New Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem()
         Me.RibbonTabItem4 = New Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem()
         Me.RibbonTabItem5 = New Stimulsoft.Controls.Win.DotNetBar.RibbonTabItem()
-        Me.QatCustomizeItem1 = New Stimulsoft.Controls.Win.DotNetBar.QatCustomizeItem()
-        Me.PanelEx1 = New Stimulsoft.Controls.Win.DotNetBar.PanelEx()
-        Me.ButtonX13 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX10 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX12 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX11 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX3 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX2 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX1 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX4 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX5 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX6 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX7 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX8 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX9 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.Office2007StartButton1 = New Stimulsoft.Controls.Win.DotNetBar.Office2007StartButton()
         Me.ItemContainer1 = New Stimulsoft.Controls.Win.DotNetBar.ItemContainer()
         Me.ItemContainer4 = New Stimulsoft.Controls.Win.DotNetBar.ItemContainer()
+        Me.PanelEx1 = New Stimulsoft.Controls.Win.DotNetBar.PanelEx()
         Me.RibbonControl1.SuspendLayout()
         Me.RibbonPanel5.SuspendLayout()
+        Me.RibbonPanel4.SuspendLayout()
         Me.RibbonPanel1.SuspendLayout()
         Me.RibbonPanel2.SuspendLayout()
-        Me.RibbonPanel4.SuspendLayout()
         Me.RibbonPanel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'RibbonControl1
         '
         Me.RibbonControl1.CaptionVisible = True
-        Me.RibbonControl1.Controls.Add(Me.RibbonPanel4)
         Me.RibbonControl1.Controls.Add(Me.RibbonPanel5)
+        Me.RibbonControl1.Controls.Add(Me.RibbonPanel4)
         Me.RibbonControl1.Controls.Add(Me.RibbonPanel1)
         Me.RibbonControl1.Controls.Add(Me.RibbonPanel2)
         Me.RibbonControl1.Controls.Add(Me.RibbonPanel3)
@@ -72,13 +71,15 @@ Partial Class menuprincipal
         Me.RibbonControl1.KeyTipsFont = New System.Drawing.Font("Arial", 7.0!)
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl1.Name = "RibbonControl1"
+        Me.RibbonControl1.Office2007ColorTable = Stimulsoft.Controls.Win.DotNetBar.Rendering.eOffice2007ColorScheme.Black
         Me.RibbonControl1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 2)
-        Me.RibbonControl1.QuickToolbarItems.AddRange(New Stimulsoft.Controls.Win.DotNetBar.BaseItem() {Me.Office2007StartButton1, Me.QatCustomizeItem1})
+        Me.RibbonControl1.QuickToolbarItems.AddRange(New Stimulsoft.Controls.Win.DotNetBar.BaseItem() {Me.Office2007StartButton1})
         Me.RibbonControl1.Size = New System.Drawing.Size(975, 130)
         Me.RibbonControl1.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
         Me.RibbonControl1.TabGroupHeight = 14
         Me.RibbonControl1.TabIndex = 0
         Me.RibbonControl1.Text = "Sistema de Gestion Comercial SAGADIST"
+        Me.RibbonControl1.UseExternalCustomization = True
         '
         'RibbonPanel5
         '
@@ -86,40 +87,32 @@ Partial Class menuprincipal
         Me.RibbonPanel5.Controls.Add(Me.ButtonX12)
         Me.RibbonPanel5.Controls.Add(Me.ButtonX11)
         Me.RibbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanel5.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanel5.Location = New System.Drawing.Point(0, 55)
         Me.RibbonPanel5.Name = "RibbonPanel5"
         Me.RibbonPanel5.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RibbonPanel5.Size = New System.Drawing.Size(975, 128)
+        Me.RibbonPanel5.Size = New System.Drawing.Size(975, 73)
         Me.RibbonPanel5.TabIndex = 5
-        Me.RibbonPanel5.Visible = False
         '
-        'RibbonPanel1
+        'ButtonX12
         '
-        Me.RibbonPanel1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
-        Me.RibbonPanel1.Controls.Add(Me.ButtonX3)
-        Me.RibbonPanel1.Controls.Add(Me.ButtonX2)
-        Me.RibbonPanel1.Controls.Add(Me.ButtonX1)
-        Me.RibbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonPanel1.Name = "RibbonPanel1"
-        Me.RibbonPanel1.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RibbonPanel1.Size = New System.Drawing.Size(975, 128)
-        Me.RibbonPanel1.TabIndex = 1
-        Me.RibbonPanel1.Visible = False
+        Me.ButtonX12.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX12.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX12.Image = Global.abacus.My.Resources.Resources.sunat
+        Me.ButtonX12.Location = New System.Drawing.Point(152, 3)
+        Me.ButtonX12.Name = "ButtonX12"
+        Me.ButtonX12.Size = New System.Drawing.Size(158, 66)
+        Me.ButtonX12.TabIndex = 11
         '
-        'RibbonPanel2
+        'ButtonX11
         '
-        Me.RibbonPanel2.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
-        Me.RibbonPanel2.Controls.Add(Me.ButtonX4)
-        Me.RibbonPanel2.Controls.Add(Me.ButtonX5)
-        Me.RibbonPanel2.Controls.Add(Me.ButtonX6)
-        Me.RibbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanel2.Location = New System.Drawing.Point(0, 55)
-        Me.RibbonPanel2.Name = "RibbonPanel2"
-        Me.RibbonPanel2.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RibbonPanel2.Size = New System.Drawing.Size(975, 73)
-        Me.RibbonPanel2.TabIndex = 2
-        Me.RibbonPanel2.Visible = False
+        Me.ButtonX11.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX11.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX11.Image = Global.abacus.My.Resources.Resources.Google_Maps
+        Me.ButtonX11.Location = New System.Drawing.Point(8, 2)
+        Me.ButtonX11.Name = "ButtonX11"
+        Me.ButtonX11.Size = New System.Drawing.Size(126, 66)
+        Me.ButtonX11.TabIndex = 10
+        Me.ButtonX11.Text = "<b>Mapas</b>"
         '
         'RibbonPanel4
         '
@@ -132,88 +125,7 @@ Partial Class menuprincipal
         Me.RibbonPanel4.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.RibbonPanel4.Size = New System.Drawing.Size(975, 73)
         Me.RibbonPanel4.TabIndex = 4
-        '
-        'RibbonPanel3
-        '
-        Me.RibbonPanel3.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
-        Me.RibbonPanel3.Controls.Add(Me.ButtonX7)
-        Me.RibbonPanel3.Controls.Add(Me.ButtonX8)
-        Me.RibbonPanel3.Controls.Add(Me.ButtonX9)
-        Me.RibbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RibbonPanel3.Location = New System.Drawing.Point(0, 55)
-        Me.RibbonPanel3.Name = "RibbonPanel3"
-        Me.RibbonPanel3.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
-        Me.RibbonPanel3.Size = New System.Drawing.Size(975, 73)
-        Me.RibbonPanel3.TabIndex = 3
-        Me.RibbonPanel3.Visible = False
-        '
-        'RibbonTabItem1
-        '
-        Me.RibbonTabItem1.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
-        Me.RibbonTabItem1.ImagePaddingHorizontal = 8
-        Me.RibbonTabItem1.Name = "RibbonTabItem1"
-        Me.RibbonTabItem1.Panel = Me.RibbonPanel1
-        Me.RibbonTabItem1.PopupPositionAdjusted = False
-        Me.RibbonTabItem1.Text = "Maestras"
-        '
-        'RibbonTabItem2
-        '
-        Me.RibbonTabItem2.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
-        Me.RibbonTabItem2.ImagePaddingHorizontal = 8
-        Me.RibbonTabItem2.Name = "RibbonTabItem2"
-        Me.RibbonTabItem2.Panel = Me.RibbonPanel2
-        Me.RibbonTabItem2.PopupPositionAdjusted = False
-        Me.RibbonTabItem2.Text = "Productos"
-        '
-        'RibbonTabItem3
-        '
-        Me.RibbonTabItem3.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
-        Me.RibbonTabItem3.ImagePaddingHorizontal = 8
-        Me.RibbonTabItem3.Name = "RibbonTabItem3"
-        Me.RibbonTabItem3.Panel = Me.RibbonPanel3
-        Me.RibbonTabItem3.PopupPositionAdjusted = False
-        Me.RibbonTabItem3.Text = "Rutas/Visitas"
-        '
-        'RibbonTabItem4
-        '
-        Me.RibbonTabItem4.Checked = True
-        Me.RibbonTabItem4.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
-        Me.RibbonTabItem4.ImagePaddingHorizontal = 8
-        Me.RibbonTabItem4.Name = "RibbonTabItem4"
-        Me.RibbonTabItem4.Panel = Me.RibbonPanel4
-        Me.RibbonTabItem4.PopupPositionAdjusted = False
-        Me.RibbonTabItem4.Text = "Movimientos"
-        '
-        'RibbonTabItem5
-        '
-        Me.RibbonTabItem5.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
-        Me.RibbonTabItem5.ImagePaddingHorizontal = 8
-        Me.RibbonTabItem5.Name = "RibbonTabItem5"
-        Me.RibbonTabItem5.Panel = Me.RibbonPanel5
-        Me.RibbonTabItem5.PopupPositionAdjusted = False
-        Me.RibbonTabItem5.Text = "Aplicaciones Especiales"
-        '
-        'QatCustomizeItem1
-        '
-        Me.QatCustomizeItem1.Name = "QatCustomizeItem1"
-        Me.QatCustomizeItem1.PopupPositionAdjusted = False
-        '
-        'PanelEx1
-        '
-        Me.PanelEx1.CanvasColor = System.Drawing.SystemColors.Control
-        Me.PanelEx1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
-        Me.PanelEx1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelEx1.Location = New System.Drawing.Point(0, 130)
-        Me.PanelEx1.Name = "PanelEx1"
-        Me.PanelEx1.Size = New System.Drawing.Size(975, 509)
-        Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
-        Me.PanelEx1.Style.BackColor1.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground
-        Me.PanelEx1.Style.BackColor2.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground2
-        Me.PanelEx1.Style.Border = Stimulsoft.Controls.Win.DotNetBar.eBorderType.SingleLine
-        Me.PanelEx1.Style.BorderColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBorder
-        Me.PanelEx1.Style.ForeColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelText
-        Me.PanelEx1.Style.GradientAngle = 90
-        Me.PanelEx1.TabIndex = 1
+        Me.RibbonPanel4.Visible = False
         '
         'ButtonX13
         '
@@ -237,26 +149,19 @@ Partial Class menuprincipal
         Me.ButtonX10.TabIndex = 9
         Me.ButtonX10.Text = "<b>Ingresos</b>"
         '
-        'ButtonX12
+        'RibbonPanel1
         '
-        Me.ButtonX12.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX12.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.ButtonX12.Image = Global.abacus.My.Resources.Resources.sunat
-        Me.ButtonX12.Location = New System.Drawing.Point(152, 3)
-        Me.ButtonX12.Name = "ButtonX12"
-        Me.ButtonX12.Size = New System.Drawing.Size(158, 66)
-        Me.ButtonX12.TabIndex = 11
-        '
-        'ButtonX11
-        '
-        Me.ButtonX11.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX11.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.ButtonX11.Image = Global.abacus.My.Resources.Resources.Google_Maps
-        Me.ButtonX11.Location = New System.Drawing.Point(8, 2)
-        Me.ButtonX11.Name = "ButtonX11"
-        Me.ButtonX11.Size = New System.Drawing.Size(126, 66)
-        Me.ButtonX11.TabIndex = 10
-        Me.ButtonX11.Text = "<b>Mapas</b>"
+        Me.RibbonPanel1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.RibbonPanel1.Controls.Add(Me.ButtonX3)
+        Me.RibbonPanel1.Controls.Add(Me.ButtonX2)
+        Me.RibbonPanel1.Controls.Add(Me.ButtonX1)
+        Me.RibbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonPanel1.Name = "RibbonPanel1"
+        Me.RibbonPanel1.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RibbonPanel1.Size = New System.Drawing.Size(975, 128)
+        Me.RibbonPanel1.TabIndex = 1
+        Me.RibbonPanel1.Visible = False
         '
         'ButtonX3
         '
@@ -292,6 +197,20 @@ Partial Class menuprincipal
         Me.ButtonX1.Size = New System.Drawing.Size(106, 66)
         Me.ButtonX1.TabIndex = 1
         Me.ButtonX1.Text = "Personal<b></b>"
+        '
+        'RibbonPanel2
+        '
+        Me.RibbonPanel2.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.RibbonPanel2.Controls.Add(Me.ButtonX4)
+        Me.RibbonPanel2.Controls.Add(Me.ButtonX5)
+        Me.RibbonPanel2.Controls.Add(Me.ButtonX6)
+        Me.RibbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanel2.Location = New System.Drawing.Point(0, 55)
+        Me.RibbonPanel2.Name = "RibbonPanel2"
+        Me.RibbonPanel2.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RibbonPanel2.Size = New System.Drawing.Size(975, 73)
+        Me.RibbonPanel2.TabIndex = 2
+        Me.RibbonPanel2.Visible = False
         '
         'ButtonX4
         '
@@ -329,6 +248,20 @@ Partial Class menuprincipal
         Me.ButtonX6.Text = "<b>Familias</b>"
         Me.ButtonX6.TextAlignment = Stimulsoft.Controls.Win.DotNetBar.eButtonTextAlignment.Left
         '
+        'RibbonPanel3
+        '
+        Me.RibbonPanel3.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.RibbonPanel3.Controls.Add(Me.ButtonX7)
+        Me.RibbonPanel3.Controls.Add(Me.ButtonX8)
+        Me.RibbonPanel3.Controls.Add(Me.ButtonX9)
+        Me.RibbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RibbonPanel3.Location = New System.Drawing.Point(0, 55)
+        Me.RibbonPanel3.Name = "RibbonPanel3"
+        Me.RibbonPanel3.Padding = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.RibbonPanel3.Size = New System.Drawing.Size(975, 73)
+        Me.RibbonPanel3.TabIndex = 3
+        Me.RibbonPanel3.Visible = False
+        '
         'ButtonX7
         '
         Me.ButtonX7.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
@@ -364,6 +297,52 @@ Partial Class menuprincipal
         Me.ButtonX9.TabIndex = 6
         Me.ButtonX9.Text = "Ruta<b></b>"
         '
+        'RibbonTabItem1
+        '
+        Me.RibbonTabItem1.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
+        Me.RibbonTabItem1.ImagePaddingHorizontal = 8
+        Me.RibbonTabItem1.Name = "RibbonTabItem1"
+        Me.RibbonTabItem1.Panel = Me.RibbonPanel1
+        Me.RibbonTabItem1.PopupPositionAdjusted = False
+        Me.RibbonTabItem1.Text = "Maestras"
+        '
+        'RibbonTabItem2
+        '
+        Me.RibbonTabItem2.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
+        Me.RibbonTabItem2.ImagePaddingHorizontal = 8
+        Me.RibbonTabItem2.Name = "RibbonTabItem2"
+        Me.RibbonTabItem2.Panel = Me.RibbonPanel2
+        Me.RibbonTabItem2.PopupPositionAdjusted = False
+        Me.RibbonTabItem2.Text = "Productos"
+        '
+        'RibbonTabItem3
+        '
+        Me.RibbonTabItem3.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
+        Me.RibbonTabItem3.ImagePaddingHorizontal = 8
+        Me.RibbonTabItem3.Name = "RibbonTabItem3"
+        Me.RibbonTabItem3.Panel = Me.RibbonPanel3
+        Me.RibbonTabItem3.PopupPositionAdjusted = False
+        Me.RibbonTabItem3.Text = "Rutas/Visitas"
+        '
+        'RibbonTabItem4
+        '
+        Me.RibbonTabItem4.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
+        Me.RibbonTabItem4.ImagePaddingHorizontal = 8
+        Me.RibbonTabItem4.Name = "RibbonTabItem4"
+        Me.RibbonTabItem4.Panel = Me.RibbonPanel4
+        Me.RibbonTabItem4.PopupPositionAdjusted = False
+        Me.RibbonTabItem4.Text = "Movimientos"
+        '
+        'RibbonTabItem5
+        '
+        Me.RibbonTabItem5.Checked = True
+        Me.RibbonTabItem5.ImageListSizeSelection = Stimulsoft.Controls.Win.DotNetBar.eButtonImageListSelection.NotSet
+        Me.RibbonTabItem5.ImagePaddingHorizontal = 8
+        Me.RibbonTabItem5.Name = "RibbonTabItem5"
+        Me.RibbonTabItem5.Panel = Me.RibbonPanel5
+        Me.RibbonTabItem5.PopupPositionAdjusted = False
+        Me.RibbonTabItem5.Text = "Aplicaciones Especiales"
+        '
         'Office2007StartButton1
         '
         Me.Office2007StartButton1.AutoExpandOnClick = True
@@ -398,24 +377,43 @@ Partial Class menuprincipal
         Me.ItemContainer4.HorizontalItemAlignment = Stimulsoft.Controls.Win.DotNetBar.eHorizontalItemsAlignment.Right
         Me.ItemContainer4.Name = "ItemContainer4"
         '
+        'PanelEx1
+        '
+        Me.PanelEx1.CanvasColor = System.Drawing.SystemColors.Control
+        Me.PanelEx1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.PanelEx1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelEx1.Location = New System.Drawing.Point(0, 130)
+        Me.PanelEx1.Name = "PanelEx1"
+        Me.PanelEx1.Size = New System.Drawing.Size(975, 509)
+        Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
+        Me.PanelEx1.Style.BackColor1.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground
+        Me.PanelEx1.Style.BackColor2.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.PanelEx1.Style.Border = Stimulsoft.Controls.Win.DotNetBar.eBorderType.SingleLine
+        Me.PanelEx1.Style.BorderColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBorder
+        Me.PanelEx1.Style.ForeColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelText
+        Me.PanelEx1.Style.GradientAngle = 90
+        Me.PanelEx1.TabIndex = 1
+        '
         'menuprincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(975, 639)
+        Me.ControlBox = False
         Me.Controls.Add(Me.PanelEx1)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "menuprincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "menuprincipal"
+        Me.Text = "Sistema de Gestion Comercial  "" SAGADIST"""
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.RibbonControl1.ResumeLayout(False)
         Me.RibbonControl1.PerformLayout()
         Me.RibbonPanel5.ResumeLayout(False)
+        Me.RibbonPanel4.ResumeLayout(False)
         Me.RibbonPanel1.ResumeLayout(False)
         Me.RibbonPanel2.ResumeLayout(False)
-        Me.RibbonPanel4.ResumeLayout(False)
         Me.RibbonPanel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -432,7 +430,6 @@ Partial Class menuprincipal
     Friend WithEvents Office2007StartButton1 As Stimulsoft.Controls.Win.DotNetBar.Office2007StartButton
     Friend WithEvents ItemContainer1 As Stimulsoft.Controls.Win.DotNetBar.ItemContainer
     Friend WithEvents ItemContainer4 As Stimulsoft.Controls.Win.DotNetBar.ItemContainer
-    Friend WithEvents QatCustomizeItem1 As Stimulsoft.Controls.Win.DotNetBar.QatCustomizeItem
     Friend WithEvents ButtonX1 As Stimulsoft.Controls.Win.DotNetBar.ButtonX
     Friend WithEvents ButtonX3 As Stimulsoft.Controls.Win.DotNetBar.ButtonX
     Friend WithEvents ButtonX2 As Stimulsoft.Controls.Win.DotNetBar.ButtonX

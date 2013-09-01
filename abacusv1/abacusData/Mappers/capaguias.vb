@@ -274,7 +274,7 @@ Public Class capaguias
             cn.Open()
             tr = cn.BeginTransaction
             cmdD.Transaction = tr
-            cmdD.Parameters.AddWithValue("@ IdGuiasDet ", guiadetalle.IdGuiasDet)
+            cmdD.Parameters.AddWithValue("@IdGuiasDet", guiadetalle.IdGuiasDet)
             cmdD.Parameters.AddWithValue("@Idguias", guiadetalle.IdGuias)
             cmdD.Parameters.AddWithValue("@IdProducto", guiadetalle.idproducto)
             cmdD.Parameters.AddWithValue("@Cantidad", guiadetalle.cantidad)
@@ -299,7 +299,7 @@ Public Class capaguias
         Dim tr As SqlClient.SqlTransaction
         Using cn As New SqlClient.SqlConnection(cox)
             Using cmd As New SqlClient.SqlCommand("coop_GuiasDet_Deletemio", cn)
-                cmd.Parameters.AddWithValue("@ IdGuiasDet ", detguia1.IdGuiasDet)
+                cmd.Parameters.AddWithValue("@IdGuiasDet", detguia1.IdGuiasDet)
                 cmd.CommandType = CommandType.StoredProcedure
                 Using da As New SqlClient.SqlDataAdapter(cmd)
                     Try
@@ -344,7 +344,7 @@ Public Class capaguias
     Public Shared Function eliminarguia(ByVal i As Integer) As DataTable
         Dim tr As SqlClient.SqlTransaction
         Using cn As New SqlClient.SqlConnection(cox)
-            Using cmd As New SqlClient.SqlCommand("coop_Guias_Deletemioo", cn)
+            Using cmd As New SqlClient.SqlCommand("coop_Guias_Delete", cn)
                 cmd.Parameters.AddWithValue("@IdGuias", i)
                 cmd.CommandType = CommandType.StoredProcedure
                 Using da As New SqlClient.SqlDataAdapter(cmd)

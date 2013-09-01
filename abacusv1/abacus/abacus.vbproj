@@ -588,6 +588,10 @@
     <None Include="Resources\sunat.gif" />
     <None Include="Resources\documents.png" />
     <None Include="Resources\documents64.png" />
+    <None Include="Resources\Sin título.png" />
+    <None Include="Resources\bot.png" />
+    <None Include="Resources\botbuscar.png" />
+    <None Include="Resources\botbuscar1.png" />
     <Content Include="stylesheets\ie.css" />
     <Content Include="stylesheets\print.css" />
     <Content Include="stylesheets\screen.css" />

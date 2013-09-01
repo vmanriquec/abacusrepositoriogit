@@ -124,8 +124,8 @@
   <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cliente-icono-5533-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cliente-icono-5533-128.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bot.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,6 +135,9 @@
   </data>
   <data name="kwikdisk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kwikdisk.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="botbuscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\botbuscar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_256.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,6 +150,9 @@
   </data>
   <data name="1376797454_download_box_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1376797454_download_box_blue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_remove.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1376797476_Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1376797476_Download.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +187,8 @@
   <data name="1376797601_provider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1376797601_provider.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1376797582_Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1376797582_Admin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1376862496_appointment-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1376862496_appointment-new.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1376797844_provider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1376797844_provider.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,6 +238,9 @@
   <data name="1376797520_ark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1376797520_ark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Sin título" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sin título.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1376797564_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1376797564_settings.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -261,9 +270,6 @@
   </data>
   <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1376862496_appointment-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1376862496_appointment-new.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\128.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,17 +307,23 @@
   <data name="1376797764_provider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1376797764_provider.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1376797582_Admin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1376797582_Admin.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Diary 64x64 копия" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagenes\32x32\Diary 64x64 копия.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit_remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit_remove.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cliente-icono-5533-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cliente-icono-5533-128.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="find" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\find.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kaboodleloop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kaboodleloop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="documents64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\documents64.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallpaper_grandefinal2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wallpaper_grandefinal2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -326,7 +338,7 @@
     <value>..\Resources\folder_customer_91730.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="documents64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\documents64.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="botbuscar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\botbuscar1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

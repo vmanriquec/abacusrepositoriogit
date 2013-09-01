@@ -27,39 +27,48 @@ Partial Class gestionguias
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(gestionguias))
         Me.Label17 = New System.Windows.Forms.Label()
         Me.PanelEx2 = New Stimulsoft.Controls.Win.DotNetBar.PanelEx()
+        Me.dgbusqueda = New Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewX()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.dgbusqueda = New Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewX()
         Me.ExpandablePanel1 = New Stimulsoft.Controls.Win.DotNetBar.ExpandablePanel()
-        Me.cbobusqueda = New System.Windows.Forms.ComboBox()
-        Me.chfecha = New System.Windows.Forms.CheckBox()
+        Me.buschekfecha = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
+        Me.buscbocliente = New Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx()
+        Me.busoptioninactivo = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
+        Me.bustxtnumero = New Stimulsoft.Controls.Win.DotNetBar.Controls.TextBoxX()
+        Me.bustxtserie = New Stimulsoft.Controls.Win.DotNetBar.Controls.TextBoxX()
+        Me.ComboBoxEx2 = New Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx()
+        Me.buscboalmacenpartida = New Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx()
+        Me.CheckBoxX7 = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
+        Me.CheckBoxX6 = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
         Me.botonbuscar = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.cboestado = New Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx()
+        Me.buscboalmacenmovimiento = New Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx()
         Me.datefechafin = New System.Windows.Forms.DateTimePicker()
-        Me.txtdato = New Stimulsoft.Controls.Win.DotNetBar.Controls.TextBoxX()
+        Me.bustxtpuntollegada = New Stimulsoft.Controls.Win.DotNetBar.Controls.TextBoxX()
         Me.datefechainicio = New System.Windows.Forms.DateTimePicker()
         Me.CheckBoxX2 = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
-        Me.CheckBoxX5 = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
-        Me.CheckBoxX4 = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
+        Me.busoptionactivo = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
         Me.CheckBoxX1 = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
-        Me.opproveedor = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
         Me.opserie = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
         Me.opnumero = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
         Me.CheckBoxX3 = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
-        Me.opproducto = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
         Me.LabelX3 = New Stimulsoft.Controls.Win.DotNetBar.LabelX()
         Me.LabelX2 = New Stimulsoft.Controls.Win.DotNetBar.LabelX()
+        Me.opproveedor = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
+        Me.opproducto = New Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX()
         Me.GroupPanel1 = New Stimulsoft.Controls.Win.DotNetBar.Controls.GroupPanel()
         Me.cancelar = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.todos = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.imprimir_datagrid = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX3 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.editar = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
+        Me.ButtonX2 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.eliminar = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.grabar = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.nuevo = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.txtnumero = New System.Windows.Forms.TextBox()
         Me.txtpuntollegada = New System.Windows.Forms.TextBox()
         Me.GroupPanel2 = New Stimulsoft.Controls.Win.DotNetBar.Controls.GroupPanel()
+        Me.ButtonX1 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.cboeliminardetalle = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.btadicionar = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.cboproducto = New System.Windows.Forms.ComboBox()
@@ -71,6 +80,11 @@ Partial Class gestionguias
         Me.cboalmacen = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.idproducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idalmacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idllegada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgdetalle = New System.Windows.Forms.DataGridView()
         Me.GroupPanel3 = New Stimulsoft.Controls.Win.DotNetBar.Controls.GroupPanel()
         Me.txtfactura = New System.Windows.Forms.TextBox()
@@ -93,15 +107,8 @@ Partial Class gestionguias
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.PanelEx1 = New Stimulsoft.Controls.Win.DotNetBar.PanelEx()
-        Me.ButtonX3 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
-        Me.ButtonX2 = New Stimulsoft.Controls.Win.DotNetBar.ButtonX()
         Me.BubbleButton19 = New DevComponents.DotNetBar.BubbleButton()
         Me.IngresosObjectBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.idproducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idalmacen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.idllegada = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelEx2.SuspendLayout()
         CType(Me.dgbusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ExpandablePanel1.SuspendLayout()
@@ -118,8 +125,8 @@ Partial Class gestionguias
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Yellow
-        Me.Label17.Location = New System.Drawing.Point(568, 397)
+        Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label17.Location = New System.Drawing.Point(24, 537)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(19, 20)
         Me.Label17.TabIndex = 25
@@ -129,14 +136,10 @@ Partial Class gestionguias
         '
         Me.PanelEx2.CanvasColor = System.Drawing.SystemColors.Window
         Me.PanelEx2.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
-        Me.PanelEx2.Controls.Add(Me.Label16)
-        Me.PanelEx2.Controls.Add(Me.Label17)
-        Me.PanelEx2.Controls.Add(Me.Label15)
         Me.PanelEx2.Controls.Add(Me.dgbusqueda)
-        Me.PanelEx2.Controls.Add(Me.ExpandablePanel1)
-        Me.PanelEx2.Location = New System.Drawing.Point(617, 2)
+        Me.PanelEx2.Location = New System.Drawing.Point(5, 244)
         Me.PanelEx2.Name = "PanelEx2"
-        Me.PanelEx2.Size = New System.Drawing.Size(734, 426)
+        Me.PanelEx2.Size = New System.Drawing.Size(1151, 334)
         Me.PanelEx2.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx2.Style.BackColor1.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx2.Style.BackColor2.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground2
@@ -145,28 +148,6 @@ Partial Class gestionguias
         Me.PanelEx2.Style.ForeColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelText
         Me.PanelEx2.Style.GradientAngle = 90
         Me.PanelEx2.TabIndex = 27
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label16.Location = New System.Drawing.Point(603, 397)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(117, 20)
-        Me.Label16.TabIndex = 25
-        Me.Label16.Text = "coincidencias"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label15.Location = New System.Drawing.Point(419, 397)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(143, 20)
-        Me.Label15.TabIndex = 25
-        Me.Label15.Text = "Se encontraron :"
         '
         'dgbusqueda
         '
@@ -184,42 +165,74 @@ Partial Class gestionguias
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgbusqueda.DefaultCellStyle = DataGridViewCellStyle1
         Me.dgbusqueda.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.dgbusqueda.Location = New System.Drawing.Point(7, 133)
+        Me.dgbusqueda.Location = New System.Drawing.Point(3, 4)
         Me.dgbusqueda.Name = "dgbusqueda"
         Me.dgbusqueda.ReadOnly = True
-        Me.dgbusqueda.Size = New System.Drawing.Size(722, 260)
+        Me.dgbusqueda.Size = New System.Drawing.Size(1145, 327)
         Me.dgbusqueda.TabIndex = 24
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label16.Location = New System.Drawing.Point(63, 538)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(117, 20)
+        Me.Label16.TabIndex = 25
+        Me.Label16.Text = "coincidencias"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label15.Location = New System.Drawing.Point(852, 496)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(143, 20)
+        Me.Label15.TabIndex = 25
+        Me.Label15.Text = "Se encontraron :"
         '
         'ExpandablePanel1
         '
+        Me.ExpandablePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ExpandablePanel1.CanvasColor = System.Drawing.SystemColors.Control
         Me.ExpandablePanel1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
-        Me.ExpandablePanel1.Controls.Add(Me.cbobusqueda)
-        Me.ExpandablePanel1.Controls.Add(Me.chfecha)
+        Me.ExpandablePanel1.Controls.Add(Me.Label16)
+        Me.ExpandablePanel1.Controls.Add(Me.Label17)
+        Me.ExpandablePanel1.Controls.Add(Me.buschekfecha)
+        Me.ExpandablePanel1.Controls.Add(Me.buscbocliente)
+        Me.ExpandablePanel1.Controls.Add(Me.busoptioninactivo)
+        Me.ExpandablePanel1.Controls.Add(Me.bustxtnumero)
+        Me.ExpandablePanel1.Controls.Add(Me.bustxtserie)
+        Me.ExpandablePanel1.Controls.Add(Me.ComboBoxEx2)
+        Me.ExpandablePanel1.Controls.Add(Me.buscboalmacenpartida)
+        Me.ExpandablePanel1.Controls.Add(Me.CheckBoxX7)
+        Me.ExpandablePanel1.Controls.Add(Me.CheckBoxX6)
         Me.ExpandablePanel1.Controls.Add(Me.botonbuscar)
-        Me.ExpandablePanel1.Controls.Add(Me.cboestado)
+        Me.ExpandablePanel1.Controls.Add(Me.buscboalmacenmovimiento)
         Me.ExpandablePanel1.Controls.Add(Me.datefechafin)
-        Me.ExpandablePanel1.Controls.Add(Me.txtdato)
+        Me.ExpandablePanel1.Controls.Add(Me.bustxtpuntollegada)
         Me.ExpandablePanel1.Controls.Add(Me.datefechainicio)
         Me.ExpandablePanel1.Controls.Add(Me.CheckBoxX2)
-        Me.ExpandablePanel1.Controls.Add(Me.CheckBoxX5)
-        Me.ExpandablePanel1.Controls.Add(Me.CheckBoxX4)
+        Me.ExpandablePanel1.Controls.Add(Me.busoptionactivo)
         Me.ExpandablePanel1.Controls.Add(Me.CheckBoxX1)
-        Me.ExpandablePanel1.Controls.Add(Me.opproveedor)
         Me.ExpandablePanel1.Controls.Add(Me.opserie)
         Me.ExpandablePanel1.Controls.Add(Me.opnumero)
         Me.ExpandablePanel1.Controls.Add(Me.CheckBoxX3)
-        Me.ExpandablePanel1.Controls.Add(Me.opproducto)
         Me.ExpandablePanel1.Controls.Add(Me.LabelX3)
         Me.ExpandablePanel1.Controls.Add(Me.LabelX2)
-        Me.ExpandablePanel1.Location = New System.Drawing.Point(6, 4)
+        Me.ExpandablePanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ExpandablePanel1.Location = New System.Drawing.Point(-2, 5)
         Me.ExpandablePanel1.Name = "ExpandablePanel1"
-        Me.ExpandablePanel1.Size = New System.Drawing.Size(723, 123)
+        Me.ExpandablePanel1.Size = New System.Drawing.Size(184, 575)
         Me.ExpandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.ExpandablePanel1.Style.BackColor1.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground
         Me.ExpandablePanel1.Style.BackColor2.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground2
+        Me.ExpandablePanel1.Style.BackgroundImage = Global.abacus.My.Resources.Resources.Sin_título
         Me.ExpandablePanel1.Style.Border = Stimulsoft.Controls.Win.DotNetBar.eBorderType.SingleLine
         Me.ExpandablePanel1.Style.BorderColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.BarDockedBorder
+        Me.ExpandablePanel1.Style.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ExpandablePanel1.Style.ForeColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.ItemText
         Me.ExpandablePanel1.Style.GradientAngle = 90
         Me.ExpandablePanel1.TabIndex = 23
@@ -232,168 +245,249 @@ Partial Class gestionguias
         Me.ExpandablePanel1.TitleStyle.GradientAngle = 90
         Me.ExpandablePanel1.TitleText = "Busqueda Rapida"
         '
-        'cbobusqueda
+        'buschekfecha
         '
-        Me.cbobusqueda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cbobusqueda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cbobusqueda.FormattingEnabled = True
-        Me.cbobusqueda.Location = New System.Drawing.Point(3, 60)
-        Me.cbobusqueda.Name = "cbobusqueda"
-        Me.cbobusqueda.Size = New System.Drawing.Size(327, 21)
-        Me.cbobusqueda.TabIndex = 25
+        Me.buschekfecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.buschekfecha.Location = New System.Drawing.Point(7, 366)
+        Me.buschekfecha.Name = "buschekfecha"
+        Me.buschekfecha.Size = New System.Drawing.Size(101, 23)
+        Me.buschekfecha.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
+        Me.buschekfecha.TabIndex = 34
+        Me.buschekfecha.Text = "Por Fecha"
         '
-        'chfecha
+        'buscbocliente
         '
-        Me.chfecha.AutoSize = True
-        Me.chfecha.Location = New System.Drawing.Point(551, 64)
-        Me.chfecha.Name = "chfecha"
-        Me.chfecha.Size = New System.Drawing.Size(105, 17)
-        Me.chfecha.TabIndex = 24
-        Me.chfecha.Text = "Entre las Fechas"
-        Me.chfecha.UseVisualStyleBackColor = True
+        Me.buscbocliente.DisplayMember = "Text"
+        Me.buscbocliente.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.buscbocliente.FormattingEnabled = True
+        Me.buscbocliente.ItemHeight = 15
+        Me.buscbocliente.Location = New System.Drawing.Point(7, 342)
+        Me.buscbocliente.Name = "buscbocliente"
+        Me.buscbocliente.Size = New System.Drawing.Size(166, 21)
+        Me.buscbocliente.TabIndex = 33
+        '
+        'busoptioninactivo
+        '
+        Me.busoptioninactivo.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
+        Me.busoptioninactivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.busoptioninactivo.Location = New System.Drawing.Point(101, 443)
+        Me.busoptioninactivo.Name = "busoptioninactivo"
+        Me.busoptioninactivo.Size = New System.Drawing.Size(75, 23)
+        Me.busoptioninactivo.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
+        Me.busoptioninactivo.TabIndex = 32
+        Me.busoptioninactivo.Text = "Inactivo"
+        '
+        'bustxtnumero
+        '
+        '
+        '
+        '
+        Me.bustxtnumero.Border.Class = "TextBoxBorder"
+        Me.bustxtnumero.Location = New System.Drawing.Point(7, 248)
+        Me.bustxtnumero.Name = "bustxtnumero"
+        Me.bustxtnumero.Size = New System.Drawing.Size(169, 21)
+        Me.bustxtnumero.TabIndex = 31
+        '
+        'bustxtserie
+        '
+        '
+        '
+        '
+        Me.bustxtserie.Border.Class = "TextBoxBorder"
+        Me.bustxtserie.Location = New System.Drawing.Point(7, 295)
+        Me.bustxtserie.Name = "bustxtserie"
+        Me.bustxtserie.Size = New System.Drawing.Size(169, 21)
+        Me.bustxtserie.TabIndex = 30
+        '
+        'ComboBoxEx2
+        '
+        Me.ComboBoxEx2.DisplayMember = "Text"
+        Me.ComboBoxEx2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.ComboBoxEx2.FormattingEnabled = True
+        Me.ComboBoxEx2.ItemHeight = 15
+        Me.ComboBoxEx2.Location = New System.Drawing.Point(7, 156)
+        Me.ComboBoxEx2.Name = "ComboBoxEx2"
+        Me.ComboBoxEx2.Size = New System.Drawing.Size(166, 21)
+        Me.ComboBoxEx2.TabIndex = 29
+        '
+        'buscboalmacenpartida
+        '
+        Me.buscboalmacenpartida.DisplayMember = "Text"
+        Me.buscboalmacenpartida.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.buscboalmacenpartida.FormattingEnabled = True
+        Me.buscboalmacenpartida.ItemHeight = 15
+        Me.buscboalmacenpartida.Location = New System.Drawing.Point(7, 56)
+        Me.buscboalmacenpartida.Name = "buscboalmacenpartida"
+        Me.buscboalmacenpartida.Size = New System.Drawing.Size(166, 21)
+        Me.buscboalmacenpartida.TabIndex = 28
+        '
+        'CheckBoxX7
+        '
+        Me.CheckBoxX7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBoxX7.Location = New System.Drawing.Point(7, 86)
+        Me.CheckBoxX7.Name = "CheckBoxX7"
+        Me.CheckBoxX7.Size = New System.Drawing.Size(144, 23)
+        Me.CheckBoxX7.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
+        Me.CheckBoxX7.TabIndex = 27
+        Me.CheckBoxX7.Text = "Almacen de Llegada"
+        '
+        'CheckBoxX6
+        '
+        Me.CheckBoxX6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBoxX6.Location = New System.Drawing.Point(7, 31)
+        Me.CheckBoxX6.Name = "CheckBoxX6"
+        Me.CheckBoxX6.Size = New System.Drawing.Size(144, 23)
+        Me.CheckBoxX6.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
+        Me.CheckBoxX6.TabIndex = 26
+        Me.CheckBoxX6.Text = "Almacen de Partida"
         '
         'botonbuscar
         '
         Me.botonbuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.botonbuscar.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.botonbuscar.Image = Global.abacus.My.Resources.Resources.openterm
-        Me.botonbuscar.Location = New System.Drawing.Point(672, 58)
+        Me.botonbuscar.Image = Global.abacus.My.Resources.Resources.botbuscar1
+        Me.botonbuscar.Location = New System.Drawing.Point(4, 493)
         Me.botonbuscar.Name = "botonbuscar"
-        Me.botonbuscar.Size = New System.Drawing.Size(36, 29)
+        Me.botonbuscar.Size = New System.Drawing.Size(177, 39)
         Me.botonbuscar.TabIndex = 8
         '
-        'cboestado
+        'buscboalmacenmovimiento
         '
-        Me.cboestado.DisplayMember = "Text"
-        Me.cboestado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboestado.FormattingEnabled = True
-        Me.cboestado.ItemHeight = 14
-        Me.cboestado.Location = New System.Drawing.Point(336, 60)
-        Me.cboestado.Name = "cboestado"
-        Me.cboestado.Size = New System.Drawing.Size(209, 20)
-        Me.cboestado.TabIndex = 7
+        Me.buscboalmacenmovimiento.DisplayMember = "Text"
+        Me.buscboalmacenmovimiento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.buscboalmacenmovimiento.FormattingEnabled = True
+        Me.buscboalmacenmovimiento.ItemHeight = 15
+        Me.buscboalmacenmovimiento.Location = New System.Drawing.Point(7, 109)
+        Me.buscboalmacenmovimiento.Name = "buscboalmacenmovimiento"
+        Me.buscboalmacenmovimiento.Size = New System.Drawing.Size(166, 21)
+        Me.buscboalmacenmovimiento.TabIndex = 7
         '
         'datefechafin
         '
         Me.datefechafin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.datefechafin.Location = New System.Drawing.Point(246, 91)
+        Me.datefechafin.Location = New System.Drawing.Point(69, 416)
         Me.datefechafin.Name = "datefechafin"
-        Me.datefechafin.Size = New System.Drawing.Size(115, 20)
+        Me.datefechafin.Size = New System.Drawing.Size(107, 21)
         Me.datefechafin.TabIndex = 6
         '
-        'txtdato
+        'bustxtpuntollegada
         '
         '
         '
         '
-        Me.txtdato.Border.Class = "TextBoxBorder"
-        Me.txtdato.Location = New System.Drawing.Point(486, 92)
-        Me.txtdato.Name = "txtdato"
-        Me.txtdato.Size = New System.Drawing.Size(223, 20)
-        Me.txtdato.TabIndex = 4
+        Me.bustxtpuntollegada.Border.Class = "TextBoxBorder"
+        Me.bustxtpuntollegada.Location = New System.Drawing.Point(7, 202)
+        Me.bustxtpuntollegada.Name = "bustxtpuntollegada"
+        Me.bustxtpuntollegada.Size = New System.Drawing.Size(169, 21)
+        Me.bustxtpuntollegada.TabIndex = 4
         '
         'datefechainicio
         '
         Me.datefechainicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.datefechainicio.Location = New System.Drawing.Point(68, 90)
+        Me.datefechainicio.Location = New System.Drawing.Point(69, 388)
         Me.datefechainicio.Name = "datefechainicio"
-        Me.datefechainicio.Size = New System.Drawing.Size(108, 20)
+        Me.datefechainicio.Size = New System.Drawing.Size(108, 21)
         Me.datefechainicio.TabIndex = 5
         '
         'CheckBoxX2
         '
         Me.CheckBoxX2.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
-        Me.CheckBoxX2.Location = New System.Drawing.Point(427, 33)
+        Me.CheckBoxX2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBoxX2.Location = New System.Drawing.Point(3, 134)
         Me.CheckBoxX2.Name = "CheckBoxX2"
-        Me.CheckBoxX2.Size = New System.Drawing.Size(118, 23)
+        Me.CheckBoxX2.Size = New System.Drawing.Size(148, 23)
+        Me.CheckBoxX2.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
         Me.CheckBoxX2.TabIndex = 1
         Me.CheckBoxX2.Text = "Tipo de Movimiento"
         '
-        'CheckBoxX5
+        'busoptionactivo
         '
-        Me.CheckBoxX5.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
-        Me.CheckBoxX5.Location = New System.Drawing.Point(618, 33)
-        Me.CheckBoxX5.Name = "CheckBoxX5"
-        Me.CheckBoxX5.Size = New System.Drawing.Size(61, 23)
-        Me.CheckBoxX5.TabIndex = 1
-        Me.CheckBoxX5.Text = "Inactivo"
-        '
-        'CheckBoxX4
-        '
-        Me.CheckBoxX4.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
-        Me.CheckBoxX4.Location = New System.Drawing.Point(551, 33)
-        Me.CheckBoxX4.Name = "CheckBoxX4"
-        Me.CheckBoxX4.Size = New System.Drawing.Size(61, 23)
-        Me.CheckBoxX4.TabIndex = 1
-        Me.CheckBoxX4.Text = "Activo"
+        Me.busoptionactivo.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
+        Me.busoptionactivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.busoptionactivo.Location = New System.Drawing.Point(10, 443)
+        Me.busoptionactivo.Name = "busoptionactivo"
+        Me.busoptionactivo.Size = New System.Drawing.Size(61, 23)
+        Me.busoptionactivo.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
+        Me.busoptionactivo.TabIndex = 1
+        Me.busoptionactivo.Text = "Activo"
         '
         'CheckBoxX1
         '
         Me.CheckBoxX1.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
-        Me.CheckBoxX1.Location = New System.Drawing.Point(367, 33)
+        Me.CheckBoxX1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBoxX1.Location = New System.Drawing.Point(7, 321)
         Me.CheckBoxX1.Name = "CheckBoxX1"
         Me.CheckBoxX1.Size = New System.Drawing.Size(61, 23)
+        Me.CheckBoxX1.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
         Me.CheckBoxX1.TabIndex = 1
         Me.CheckBoxX1.Text = "Cliente"
         '
-        'opproveedor
-        '
-        Me.opproveedor.Location = New System.Drawing.Point(1, 33)
-        Me.opproveedor.Name = "opproveedor"
-        Me.opproveedor.Size = New System.Drawing.Size(121, 23)
-        Me.opproveedor.TabIndex = 1
-        Me.opproveedor.Text = "almacen  de Partida"
-        '
         'opserie
         '
-        Me.opserie.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
-        Me.opserie.Location = New System.Drawing.Point(433, 91)
+        Me.opserie.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.opserie.Location = New System.Drawing.Point(7, 274)
         Me.opserie.Name = "opserie"
-        Me.opserie.Size = New System.Drawing.Size(44, 23)
+        Me.opserie.Size = New System.Drawing.Size(80, 23)
+        Me.opserie.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
         Me.opserie.TabIndex = 1
         Me.opserie.Text = "serie"
         '
         'opnumero
         '
-        Me.opnumero.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
-        Me.opnumero.Location = New System.Drawing.Point(366, 91)
+        Me.opnumero.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.opnumero.Location = New System.Drawing.Point(7, 227)
         Me.opnumero.Name = "opnumero"
-        Me.opnumero.Size = New System.Drawing.Size(61, 23)
+        Me.opnumero.Size = New System.Drawing.Size(80, 23)
+        Me.opnumero.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
         Me.opnumero.TabIndex = 1
         Me.opnumero.Text = "numero"
         '
         'CheckBoxX3
         '
         Me.CheckBoxX3.CheckBoxStyle = Stimulsoft.Controls.Win.DotNetBar.eCheckBoxStyle.RadioButton
-        Me.CheckBoxX3.Location = New System.Drawing.Point(257, 33)
+        Me.CheckBoxX3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBoxX3.Location = New System.Drawing.Point(3, 180)
         Me.CheckBoxX3.Name = "CheckBoxX3"
         Me.CheckBoxX3.Size = New System.Drawing.Size(123, 23)
+        Me.CheckBoxX3.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
         Me.CheckBoxX3.TabIndex = 1
         Me.CheckBoxX3.Text = "Punto de Llegada"
         '
-        'opproducto
-        '
-        Me.opproducto.Location = New System.Drawing.Point(128, 32)
-        Me.opproducto.Name = "opproducto"
-        Me.opproducto.Size = New System.Drawing.Size(123, 23)
-        Me.opproducto.TabIndex = 1
-        Me.opproducto.Text = "Almacen de Llegada"
-        '
         'LabelX3
         '
-        Me.LabelX3.Location = New System.Drawing.Point(3, 89)
+        Me.LabelX3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX3.Location = New System.Drawing.Point(4, 387)
         Me.LabelX3.Name = "LabelX3"
         Me.LabelX3.Size = New System.Drawing.Size(72, 23)
+        Me.LabelX3.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
         Me.LabelX3.TabIndex = 3
         Me.LabelX3.Text = "Fecha Inicio"
         '
         'LabelX2
         '
-        Me.LabelX2.Location = New System.Drawing.Point(182, 89)
+        Me.LabelX2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelX2.Location = New System.Drawing.Point(5, 414)
         Me.LabelX2.Name = "LabelX2"
         Me.LabelX2.Size = New System.Drawing.Size(60, 23)
+        Me.LabelX2.Style = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.VS2005
         Me.LabelX2.TabIndex = 3
         Me.LabelX2.Text = "Fecha Fin"
+        '
+        'opproveedor
+        '
+        Me.opproveedor.Location = New System.Drawing.Point(22, 24)
+        Me.opproveedor.Name = "opproveedor"
+        Me.opproveedor.Size = New System.Drawing.Size(121, 23)
+        Me.opproveedor.TabIndex = 1
+        Me.opproveedor.Text = "almacen  de Partida"
+        '
+        'opproducto
+        '
+        Me.opproducto.Location = New System.Drawing.Point(3, 31)
+        Me.opproducto.Name = "opproducto"
+        Me.opproducto.Size = New System.Drawing.Size(160, 23)
+        Me.opproducto.TabIndex = 1
+        Me.opproducto.Text = "Almacen de Llegada"
         '
         'GroupPanel1
         '
@@ -403,13 +497,15 @@ Partial Class gestionguias
         Me.GroupPanel1.Controls.Add(Me.cancelar)
         Me.GroupPanel1.Controls.Add(Me.todos)
         Me.GroupPanel1.Controls.Add(Me.imprimir_datagrid)
+        Me.GroupPanel1.Controls.Add(Me.ButtonX3)
         Me.GroupPanel1.Controls.Add(Me.editar)
+        Me.GroupPanel1.Controls.Add(Me.ButtonX2)
         Me.GroupPanel1.Controls.Add(Me.eliminar)
         Me.GroupPanel1.Controls.Add(Me.grabar)
         Me.GroupPanel1.Controls.Add(Me.nuevo)
         Me.GroupPanel1.Location = New System.Drawing.Point(554, 5)
         Me.GroupPanel1.Name = "GroupPanel1"
-        Me.GroupPanel1.Size = New System.Drawing.Size(46, 421)
+        Me.GroupPanel1.Size = New System.Drawing.Size(93, 233)
         '
         '
         '
@@ -437,7 +533,7 @@ Partial Class gestionguias
         Me.cancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.cancelar.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
         Me.cancelar.Image = Global.abacus.My.Resources.Resources._error
-        Me.cancelar.Location = New System.Drawing.Point(-1, 263)
+        Me.cancelar.Location = New System.Drawing.Point(46, 135)
         Me.cancelar.Name = "cancelar"
         Me.cancelar.Size = New System.Drawing.Size(41, 45)
         Me.cancelar.TabIndex = 23
@@ -457,10 +553,20 @@ Partial Class gestionguias
         Me.imprimir_datagrid.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.imprimir_datagrid.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
         Me.imprimir_datagrid.Image = Global.abacus.My.Resources.Resources._1376806550_print_32
-        Me.imprimir_datagrid.Location = New System.Drawing.Point(5, 219)
+        Me.imprimir_datagrid.Location = New System.Drawing.Point(51, 2)
         Me.imprimir_datagrid.Name = "imprimir_datagrid"
         Me.imprimir_datagrid.Size = New System.Drawing.Size(34, 38)
         Me.imprimir_datagrid.TabIndex = 0
+        '
+        'ButtonX3
+        '
+        Me.ButtonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX3.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX3.Image = Global.abacus.My.Resources.Resources._1377399061_pdf
+        Me.ButtonX3.Location = New System.Drawing.Point(50, 90)
+        Me.ButtonX3.Name = "ButtonX3"
+        Me.ButtonX3.Size = New System.Drawing.Size(32, 38)
+        Me.ButtonX3.TabIndex = 28
         '
         'editar
         '
@@ -471,6 +577,16 @@ Partial Class gestionguias
         Me.editar.Name = "editar"
         Me.editar.Size = New System.Drawing.Size(34, 38)
         Me.editar.TabIndex = 0
+        '
+        'ButtonX2
+        '
+        Me.ButtonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX2.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX2.Image = Global.abacus.My.Resources.Resources._1377398986_File_XLS_Excel
+        Me.ButtonX2.Location = New System.Drawing.Point(45, 45)
+        Me.ButtonX2.Name = "ButtonX2"
+        Me.ButtonX2.Size = New System.Drawing.Size(42, 40)
+        Me.ButtonX2.TabIndex = 27
         '
         'eliminar
         '
@@ -520,15 +636,16 @@ Partial Class gestionguias
         '
         Me.GroupPanel2.CanvasColor = System.Drawing.SystemColors.Control
         Me.GroupPanel2.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
+        Me.GroupPanel2.Controls.Add(Me.ButtonX1)
         Me.GroupPanel2.Controls.Add(Me.cboeliminardetalle)
         Me.GroupPanel2.Controls.Add(Me.btadicionar)
         Me.GroupPanel2.Controls.Add(Me.cboproducto)
         Me.GroupPanel2.Controls.Add(Me.Label1)
         Me.GroupPanel2.Controls.Add(Me.txtcantidad)
         Me.GroupPanel2.Controls.Add(Me.Label10)
-        Me.GroupPanel2.Location = New System.Drawing.Point(3, 244)
+        Me.GroupPanel2.Location = New System.Drawing.Point(653, 9)
         Me.GroupPanel2.Name = "GroupPanel2"
-        Me.GroupPanel2.Size = New System.Drawing.Size(541, 46)
+        Me.GroupPanel2.Size = New System.Drawing.Size(500, 46)
         '
         '
         '
@@ -551,12 +668,22 @@ Partial Class gestionguias
         Me.GroupPanel2.Style.TextLineAlignment = Stimulsoft.Controls.Win.DotNetBar.eStyleTextAlignment.Near
         Me.GroupPanel2.TabIndex = 22
         '
+        'ButtonX1
+        '
+        Me.ButtonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
+        Me.ButtonX1.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
+        Me.ButtonX1.Image = Global.abacus.My.Resources.Resources.spellcheck
+        Me.ButtonX1.Location = New System.Drawing.Point(443, 4)
+        Me.ButtonX1.Name = "ButtonX1"
+        Me.ButtonX1.Size = New System.Drawing.Size(43, 35)
+        Me.ButtonX1.TabIndex = 28
+        '
         'cboeliminardetalle
         '
         Me.cboeliminardetalle.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.cboeliminardetalle.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
         Me.cboeliminardetalle.Image = Global.abacus.My.Resources.Resources.edit_remove
-        Me.cboeliminardetalle.Location = New System.Drawing.Point(489, 3)
+        Me.cboeliminardetalle.Location = New System.Drawing.Point(398, 4)
         Me.cboeliminardetalle.Name = "cboeliminardetalle"
         Me.cboeliminardetalle.Size = New System.Drawing.Size(43, 35)
         Me.cboeliminardetalle.TabIndex = 21
@@ -566,7 +693,7 @@ Partial Class gestionguias
         Me.btadicionar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
         Me.btadicionar.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
         Me.btadicionar.Image = Global.abacus.My.Resources.Resources.edit_add
-        Me.btadicionar.Location = New System.Drawing.Point(442, 3)
+        Me.btadicionar.Location = New System.Drawing.Point(351, 5)
         Me.btadicionar.Name = "btadicionar"
         Me.btadicionar.Size = New System.Drawing.Size(44, 35)
         Me.btadicionar.TabIndex = 21
@@ -576,15 +703,15 @@ Partial Class gestionguias
         Me.cboproducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
         Me.cboproducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboproducto.FormattingEnabled = True
-        Me.cboproducto.Location = New System.Drawing.Point(58, 9)
+        Me.cboproducto.Location = New System.Drawing.Point(1, 18)
         Me.cboproducto.Name = "cboproducto"
-        Me.cboproducto.Size = New System.Drawing.Size(253, 21)
+        Me.cboproducto.Size = New System.Drawing.Size(274, 21)
         Me.cboproducto.TabIndex = 18
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(2, 9)
+        Me.Label1.Location = New System.Drawing.Point(2, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 17
@@ -592,15 +719,16 @@ Partial Class gestionguias
         '
         'txtcantidad
         '
-        Me.txtcantidad.Location = New System.Drawing.Point(375, 9)
+        Me.txtcantidad.Location = New System.Drawing.Point(280, 18)
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.Size = New System.Drawing.Size(61, 20)
         Me.txtcantidad.TabIndex = 19
+        Me.txtcantidad.Text = "0"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(320, 10)
+        Me.Label10.Location = New System.Drawing.Point(285, 2)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(49, 13)
         Me.Label10.TabIndex = 17
@@ -649,21 +777,51 @@ Partial Class gestionguias
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idproducto, Me.producto, Me.cantidad, Me.idalmacen, Me.idllegada})
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 353)
+        Me.DataGridView1.Location = New System.Drawing.Point(653, 59)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(538, 177)
+        Me.DataGridView1.Size = New System.Drawing.Size(503, 179)
         Me.DataGridView1.TabIndex = 26
+        '
+        'idproducto
+        '
+        Me.idproducto.HeaderText = "id"
+        Me.idproducto.Name = "idproducto"
+        Me.idproducto.ReadOnly = True
+        '
+        'producto
+        '
+        Me.producto.HeaderText = "producto"
+        Me.producto.Name = "producto"
+        Me.producto.ReadOnly = True
+        '
+        'cantidad
+        '
+        Me.cantidad.HeaderText = "cantidad"
+        Me.cantidad.Name = "cantidad"
+        Me.cantidad.ReadOnly = True
+        '
+        'idalmacen
+        '
+        Me.idalmacen.HeaderText = "idalmacen"
+        Me.idalmacen.Name = "idalmacen"
+        Me.idalmacen.ReadOnly = True
+        '
+        'idllegada
+        '
+        Me.idllegada.HeaderText = "idllegada"
+        Me.idllegada.Name = "idllegada"
+        Me.idllegada.ReadOnly = True
         '
         'dgdetalle
         '
         Me.dgdetalle.AllowUserToAddRows = False
         Me.dgdetalle.AllowUserToDeleteRows = False
         Me.dgdetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgdetalle.Location = New System.Drawing.Point(6, 352)
+        Me.dgdetalle.Location = New System.Drawing.Point(653, 61)
         Me.dgdetalle.Name = "dgdetalle"
         Me.dgdetalle.ReadOnly = True
-        Me.dgdetalle.Size = New System.Drawing.Size(533, 188)
+        Me.dgdetalle.Size = New System.Drawing.Size(503, 177)
         Me.dgdetalle.TabIndex = 21
         '
         'GroupPanel3
@@ -755,7 +913,6 @@ Partial Class gestionguias
         Me.labcantidadarticulos.Name = "labcantidadarticulos"
         Me.labcantidadarticulos.Size = New System.Drawing.Size(76, 28)
         Me.labcantidadarticulos.TabIndex = 17
-        Me.labcantidadarticulos.Text = "Tprod"
         '
         'txtobservacion
         '
@@ -899,16 +1056,16 @@ Partial Class gestionguias
         '
         Me.PanelEx1.CanvasColor = System.Drawing.SystemColors.Control
         Me.PanelEx1.ColorSchemeStyle = Stimulsoft.Controls.Win.DotNetBar.eDotNetBarStyle.Office2007
-        Me.PanelEx1.Controls.Add(Me.ButtonX3)
-        Me.PanelEx1.Controls.Add(Me.ButtonX2)
-        Me.PanelEx1.Controls.Add(Me.DataGridView1)
         Me.PanelEx1.Controls.Add(Me.dgdetalle)
+        Me.PanelEx1.Controls.Add(Me.PanelEx2)
+        Me.PanelEx1.Controls.Add(Me.Label15)
+        Me.PanelEx1.Controls.Add(Me.DataGridView1)
         Me.PanelEx1.Controls.Add(Me.GroupPanel3)
         Me.PanelEx1.Controls.Add(Me.GroupPanel2)
         Me.PanelEx1.Controls.Add(Me.GroupPanel1)
-        Me.PanelEx1.Location = New System.Drawing.Point(1, 2)
+        Me.PanelEx1.Location = New System.Drawing.Point(188, 2)
         Me.PanelEx1.Name = "PanelEx1"
-        Me.PanelEx1.Size = New System.Drawing.Size(616, 541)
+        Me.PanelEx1.Size = New System.Drawing.Size(1163, 581)
         Me.PanelEx1.Style.Alignment = System.Drawing.StringAlignment.Center
         Me.PanelEx1.Style.BackColor1.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground
         Me.PanelEx1.Style.BackColor2.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelBackground2
@@ -917,26 +1074,6 @@ Partial Class gestionguias
         Me.PanelEx1.Style.ForeColor.ColorSchemePart = Stimulsoft.Controls.Win.DotNetBar.eColorSchemePart.PanelText
         Me.PanelEx1.Style.GradientAngle = 90
         Me.PanelEx1.TabIndex = 26
-        '
-        'ButtonX3
-        '
-        Me.ButtonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX3.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.ButtonX3.Image = Global.abacus.My.Resources.Resources._1377399061_pdf
-        Me.ButtonX3.Location = New System.Drawing.Point(560, 379)
-        Me.ButtonX3.Name = "ButtonX3"
-        Me.ButtonX3.Size = New System.Drawing.Size(32, 38)
-        Me.ButtonX3.TabIndex = 28
-        '
-        'ButtonX2
-        '
-        Me.ButtonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton
-        Me.ButtonX2.ColorTable = Stimulsoft.Controls.Win.DotNetBar.eButtonColor.OrangeWithBackground
-        Me.ButtonX2.Image = Global.abacus.My.Resources.Resources._1377398986_File_XLS_Excel
-        Me.ButtonX2.Location = New System.Drawing.Point(555, 326)
-        Me.ButtonX2.Name = "ButtonX2"
-        Me.ButtonX2.Size = New System.Drawing.Size(42, 45)
-        Me.ButtonX2.TabIndex = 27
         '
         'BubbleButton19
         '
@@ -948,47 +1085,16 @@ Partial Class gestionguias
         '
         Me.IngresosObjectBindingSource.DataSource = GetType(abacusRules.Objects.IngresosObject)
         '
-        'idproducto
-        '
-        Me.idproducto.HeaderText = "id"
-        Me.idproducto.Name = "idproducto"
-        Me.idproducto.ReadOnly = True
-        '
-        'producto
-        '
-        Me.producto.HeaderText = "producto"
-        Me.producto.Name = "producto"
-        Me.producto.ReadOnly = True
-        '
-        'cantidad
-        '
-        Me.cantidad.HeaderText = "cantidad"
-        Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
-        '
-        'idalmacen
-        '
-        Me.idalmacen.HeaderText = "idalmacen"
-        Me.idalmacen.Name = "idalmacen"
-        Me.idalmacen.ReadOnly = True
-        '
-        'idllegada
-        '
-        Me.idllegada.HeaderText = "idllegada"
-        Me.idllegada.Name = "idllegada"
-        Me.idllegada.ReadOnly = True
-        '
         'gestionguias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1347, 544)
-        Me.Controls.Add(Me.PanelEx2)
+        Me.ClientSize = New System.Drawing.Size(1347, 586)
+        Me.Controls.Add(Me.ExpandablePanel1)
         Me.Controls.Add(Me.PanelEx1)
         Me.Name = "gestionguias"
-        Me.Text = "gestionguias"
+        Me.Text = "Gestin de Guias"
         Me.PanelEx2.ResumeLayout(False)
-        Me.PanelEx2.PerformLayout()
         CType(Me.dgbusqueda, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ExpandablePanel1.ResumeLayout(False)
         Me.ExpandablePanel1.PerformLayout()
@@ -1000,6 +1106,7 @@ Partial Class gestionguias
         Me.GroupPanel3.ResumeLayout(False)
         Me.GroupPanel3.PerformLayout()
         Me.PanelEx1.ResumeLayout(False)
+        Me.PanelEx1.PerformLayout()
         CType(Me.IngresosObjectBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1011,12 +1118,10 @@ Partial Class gestionguias
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents dgbusqueda As Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewX
     Friend WithEvents ExpandablePanel1 As Stimulsoft.Controls.Win.DotNetBar.ExpandablePanel
-    Friend WithEvents cbobusqueda As System.Windows.Forms.ComboBox
-    Friend WithEvents chfecha As System.Windows.Forms.CheckBox
     Friend WithEvents botonbuscar As Stimulsoft.Controls.Win.DotNetBar.ButtonX
-    Friend WithEvents cboestado As Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents buscboalmacenmovimiento As Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx
     Friend WithEvents datefechafin As System.Windows.Forms.DateTimePicker
-    Friend WithEvents txtdato As Stimulsoft.Controls.Win.DotNetBar.Controls.TextBoxX
+    Friend WithEvents bustxtpuntollegada As Stimulsoft.Controls.Win.DotNetBar.Controls.TextBoxX
     Friend WithEvents datefechainicio As System.Windows.Forms.DateTimePicker
     Friend WithEvents opproveedor As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
     Friend WithEvents opserie As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
@@ -1070,8 +1175,7 @@ Partial Class gestionguias
     Friend WithEvents cboalmacenllegada As System.Windows.Forms.ComboBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents CheckBoxX2 As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
-    Friend WithEvents CheckBoxX5 As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
-    Friend WithEvents CheckBoxX4 As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
+    Friend WithEvents busoptionactivo As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
     Friend WithEvents CheckBoxX1 As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
     Friend WithEvents CheckBoxX3 As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
     Friend WithEvents txtfactura As System.Windows.Forms.TextBox
@@ -1081,4 +1185,14 @@ Partial Class gestionguias
     Friend WithEvents cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idalmacen As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idllegada As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents buschekfecha As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
+    Friend WithEvents buscbocliente As Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents busoptioninactivo As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
+    Friend WithEvents bustxtnumero As Stimulsoft.Controls.Win.DotNetBar.Controls.TextBoxX
+    Friend WithEvents bustxtserie As Stimulsoft.Controls.Win.DotNetBar.Controls.TextBoxX
+    Friend WithEvents ComboBoxEx2 As Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents buscboalmacenpartida As Stimulsoft.Controls.Win.DotNetBar.Controls.ComboBoxEx
+    Friend WithEvents CheckBoxX7 As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
+    Friend WithEvents CheckBoxX6 As Stimulsoft.Controls.Win.DotNetBar.Controls.CheckBoxX
+    Friend WithEvents ButtonX1 As Stimulsoft.Controls.Win.DotNetBar.ButtonX
 End Class

@@ -35,8 +35,8 @@ Public Class gestionguias
         Dim headerwidths As Single() = GetColumnasSize(dgbusqueda)
         datatable.SetWidths(headerwidths)
         datatable.WidthPercentage = 100
-        datatable.DefaultCell.BorderWidth = 2
-        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+        datatable.DefaultCell.BorderWidth = 1
+        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
         'Se crea el encabezado en el PDF. 
         Dim encabezado As New Paragraph("lista de ingresos")
         Dim espacio As New Paragraph("                                           ")
@@ -250,10 +250,21 @@ Public Class gestionguias
         Me.cboalmacen.Text = ""
         Me.cboproducto.Text = ""
         Me.cbcliente.Text = ""
+        Me.cboalmacenllegada.Text = ""
+        Me.cbotipomovimiento.Text = ""
+
         Me.cbotrabajador.Text = ""
         Me.txtserie.Text = ""
         Me.txtnumero.Text = ""
         Me.txtpuntollegada.Text = ""
+
+        Me.cboalmacenllegada.Text = ""
+        Me.cbotipomovimiento.Text = ""
+
+        Me.txtfactura.Text = ""
+        Me.txtobservacion.Text = ""
+        Me.txtcantidad.Text = ""
+
     End Sub
     Private Sub habilitarcabecera()
         Me.cboalmacen.Enabled = True
@@ -263,11 +274,17 @@ Public Class gestionguias
         Me.txtserie.Enabled = True
         Me.txtnumero.Enabled = True
         Me.txtpuntollegada.Enabled = True
+        Me.cboalmacenllegada.Enabled = True
+        Me.cbotipomovimiento.Enabled = True
+
+        Me.txtfactura.Enabled = True
+        Me.txtobservacion.Enabled = True
 
     End Sub
     Private Sub habilitardetalle()
         Me.txtcantidad.Enabled = True
         Me.cboproducto.Enabled = True
+        Me.txtcantidad.Enabled = True
     End Sub
     Private Sub inhabilitarcabecera()
         Me.cboalmacen.Enabled = False
@@ -277,10 +294,19 @@ Public Class gestionguias
         Me.txtserie.Enabled = False
         Me.txtnumero.Enabled = False
         Me.txtpuntollegada.Enabled = False
+        Me.cboalmacenllegada.Enabled = False
+        Me.cbotipomovimiento.Enabled = False
+
+        Me.txtfactura.Enabled = False
+        Me.txtobservacion.Enabled = False
+
+
+
     End Sub
     Private Sub inhabilitardetalle()
         Me.txtcantidad.Enabled = False
         Me.cboproducto.Enabled = False
+        Me.txtcantidad.Enabled = False
     End Sub
     Private Sub nuevo_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
         limpiarcabecera()
@@ -288,6 +314,7 @@ Public Class gestionguias
     End Sub
 
     Private Sub gestiondeingresos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.ButtonX1.Enabled = False
         cb1 = 0
         Me.cboalmacenllegada.Enabled = False
         Me.cboalmacenllegada.Visible = False
@@ -310,19 +337,24 @@ Public Class gestionguias
             MsgBox("debe llenar alguna cantidad ")
         Else
             If actualidetalle = 1 Then
+
+                Dim fila1 As Byte
+                Dim w As Integer
+                fila1 = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
+                w = CInt(CDec(Me.dgbusqueda.Item(0, fila1).Value()))
                 Dim fila As Byte
                 Dim i As Integer
-                fila = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
-                i = CInt(CDec(Me.dgbusqueda.Item(0, fila).Value()))
-                Dim oo As New guia
-                oo.IdGuias = i
+                fila = CByte(Me.dgdetalle.CurrentCell.RowIndex())
+                i = CInt(CDec(Me.dgdetalle.Item(0, fila).Value()))
                 Dim guiasdet1 As New guiadetalles
                 guiasdet1.IdGuiasDet = i
+                guiasdet1.IdGuias = w
                 guiasdet1.idproducto = CInt(CType(Me.cboproducto.SelectedValue.ToString, Integer?))
                 guiasdet1.cantidad = CInt(CDec(Me.txtcantidad.Text))
                 guiasdet1.IdTienda = CInt(Me.cboalmacen.SelectedValue)
-                capaguias.Registrardetalle(guiasdet1)
-                Me.dgdetalle.DataSource = capaguias.listardetalleporidguia(i)
+                capaguias.actualizardetalleguia(guiasdet1)
+                Me.dgdetalle.DataSource = capaguias.listardetalleporidguia(w)
+                MsgBox("se actualizo detalle")
             Else
                 Dim ee As Integer = CInt(CType(Me.cboproducto.SelectedValue.ToString, Integer?))
                 Dim t As Integer = CInt(Me.txtcantidad.Text)
@@ -376,54 +408,50 @@ Public Class gestionguias
                 guiad1.IdTienda = CInt(Me.cboalmacen.SelectedValue)
                 guiad1.idllegada = CInt(Me.cboalmacenllegada.SelectedValue)
                 capaguias.actualizardetalleguia(guiad1)
-                cargartodos()
+
             Next
             MsgBox("se actualizo registro")
+            cargartodos()
         Else
 
-            If Me.cboproducto.Text = "" Then
-
-                MsgBox("debe llenar por lo menos un nombre")
-
-            Else
-                If actuali <> 1 Then
-                    Dim guia1 As New guia
-                    guia1.idalmacen = CInt(CType(Me.cboalmacen.SelectedValue.ToString, Integer?))
-                    guia1.idtrabajador = CInt(CType(Me.cbotrabajador.SelectedValue.ToString, Integer?))
-                    guia1.FecTraslado = Me.dtfecha.Value
-                    guia1.sguia = Me.txtserie.Text
-                    guia1.nguia = CInt(Me.txtnumero.Text)
-                    guia1.nfactura = Me.txtfactura.Text
-                    guia1.idcliente = CInt(CType(Me.cbcliente.SelectedValue.ToString, Integer?))
-                    If Me.chestado.Checked = True Then
-                        guia1.estado = "1"
-                    Else
-                        guia1.estado = "0"
-                    End If
-                    If cbotipomovimiento.Text = "entre_almacenes" Then
-                        guia1.puntopartida = Me.cboalmacenllegada.Text
-                    Else
-                        guia1.puntopartida = Me.txtpuntollegada.Text
-                    End If
-                    guia1.EspecOtros = Me.cbotipomovimiento.Text
-                    guia1.ObsAnulado = Me.txtobservacion.Text
-
-                    capaguias.Registrarguias(guia1)
-                    idultimaguia()
-                    Dim filas As Integer = Me.DataGridView1.RowCount
-                    Dim q As Integer
-                    For q = 0 To filas - 1
-
-                        Dim guiad1 As New guiadetalles
-                        guiad1.IdGuias = ultimoid
-                        guiad1.idproducto = CInt(Me.DataGridView1.Item(0, q).Value)
-                        guiad1.cantidad = CInt(Me.DataGridView1.Item(2, q).Value)
-                        guiad1.IdTienda = CInt(Me.cboalmacen.SelectedValue)
-                        guiad1.idllegada = CInt(Me.cboalmacenllegada.SelectedValue)
-                        capaguias.Registrardetalle(guiad1)
-                    Next
-                    MsgBox("se agrego el registro")
+            If actuali <> 1 Then
+                Dim guia1 As New guia
+                guia1.idalmacen = CInt(CType(Me.cboalmacen.SelectedValue.ToString, Integer?))
+                guia1.idtrabajador = CInt(CType(Me.cbotrabajador.SelectedValue.ToString, Integer?))
+                guia1.FecTraslado = Me.dtfecha.Value
+                guia1.sguia = Me.txtserie.Text
+                guia1.nguia = CInt(Me.txtnumero.Text)
+                guia1.nfactura = Me.txtfactura.Text
+                guia1.idcliente = CInt(CType(Me.cbcliente.SelectedValue.ToString, Integer?))
+                If Me.chestado.Checked = True Then
+                    guia1.estado = "1"
+                Else
+                    guia1.estado = "0"
                 End If
+                If cbotipomovimiento.Text = "entre_almacenes" Then
+                    guia1.puntopartida = Me.cboalmacenllegada.Text
+                Else
+                    guia1.puntopartida = Me.txtpuntollegada.Text
+                End If
+                guia1.EspecOtros = Me.cbotipomovimiento.Text
+                guia1.ObsAnulado = Me.txtobservacion.Text
+
+                capaguias.Registrarguias(guia1)
+                idultimaguia()
+                Dim filas As Integer = Me.DataGridView1.RowCount
+                Dim q As Integer
+                For q = 0 To filas - 1
+
+                    Dim guiad1 As New guiadetalles
+                    guiad1.IdGuias = ultimoid
+                    guiad1.idproducto = CInt(Me.DataGridView1.Item(0, q).Value)
+                    guiad1.cantidad = CInt(Me.DataGridView1.Item(2, q).Value)
+                    guiad1.IdTienda = CInt(Me.cboalmacen.SelectedValue)
+                    guiad1.idllegada = CInt(Me.cboalmacenllegada.SelectedValue)
+                    capaguias.Registrardetalle(guiad1)
+                Next
+                MsgBox("se agrego el registro")
+                cargartodos()
             End If
         End If
         bgrabar()
@@ -433,61 +461,65 @@ Public Class gestionguias
         Me.DataGridView1.DataSource = ""
         limpiarcabecera()
         limpiardetalle()
+        Me.ButtonX1.Enabled = False
+        Me.labcantidadarticulos.Text = ""
+        Me.dgbusqueda.DataSource = ""
+        Me.dgdetalle.DataSource = ""
 
     End Sub
     Private Sub botonbuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles botonbuscar.Click
 
-        If Me.chfecha.Checked = False Then
-        ElseIf Me.opproveedor.Checked = True Then
-            Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporproveedorconfecha(CInt(Me.cbobusqueda.SelectedValue), Me.datefechainicio.Value, Me.datefechafin.Value)
-        ElseIf Me.opproducto.Checked = True Then
-        End If
+        'If Me.chfecha.Checked = False Then
+        'ElseIf Me.opproveedor.Checked = True Then
+        '    Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporproveedorconfecha(CInt(Me.cbobusqueda.SelectedValue), Me.datefechainicio.Value, Me.datefechafin.Value)
+        'ElseIf Me.opproducto.Checked = True Then
+        'End If
 
-        If Me.opnumero.Checked = True Then
-            Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresospornumero(CStr(Me.txtdato.Text))
-        End If
+        'If Me.opnumero.Checked = True Then
+        '    Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresospornumero(CStr(Me.txtdato.Text))
+        'End If
 
 
-        If Me.opserie.Checked = True Then
-            Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporserie(CStr(Me.txtdato.Text))
-        End If
+        'If Me.opserie.Checked = True Then
+        '    Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporserie(CStr(Me.txtdato.Text))
+        'End If
 
-        If Me.chfecha.Checked = True Then
-        ElseIf Me.opproveedor.Checked = True Then
-            Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporproveedor(CInt(Me.cbobusqueda.SelectedValue))
+        'If Me.chfecha.Checked = True Then
+        'ElseIf Me.opproveedor.Checked = True Then
+        '    Me.dgbusqueda.DataSource = capaingresos.listartodoslosingresosporproveedor(CInt(Me.cbobusqueda.SelectedValue))
 
-        ElseIf Me.opproducto.Checked = True Then
+        'ElseIf Me.opproducto.Checked = True Then
 
-        ElseIf Me.opnumero.Checked = True Then
-        ElseIf Me.opserie.Checked = True Then
+        'ElseIf Me.opnumero.Checked = True Then
+        'ElseIf Me.opserie.Checked = True Then
 
-        End If
-        Dim cant As Integer = Me.dgbusqueda.RowCount
-        Me.Label17.Text = CStr(cant)
-        btodos()
-        btadicionar.Enabled = False
-        Me.cboeliminardetalle.Enabled = False
+        'End If
+        'Dim cant As Integer = Me.dgbusqueda.RowCount
+        'Me.Label17.Text = CStr(cant)
+        'btodos()
+        'btadicionar.Enabled = False
+        'Me.cboeliminardetalle.Enabled = False
 
     End Sub
 
     Private Sub editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles editar.Click
         If Me.dgbusqueda.RowCount = 0 Then
-            MsgBox("busque primero la ruta")
+            MsgBox("busque primero el registro a editar")
         Else
-
+            cb1 = 1
+            Me.ButtonX1.Enabled = True
             Dim fila As Byte
             Dim i As Integer
             fila = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
             i = CInt(CDec(Me.dgbusqueda.Item(0, fila).Value()))
             Dim st As DataRow
             st = capaguias.listarguiagetone(i)
-            Me.cboalmacen.SelectedValue = CInt(st.Item("IdAlmacen"))
+            Me.cboalmacen.Text = CStr(st.Item("Punto_Partida"))
             Me.dtfecha.Value = CDate(st.Item("FecTraslado"))
             Me.txtserie.Text = CStr(CInt(st.Item("SGuia")))
             Me.txtnumero.Text = CStr(CInt(st.Item("NGuia")))
             Me.txtfactura.Text = CStr(CInt(st.Item("NFactura")))
             Me.cbcliente.Text = CStr(st.Item("cliente"))
-
             If CStr(st.Item("estado")) = "1" Then
                 Me.chestado.Checked = True
             Else
@@ -496,7 +528,15 @@ Public Class gestionguias
             cbotipomovimiento.Text = CStr(st.Item("EspecOtros"))
             Me.txtobservacion.Text = CStr(st.Item("observacion"))
             Me.cbotrabajador.Text = CStr(st.Item("trabajador"))
-            Me.txtpuntollegada.Text = CStr(st.Item("Punto_llegada"))
+
+
+            If CStr(st.Item("EspecOtros")) = "entre_almacenes" Then
+
+                Me.cboalmacenllegada.Text = CStr(st.Item("Punto_Llegada"))
+
+            Else
+                Me.txtpuntollegada.Text = CStr(st.Item("Punto_llegada"))
+            End If
             actuali = 1
             actualidetalle = 1
             Dim aa As New guia
@@ -513,12 +553,8 @@ Public Class gestionguias
             Me.grabar.Enabled = True
             Me.cboalmacenllegada.Visible = True
             Me.cboalmacenllegada.Enabled = True
-            If cboalmacen.Text = "entre_almacenes" Then
-                cb1 = 0
-            Else
-                cb1 = 1
+            beditar()
 
-            End If
         End If
     End Sub
     Private Sub todos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles todos.Click
@@ -527,6 +563,7 @@ Public Class gestionguias
         Dim cant As Integer = Me.dgbusqueda.RowCount
         Me.Label17.Text = CStr(cant)
         eliminar.Enabled = True
+        Me.dgdetalle.DataSource = ""
     End Sub
     Private Sub dgdetalle_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If Me.dgdetalle.RowCount = 0 Then
@@ -552,8 +589,10 @@ Public Class gestionguias
     End Sub
 
     Private Sub nuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles nuevo.Click
+
+        dgbusqueda.DataSource = ""
         Me.DataGridView1.Enabled = True
-        cb1 = 1
+        cb1 = 0
         bnuevo()
         limpiarcabecera()
         limpiardetalle()
@@ -563,6 +602,11 @@ Public Class gestionguias
         btadicionar.Enabled = True
         Me.dgdetalle.Enabled = False
         Me.cboalmacenllegada.Visible = False
+        Me.labcantidadarticulos.Text = "0"
+        Me.txtfactura.Text = "0"
+        Me.txtnumero.Text = "0"
+        Me.txtserie.Text = "0"
+
     End Sub
 
     Private Sub eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eliminar.Click
@@ -579,6 +623,7 @@ Public Class gestionguias
             capaguias.eliminardetalleporguia(i)
             capaguias.eliminarguia(i)
             MsgBox("ingreso y detalle eliminado")
+            cargartodos()
         End If
     End Sub
     Private Sub cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cancelar.Click
@@ -586,6 +631,7 @@ Public Class gestionguias
         Me.DataGridView1.DataSource = ""
         limpiarcabecera()
         limpiardetalle()
+        Me.dgbusqueda.Enabled = True
     End Sub
 
     Private Sub dgbusqueda_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgbusqueda.CellContentClick
@@ -594,6 +640,25 @@ Public Class gestionguias
         Me.dgdetalle.Enabled = True
         Me.DataGridView1.Visible = False
         Me.DataGridView1.Enabled = False
+    End Sub
+
+    Private Sub dgdetalle_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgdetalle.CellClick
+        If Me.dgdetalle.RowCount = 0 Then
+            MsgBox("no existen detalles")
+        Else
+            Dim fila As Byte
+            Dim i As Integer
+            fila = CByte(Me.dgdetalle.CurrentCell.RowIndex())
+            Dim detalleguia1 As GuiasDet
+            i = CInt(CDec(Me.dgdetalle.Item(0, fila).Value()))
+            detalleguia1 = GuiasDetMapper.Instance.GetOne(i)
+            Me.cboproducto.SelectedValue = detalleguia1.IdProducto
+            Me.txtcantidad.Text = CStr(detalleguia1.Cantidad)
+            Me.cboalmacen.SelectedValue = detalleguia1.IdTienda
+            Me.DataGridView1.Enabled = False
+            Me.dgbusqueda.Enabled = False
+            actualidetalle = 1
+        End If
     End Sub
     Private Sub dgdetalle_CellContentClick_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgdetalle.CellContentClick
         If Me.dgdetalle.RowCount = 0 Then
@@ -610,6 +675,7 @@ Public Class gestionguias
             Me.cboalmacen.SelectedValue = detalleguia1.IdTienda
             Me.DataGridView1.Enabled = False
             Me.dgbusqueda.Enabled = False
+            actualidetalle = 1
         End If
     End Sub
 
@@ -629,7 +695,6 @@ Public Class gestionguias
                 Dim fila As Byte
                 Dim i As Integer
                 fila = CByte(Me.dgdetalle.CurrentCell.RowIndex())
-
                 Dim ingresoguia1 As GuiasDet
                 i = CInt(CDec(Me.dgdetalle.Item(0, fila).Value()))
                 GuiasDetMapper.Instance.Delete(i)
@@ -656,57 +721,71 @@ Public Class gestionguias
         Me.labcantidadarticulos.Text = CStr(Sumar("cantidad", Me.DataGridView1))
     End Sub
     Private Sub ButtonX2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonX2.Click
-        If Me.dgdetalle.RowCount = 0 Then
-            MsgBox("no existen detalles")
-        Else
-            'Crer dataset para exportar
-            Dim dset As New DataSet
-            'add table to dataset
-            dset.Tables.Add()
-            'agregar columnas a la tabla
-            For i As Integer = 0 To dgbusqueda.ColumnCount - 1
-                dset.Tables(0).Columns.Add(dgbusqueda.Columns(i).HeaderText)
+        'If Me.dgdetalle.RowCount = 0 Then
+        '    MsgBox("no existen detalles")
+        'Else
+        'Crer dataset para exportar
+        Dim dset As New DataSet
+        'add table to dataset
+        dset.Tables.Add()
+        'agregar columnas a la tabla
+        For i As Integer = 0 To dgbusqueda.ColumnCount - 1
+            dset.Tables(0).Columns.Add(dgbusqueda.Columns(i).HeaderText)
+        Next
+        'agregar filas a la tabla
+        Dim dr1 As DataRow
+        For i As Integer = 0 To dgbusqueda.RowCount - 1
+            dr1 = dset.Tables(0).NewRow
+            For j As Integer = 0 To dgbusqueda.Columns.Count - 1
+                dr1(j) = dgbusqueda.Rows(i).Cells(j).Value
             Next
-            'agregar filas a la tabla
-            Dim dr1 As DataRow
-            For i As Integer = 0 To dgbusqueda.RowCount - 1
-                dr1 = dset.Tables(0).NewRow
-                For j As Integer = 0 To dgbusqueda.Columns.Count - 1
-                    dr1(j) = dgbusqueda.Rows(i).Cells(j).Value
-                Next
-                dset.Tables(0).Rows.Add(dr1)
+            dset.Tables(0).Rows.Add(dr1)
+        Next
+        'mioo
+        For i2 As Integer = 0 To dgdetalle.ColumnCount - 2
+            dset.Tables(0).Columns.Add(dgdetalle.Columns(i2).HeaderText)
+        Next
+        'agregar filas a la tabla
+        Dim dr2 As DataRow
+        For i3 As Integer = 0 To dgdetalle.RowCount - 1
+            dr2 = dset.Tables(0).NewRow
+            For j As Integer = 0 To dgdetalle.Columns.Count - 2
+                dr2(j) = dgdetalle.Rows(i3).Cells(j).Value
             Next
-            Dim excel As New Microsoft.Office.Interop.Excel.ApplicationClass
-            Dim wBook As Microsoft.Office.Interop.Excel.Workbook
-            Dim wSheet As Microsoft.Office.Interop.Excel.Worksheet
-            wBook = excel.Workbooks.Add()
-            wSheet = CType(wBook.ActiveSheet(), Microsoft.Office.Interop.Excel.Worksheet)
-            wSheet.Name = "Ejemplo"
-            Dim dt As System.Data.DataTable = dset.Tables(0)
-            Dim dc As System.Data.DataColumn
-            Dim dr As System.Data.DataRow
-            Dim colIndex As Integer = 0
-            Dim rowIndex As Integer = 0
+            dset.Tables(0).Rows.Add(dr2)
+        Next
+        'miooo
+        Dim excel As New Microsoft.Office.Interop.Excel.ApplicationClass
+        Dim wBook As Microsoft.Office.Interop.Excel.Workbook
+        Dim wSheet As Microsoft.Office.Interop.Excel.Worksheet
+        wBook = excel.Workbooks.Add()
+        wSheet = CType(wBook.ActiveSheet(), Microsoft.Office.Interop.Excel.Worksheet)
+        wSheet.Name = "lista de guias con detalles"
+        Dim dt As System.Data.DataTable = dset.Tables(0)
+        Dim dc As System.Data.DataColumn
+        Dim dr As System.Data.DataRow
+        Dim colIndex As Integer = 0
+        Dim rowIndex As Integer = 0
+        For Each dc In dt.Columns
+            colIndex = colIndex + 1
+            excel.Cells(1, colIndex) = dc.ColumnName
+        Next
+        For Each dr In dt.Rows
+            rowIndex = rowIndex + 1
+            colIndex = 0
             For Each dc In dt.Columns
                 colIndex = colIndex + 1
-                excel.Cells(1, colIndex) = dc.ColumnName
+                excel.Cells(rowIndex + 1, colIndex) = dr(dc.ColumnName)
             Next
-            For Each dr In dt.Rows
-                rowIndex = rowIndex + 1
-                colIndex = 0
-                For Each dc In dt.Columns
-                    colIndex = colIndex + 1
-                    excel.Cells(rowIndex + 1, colIndex) = dr(dc.ColumnName)
-                Next
-            Next
-            wSheet.Columns.AutoFit()
-            Dim blnFileOpen As Boolean = False
-            Try
-            Catch ex As Exception
-                blnFileOpen = False
-            End Try
-            excel.Visible = True
-        End If
+        Next
+        wSheet.Columns.AutoFit()
+        Dim blnFileOpen As Boolean = False
+        Try
+        Catch ex As Exception
+            blnFileOpen = False
+        End Try
+        excel.Visible = True
+        'End If
     End Sub
 
     Private Sub ButtonX3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonX3.Click
@@ -727,29 +806,45 @@ Public Class gestionguias
         End If
     End Sub
     Private Sub cbotipomovimiento_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbotipomovimiento.SelectedIndexChanged
+        If Me.cbotipomovimiento.Text = "entre_almacenes" And cb1 = 1 Then
+            Me.cboalmacenllegada.Enabled = True
+            Me.cboalmacenllegada.Visible = True
+            Me.txtpuntollegada.Visible = False
+            Me.txtpuntollegada.Text = ""
+        End If
+        If Me.cbotipomovimiento.Text = "entre_almacenes" And cb1 = 0 Then
 
-        If cb1 = 1 Then
-            If Me.cbotipomovimiento.Text = "entre_almacenes" Then
-                Me.cboalmacenllegada.Enabled = True
-                Me.cboalmacenllegada.Visible = True
-                Me.txtpuntollegada.Visible = False
-                Me.txtpuntollegada.Text = "ee"
-            Else
-                Me.cboalmacenllegada.Enabled = False
-                Me.cboalmacenllegada.Visible = False
-                Me.txtpuntollegada.Visible = True
-                Me.txtpuntollegada.Text = ""
-            End If
+            Me.cboalmacenllegada.Enabled = True
+            Me.cboalmacenllegada.Visible = True
+            Me.txtpuntollegada.Visible = False
+            Me.txtpuntollegada.Text = ""
+        End If
+        If Me.cbotipomovimiento.Text <> "entre_almacenes" And cb1 = 0 Then
 
-
-        Else
-
-
+            Me.cboalmacenllegada.Enabled = False
+            Me.cboalmacenllegada.Visible = False
+            Me.txtpuntollegada.Visible = True
+            Me.txtpuntollegada.Text = ""
+        End If
+        If Me.cbotipomovimiento.Text <> "entre_almacenes" And cb1 = 1 Then
+            Me.cboalmacenllegada.Enabled = False
+            Me.cboalmacenllegada.Visible = False
+            Me.txtpuntollegada.Visible = True
+            Me.txtpuntollegada.Text = ""
         End If
 
     End Sub
-
-    Private Sub labcantidadarticulos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles labcantidadarticulos.Click
-
+    Private Sub ButtonX1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonX1.Click
+        Dim fila As Byte
+        Dim i As Integer
+        fila = CByte(Me.dgbusqueda.CurrentCell.RowIndex())
+        i = CInt(CDec(Me.dgbusqueda.Item(0, fila).Value()))
+        MsgBox("se adicionaran detalles a la guia ")
+        Dim guiad1 As New guiadetalles
+        guiad1.IdGuias = i
+        guiad1.idproducto = CInt(cboproducto.SelectedValue)
+        guiad1.cantidad = CInt(Me.txtcantidad.Text)
+        capaguias.Registrardetalle(guiad1)
+        dgdetalle.DataSource = capaguias.listardetalleporidguia(i)
     End Sub
 End Class

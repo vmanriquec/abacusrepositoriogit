@@ -117,4 +117,8 @@ Public Class menuprincipal
         cf.StartPosition = FormStartPosition.CenterParent
         cf.Show()
     End Sub
+
+    Private Sub PanelEx2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
 End Class
